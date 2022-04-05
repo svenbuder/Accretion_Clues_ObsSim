@@ -24,6 +24,8 @@
 \newcommand{\SB}[1]{{\textcolor{orange}{SB: #1}}}
 \newcommand{\TB}[1]{{\textcolor{green}{TB: #1}}}
 
+\newcommand{\Gaia}{\textit{Gaia}\xspace} % \Gaia
+
 \usepackage{newtxtext,newtxmath}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -86,12 +88,12 @@ cosmology: observations -- Galaxy: formation -- Galaxy: evolution -- Galaxy: abu
 \section{Introduction}
 \label{sec:intro}
 
-The history of the Milky Way is a puzzle that has taunted astronomers for decades. Their long lifetimes and unchanging chemistry through Galactic evolution means that stars in the Milky Way hold key insights to our understanding of the processes that have led to our Galaxy as we know it today. The advent of new large-scale stellar surveys has enabled insights into the long and complex history of our Galaxy that have been previously unattainable. When the first data from the Gaia satellite was released in 2016 \citep{Brown2016}, it catalysed a cascade of new discoveries and discussions: a product of the survey's unprecedented accuracy and scale \citep{BlandHawthorn2019}. Gaia’s astrometric data complements corresponding advancements in spectroscopic surveys that are allowing for significant improvement in our understanding of the chemical makeup of stars \citep{Buck2021}. The \textit{GALactic Archaeology with HERMES} (GALAH) survey\footnote{\url{https://www.galah-survey.org}}, based at the Australian-Anglo telescope, is at the forefront of our improved spectroscopic capabilities \citep{DeSilva2015}. Created to provide chemical data for up to one million of the stars observed by Gaia, the combined use of Gaia and GALAH possesses undeniable potential for the field of galactic archaeology, promising to pave the way for improved analysis and understanding of our Galaxy \citep{Buder2021}. This report aims to contribute a small piece in our burgeoning understanding of galactic evolution: combining cosmological simulations and the spectroscopic GALAH data to explore the best option for diagnostic plots with which we can recognise accreted stars in the Milky Way.  
+The history of the Milky Way is a puzzle that has taunted astronomers for decades. Their long lifetimes and unchanging chemical composition through Galactic evolution means that stars in the Milky Way hold key insights to our understanding of the processes that have led to our Galaxy as we know it today. The advent of new large-scale stellar surveys, providing measurements of elemental abundances\footnote{We define elemental abundances, such as [Fe/H], [Mg/Fe], and [Mg/Mn] as logarithmic ratios of two elemental number densities compared to the Sun, that is, $\left[\frac{X}{Y}\right]=\log_{10}\left(\frac{N_X}{N_Y}\right) -\log_{10}\left(\frac{N_X}{N_Y}\right)_\odot$.} for millions of stars has enabled insights into the long and complex history of our Galaxy that have been previously unattainable. When the first data from the \Gaia satellite was released in 2016 \citep{Brown2016}, it catalysed a cascade of new discoveries and discussions: a product of the survey's unprecedented accuracy and scale \citep{BlandHawthorn2019}. \Gaia's astrometric data complements corresponding advancements in spectroscopic surveys that are allowing for significant improvement in our understanding of the chemical makeup of stars \citep{Buck2021}. The \textit{GALactic Archaeology with HERMES} (GALAH) survey\footnote{\url{https://www.galah-survey.org}}, based at the Australian-Anglo telescope, is at the forefront of our improved spectroscopic capabilities \citep{DeSilva2015}. Created to provide chemical data for up to one million of the stars observed by \Gaia, the combined use of \Gaia and GALAH possesses undeniable potential for the field of galactic archaeology, promising to pave the way for improved analysis and understanding of our Galaxy \citep{Buder2021}. This report aims to contribute a small piece in our burgeoning understanding of galactic evolution: combining cosmological simulations and the spectroscopic GALAH data to explore the best option for diagnostic plots with which we can recognise accreted stars in the Milky Way.  
 
-- difference in the evolution of chemical abundances, both [X/H] and [X/Fe] expected from theoretical predictions of chemical evolution \citep[see e.g.][]{Kobayashi2020}.
-\begin{equation}
-\left[\frac{X}{Y}\right]=\log_{10}\left(\frac{N_X}{N_Y}\right)_{star} -\log_{10}\left(\frac{N_X}{N_Y}\right)_{sun}
-\end{equation}
+% - difference in the evolution of chemical abundances, both [X/H] and [X/Fe] expected from theoretical predictions of chemical evolution \citep[see e.g.][]{Kobayashi2020}.
+% \begin{equation}
+% \left[\frac{X}{Y}\right]=\log_{10}\left(\frac{N_X}{N_Y}\right)_{star} -\log_{10}\left(\frac{N_X}{N_Y}\right)_{sun}
+% \end{equation}
 
 \subsection{Identifying accreted stars - clues from observations}
 
@@ -110,19 +112,11 @@ Cosmological zoom-in simulation have no age uncertainties and now also trace che
 \subsection{NIHAO Zoom-in simulation with chemistry}
 
 In this study, we use a follow-up zoom-in simulation from the \textit{Numerical Investigation of a Hundred Astronomical Objects} (NIHAO) simulation suite. NIHAO describes a series of 100 “zoom-in” simulations, the most accurate and unbiased galactic models to-date \citep{Wang2015}. These simulations are characterised as time-resolved chemical enrichment models, where spectral data is taken at specific time intervals, rather than averaged over time. This allows for unprecedented flexibility in the initial parameters and consequently unprecedented accuracy in the models \citep{Buck2021}. 
-More importantly, the simulations by \citet{Buck2021} incorporate a “hybrid approach” wherein observational data is first used to fit a chemical evolution model for initial conditions, before being fit to hydrodynamical simulations \citep{Buck2021}. It is clear therefore that the accuracy of models relies heavily on sufficient observational data \citep{Wang2015}, which reinforces the importance of large, accurate surveys like Gaia and GALAH. The simulations are used throughout this project to compare to results from the observational data of GALAH, as well as providing an argument for different plots to be used. This allows an unprecedented comparison of accurate measurements with uncertainties and model predictions without uncertainties.
+More importantly, the simulations by \citet{Buck2021} incorporate a “hybrid approach” wherein observational data is first used to fit a chemical evolution model for initial conditions, before being fit to hydrodynamical simulations \citep{Buck2021}. It is clear therefore that the accuracy of models relies heavily on sufficient observational data \citep{Wang2015}, which reinforces the importance of large, accurate surveys like \Gaia and GALAH. The simulations are used throughout this project to compare to results from the observational data of GALAH, as well as providing an argument for different plots to be used. This allows an unprecedented comparison of accurate measurements with uncertainties and model predictions without uncertainties.
 
 Motivation for this study: In \citet{Buck2021}, the main focus of the paper was to present the chemical evolution implementation and only a few verification plots have been done, focusing on the stellar disk.
 
-The simulation data is available for the elements H, He, C, N, O, Ne, Mg, Al, Si, P, S, V, Cr, Mn, Fe, Co, Ba. Of these, only ten correspond with the GALAH data leaving plots possible for only C, O, Mg, Al, Si, V, Cr, Mn, Co and Ba. For each of these ten, a plot was produced in Python of the element's abundance ratio to Hydrogen, against the abundance ratio [Fe/H], or metallicity. The results of this are shown in Figure \ref{fig:allvsFeH}. 
-
-\begin{figure*}
-	\includegraphics[width=\textwidth]{figures/Overview_FeH_XFe_Obs_Sim.png}
-    \caption{
-    \textbf{Distribution of elemental abundances [X/Fe] versus [Fe/H] for the ten elements overlapping between GALAH and NIHAO.} 
-    \textbf{First and third rows} show observed data from GALAH and \textbf{second and fourth rows} show the simulated data for the same abundance ratios. Color maps are showing the logarithmic density distributions with brightest colors indicating highest densities. For better visibility, plot ranges are adjusted to the data rather than to be equal among each panel. Dashed lines indicate Solar values.}
-    \label{fig:allvsFeH}
-\end{figure*}
+The simulation data is available for the elements H, He, C, N, O, Ne, Mg, Al, Si, P, S, V, Cr, Mn, Fe, Co, Ba. Of these, only ten correspond with the GALAH data leaving plots possible for only C, O, Mg, Al, Si, V, Cr, Mn, Co and Ba. For each of these ten, a plot was produced in Python of the element's abundance ratio to Hydrogen, against the abundance ratio [Fe/H], or metallicity. The results of this are shown in Fig.~\ref{fig:FeH_XFe}.
 
 \SB{Question to discuss: Should we renormalise the [X/H] for the elements so that the solar neighborhood lands at 0, as would be custom by definition?}
 
@@ -134,136 +128,66 @@ An improved understanding of accretion within the Milky Way encompasses more acc
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Diagnostic plots with simulated data}
+\section{Diagnostic plots: Observation vs. Simulation}
 \label{sec:comparison}
 
-In Sec.~\ref{sec:intro}, we have identified several observation-based plots that have been used to identify accreted stars in the Milky Way. In this section, we are now concerned with replicating these plots for the simulated Milky Way analogue to first order\footnote{\SB{Come back to this if we figure out that we actually do have to limit the simulation space to the Solar neighborhood - which we have not done yet!}}. For this particular study, we will limit ourselves to the following plots: a) [Fe/H] vs. [Mg/Fe] \citep{Nissen2010}, [Al/Fe] vs. [Mg/Mn] \citep{Hawkins2015, Das2020}, 
+In Sec.~\ref{sec:intro}, we have identified several observation-based plots that have been used to identify accreted stars in the Milky Way. In this section, we are now concerned with replicating these plots for the simulated Milky Way analogue to first order\footnote{\SB{Come back to this if we figure out that we actually do have to limit the simulation space to the Solar neighborhood - which we have not done yet!}}. For this particular study, we will limit ourselves to the following plots: a) [Fe/H] vs. [Mg/Fe] \citep{Nissen2010}, [Al/Fe] vs. [Mg/Mn] \citep{Hawkins2015, Das2020}.
 
+\subsection{Abundance trends: [Fe/H] vs. [X/Fe]} \label{sec:feh_xfe}
 
-Through reading the relevant literature, a clear starting place for data analysis arose: replicating observation-based plots that had demonstrated clear results.  
+\begin{itemize}
+    \item Trends for 10 overlapping elements in Fig.~\ref{fig:FeH_XFe}.
+    \item To discuss: [C/Fe] and [Ba/Fe] with significant differences!
+    \item Then closer look at contributions from SNII vs. SNIa as suggested by \citet{Nissen2010} in Fig.~\ref{fig:low_alpha_halo}. Discuss selection of white polygon and how it does not show a significant overdensity in the [Al/Fe] vs. [Mn/Mn] plot (which could be expected without measurement uncertainties).
+    \item Look more generally at the abundance-abundance plots used to identify accreted stars in Sec.~\ref{sec:alfe_mgmn}.
+    \item \SB{[Fe/H] vs. [C+N/Fe] \citep{Hawkins2015}?}
+\end{itemize}
+
+\begin{figure*}
+	\includegraphics[width=\textwidth]{figures/Overview_FeH_XFe_Obs_Sim.png}
+    \caption{
+    \textbf{Distribution of elemental abundances [X/Fe] versus [Fe/H] for the ten elements overlapping between GALAH and NIHAO.} 
+    \textbf{First and third rows} show observed data from GALAH and \textbf{second and fourth rows} show the simulated data for the same abundance ratios. Color maps are showing the logarithmic density distributions with brightest colors indicating highest densities. For better visibility, plot ranges are adjusted to the data rather than to be equal among each panel. Dashed lines indicate Solar values.}
+    \label{fig:FeH_XFe}
+\end{figure*}
 
 \begin{figure*}
 	\includegraphics[width=\textwidth]{figures/low_alpha_halo.png}
     \caption{
     \textbf{Chemical abundances for all particles of the simulation (color-coded by logarithmic density) and a subset of particles (selected via white polygon in left plot).} 
-    \textbf{Panel a):} iron vs. silicon abundances as tracers of contribution from SNIa and SNII. \textbf{Panel b):} abundance combination [Al/Fe] vs. [Mg/Mn] used to trace accreted stars in observations. A convex hull is used to plot the area of the stars selected via a polygon in panel a).
-}
+    \textbf{Panel a):} iron vs. silicon abundances as tracers of contribution from SNIa and SNII. \textbf{Panel b):} abundance combination [Al/Fe] vs. [Mg/Mn] used to trace accreted stars in observations. A convex hull is used to plot the area of the stars selected via a polygon in panel a).}
     \label{fig:low_alpha_halo}
 \end{figure*}
 
-These plots didn't return the expected results (as explained in detail in Section \ref{sec:obs_vs_sim}), so a range of other plots, of different chemical abundance planes, were produced. \citet{Hawkins2015} outlined the four most suitable combinations to be [$\alpha/Fe$], [C+N/Fe], [Al/Fe], [Mg/Mn]. This informed the next plots made, shown in Figure \ref{fig:alpha}. Although the majority of plots throughout this report are produced on identical axes for clear comparison, the observation and simulation plots were on such different scales that the axes range had to be altered to allow for detail in the plots to be seen clearly. Again, these plots did not return any usable results (see Section \ref{sec:obs_vs_sim}) and so plots of elements over time were produced instead. 
- 
- The first step in creating these plots was to align the 'age' data in both datasets, as the simulation data uses time since formation (where a 3Gyr star would be placed at a value of 'tform' = $\sim$ 11Gyr) and the observation data uses stellar age directly. This is a simple matter of subtracting one dataset from 13.8Gyr, but is an important step nonetheless. For this report, the simulation 'tform' column was subtracted from 13.8Gyr to ensure that both datasets being compared could be considered in terms of stellar age.  
-Once this had been done, each element (in a ratio with Fe) was plotted over time, in both simulation and observation as shown in Fig.~\ref{fig:BaFetime} for [Ba/Fe]. The elements were tested with a range of elemental abundances, and it was found that the combination of [X/H] produced the most distinct results. This plot then formed the basis of the preceeding steps taken to quantify the separation between accreted and in situ stars, as described more thoroughly in \ref{subsec:quant}.  
- 
- All the plots described thus far have been two dimensional histograms, with a colourscale to represent density. Because of the high volume of stars we are working with, the colourscale is logarithmic-based. These were chosen as the clearest representation of the data, as they most clearly highlight overdensities through distinction in colour, as well as the various trends and shapes that are apparent in the substructure.  
- Essentially, the first step of this project was to create a number of abundance planes, based on the literature, and explore a large range of elemental combinations, subsets, and types of plots. When these were found to provide little clarity, elements were plotted over time instead, which form the basis of this report's \hyperref[sec:discussion]{discussion}, recommendations and conclusions.
- 
- 
- \subsection{Quantifying Results}
-\label{subsec:quant}
-This project relies on comparison between plots- comparing between elements, observation and simulation, and plots themselves. Whilst an important component of this is visual comparison of the plots, it is also necessary to find a way to quantify the differences between plots. The basis of this quantitative analysis is the assumption that the measurement uncertainties of the observational data are distributed in a Gaussian shape. In essence therefore, the difference between plots will be quantified through the mean of the Gaussian spread $\mu$ and the standard deviation $\sigma$. These values are shown in Figure \ref{fig:hist_labels}, where a discrete, one-dimensional histogram has been plotted and produces two distinct Gaussians, with the corresponding values shown. 
-\begin{figure}
-	\includegraphics[width=\columnwidth]{figures/hist_labelled.png}
-    \caption{A discrete 1D histogram of Barium (used just as an example), with two distinct Gaussian distributions representative of the accreted and in situ populations. This plot has been labelled with diagramatic indicators of the values of mean ($\mu_1$ and $\mu_2$) and standard deviation ($\sigma_1$ and $\sigma_2$) which are used in this project to quantify the separation between populations.}
-    \label{fig:hist_labels}
-\end{figure}
+% The first plots produced and analysed were [X/Fe] against [Fe/H], from both the observation and simulation data, which allowed for a side-by-side comparison to be made. [Fe/H] is generally representative of the metallicity of a star, which has significant implications for its age and the ISM from which it was born, which is why [Fe/H] is used often as a basis over which to plot a range of elemental abundances \citep{Buder2022}.  
 
- 
-To identify accreted stars, one must be able to identify separate bodies of stellar populations in the data with enough confidence to definitely say they are distinct. This confidence comes from low enough uncertainty in the data to reduce potential overlap between the bodies. \citet{Lindegren2013} produced a research note exploring this exact problem, and specifying an upper limit to the uncertainty possible in the data to still allow for a clear distinction between two bodies of stars. The precision of the data depends on two factors: the separation between the bodies (intrinsic scatter) and measurement uncertainties (extrinsic scatter). 
+% This abundance plane has been plotted many times throughout the existing literature and has consistently produced a clear distinction in substructure from measured spectra \citep{Das2020, Nissen2010}. When these plots were reproduced for this report, as in Fig.~\ref{fig:allvsFeH}, in the observation-based plots (right), there are clear overdensities observed, separate to the main, in situ population. When compared to the simulations (left) however, there is very little distinct substructure to be noted. There is significant overlap in the chemical abundance planes in the simulation data, resulting in no clear substructure and making it impossible to identify in situ or accreted stars from the plots.  
+% One of the key advantages to using simulations is the complete lack of corresponding measurement uncertainties. We would expect the substructure to appear even more clearly in the simulations than in the observations, and the fact that this isn't the case indicates a larger problem in the process. 
 
+\subsection{Abundance-abundance plots: [Al/Fe] vs. [Mg/Mn]} \label{sec:alfe_mgmn}
 
-% Visually, this is made very clear in Figure \ref{fig:lineartime}, where the elemental ratio of Barium over Hydrogen has been plotted over time and there are two distinct streams of stars, as highlighted with different colours. Linear equations to assist in the quantification have been fitted to the two curves in 1Gyr increments, symbolised by the alternating shades of the two colours.  This figure makes the two different stellar bodies (accreted and in situ) that we are trying to distinguish between very clear, however the next crucial step is to be able to quantify the separation between the two. To do this we can compare the linear plots of each Gyr increment: finding the mean value ($\mu$) of the line, and the standard deviation ($\sigma$) of the scatter. An estimate of these values can be made easily through a one dimensional histogram of the data (see Figure \ref{fig:hist}, wherein there are two clear Gaussian distributions visible, and the values of ($\mu$) and ($\sigma$) can be estimated by sight for now, before being used in accordance with Equation \ref{eq: sep} to calculate the separation. The accurate calculation of these values will be done through Python in the coming weeks.  
+\begin{itemize}
+    \item As suggested by \citet{Hawkins2015} and \citet{Das2020} based on data from the APOGEE survey as well as \citet{Buder2022} based on data from the GALAH survey, we plot the ratio of a light odd-Z element (Na and Al) as well as the ratio of SNII and SNIa dominated elements (Mg and Mn, respectively) in Fig.~\ref{fig:alfe_mgmn}.
+    \item Describe observations: overdensities for thin/low-alpha disk around (0,0), thick/high-alpha disk at (0.4,0.5) and accreted stars around (-0.4,0.4), refer to \citet{Das2020, Horta2021}. Not so clear for [Al/Fe] with GALAH, but clearer when using [Na/Fe] \citep{Buder2022}. \SB{We could use APOGEE DR17 for a better/clearer comparison.}
+    \item Describe simulations: Zeropoint shift, that is the location of the thin disk around (-0.23,-0.55) instead (0,0). But also overall structure is significantly different: No noise, but also no clear substructure!
+    \item Interpretation: different chemical evolution in simulation and Milky Way (either because truly different or because chemical enrichment in simulation not accurate).
+\end{itemize}
 
-% \begin{figure}
-%     \includegraphics[width=\columnwidth]{SIM Ba over time acc vs situ.png}
-%     \caption{The elemental component of Barium over time from the cosmological simulations, with two distinct streams. A linear line has been fitted to 1Gyr increments (shown as alternating shades of the same colour). The brown curve represents the in situ stars and the pink curve represents accreted stars, segmented  into linear chunks.}
-%     \label{fig:lineartime}
-% \end{figure}
-
-% \begin{figure}
-% 	\includegraphics[width=\columnwidth]{histogram.png}
-%     \caption{A one dimensional histogram of the same data plotted in Figure \ref{fig:lineartime}, which shows two clear Gaussian distributions among the data, representative of the two stellar bodies in question. This histogram has been limited to all of the stars existent between 4 and 5 Gyrs, for direct comparison between the two linear lines produced above.} 
-%     \label{fig:hist}
-% \end{figure}
-
-Adapted from \citet{Lindegren2013}, Equation \ref{eq: sep} will be used to quantify this separation. In the case of the simulation data, as this example is, there are no measurement uncertainties which means the standard deviation only depends on the intrinsic scatter of the data. 
-
-\begin{equation} \label{eq: sep}
-r = \frac{|\mu_1 - \mu_2|}{\sqrt{\sigma_1^2 + \sigma_2^2}}
-\end{equation}
-
-Within this equation, subscripts 1 and 2 represent the two populations in question, as shown in Figure \ref{fig:hist_labels}. To determine the exact numerical values of these quantities, the dataset of each element had to be split into two parts, encompassing the lower and higher Gaussians respectively (1 and 2). \SB{Need to make this more quantitative via Python: This was done visually, through looking at the histogram of each element as in Figure \ref{fig:hist_labels} and setting an upper and lower limit for each sequence.} 
-
-
-
- The process of calculating the r-value using Equation \ref{eq: sep} was performed for each element to determine the most suitable choice for identifying accreted stars. Simply, the element with the highest corresponding r-value will be the plot that we can be most confident in our identification of accreted and in situ stars. The results of these calculations can be found in Table \ref{table: 1}. 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Observation vs. Simulation}
-\label{sec:obs_vs_sim}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The first plots produced and analysed were [X/Fe] against [Fe/H], from both the observation and simulation data, which allowed for a side-by-side comparison to be made. [Fe/H] is generally representative of the metallicity of a star, which has significant implications for its age and the ISM from which it was born, which is why [Fe/H] is used often as a basis over which to plot a range of elemental abundances \citep{Buder2022}.  
-This abundance plane has been plotted many times throughout the existing literature and has consistently produced a clear distinction in substructure from measured spectra \citep{Das2020, Nissen2010}. When these plots were reproduced for this report, as in Figure \ref{fig:allvsFeH}, in the observation-based plots (right), there are clear overdensities observed, separate to the main, in situ population. When compared to the simulations (left) however, there is very little distinct substructure to be noted. There is significant overlap in the chemical abundance planes in the simulation data, resulting in no clear substructure and making it impossible to identify in situ or accreted stars from the plots.  
-One of the key advantages to using simulations is the complete lack of corresponding measurement uncertainties. We would expect the substructure to appear even more clearly in the simulations than in the observations, and the fact that this isn't the case indicates a larger problem in the process. 
 \begin{figure*}
 	\includegraphics[width=\textwidth]{figures/[MgMn] vs [AlFe].png}
-    \caption{Simulation (left) vs observation (right) of alpha element Mg against Mn, plotted over [Al/Fe]. The two plots are on separate axes as the observational plot had to be zoomed in significantly to show any sufficient detail. The zeropoints are completely different, with the axes representing the solar abundances at [0,0] not visible on the observational plot.}
-    \label{fig:alpha}
+    \caption{Simulation (left) vs observation (right) of alpha element Mg against Mn, plotted over [Al/Fe]. The two plots are on separate axes as the observational plot had to be zoomed in significantly to show any sufficient detail. The zeropoints are completely different, with the axes representing the solar abundances at [0,0] not visible on the observational plot. \SB{Luka: Can you try to color the simulation with cmap='plasma' and add this plot to the final notebook?}}
+    \label{fig:alfe_mgmn}
 \end{figure*}
 
-Having discounted abundance planes of [X/Fe] vs [Fe/H] as a viable option using these particular simulations, the next step was to assess high and low $\alpha$ haloes. The $\alpha$ elements include Mg and Si, and tend to be of lower abundance in accreted stars. These elements were plotted in combinations of [Si/Fe] vs [Fe/H], as seen in Figure \ref{fig:allvsFeH} and [Mg/Mn] vs [Al/Fe]. Analysing these planes using TopCat, as shown in Figure \ref{fig:low_alpha_halo} made it clear that an overdensity in one plane did appear as an overdensity in the second plane. This provided a good indication that $\alpha$ elements would show distinction in more complete plots of the simulated data. These plots are shown in Figure \ref{fig:alpha}, where the abundance plane [Mg/Mn] vs [Al/Fe] is assessed in the hopes of distinguishing high and low alpha stars.  
-Once again, despite clear substructure visible in the GALAH plots, there are no distinct stellar populations visible in the simulation plots. It was expected that the high and low alpha haloes, which, as described in Section \ref{sec:intro} represent young and old populations of stars respectively \citep{Das2020}, would be distinguishable in the plots. However, this was not the case in any viable plots of Mg or Si. Once again, there is no substructure visible in the simulation plots and these abundance planes are not deemed suitable for the purposes of this project.  
-Based on the unexpectedly indistinct results produced by plotting abundance planes with known substructure, like the low and high alpha haloes, it was deemed futile to continue delving further into attempting to identify the most suitable abundance plane. Instead, this report turns to the question of other observables that could instead be used to diagnose accretion. Chemical abundances alone did not return usable results, so from the range of other information provided by both GALAH and the simulations, the research now turns to the question of chemical evolution- exploring chronological plots to investigate the difference in evolution between accreted and in situ stars.  
+\section{A new angle: age-abundance-distributions}
 
+\begin{itemize}
+    \item Chemistry is not the only conserved property of stars.
+    \item We therefore turn to stellar ages and assess age-abundance trends in the simulations. This is an especially informative exercise, as stellar ages are currently still suffering from low precisions on the order of 30-50\% for most stars. Our simulation, however, traces the formation age \texttt{tform} as a perfect value and we can infer stellar ages by subtracting \texttt{tform} from the age of the universe, which is $14.14\,\mathrm{Gyr}$ in the simulation.
+    \item Such plots have been used in observed data of other galaxies to identify accreted stars \citep{Martig2021}.
+\end{itemize}
 
-
-% \begin{figure*}
-% 	\includegraphics[width=\textwidth]{4 way comp.png}
-%     \caption{A quadrant comparison of two subsections of stars in the abundance plane of [Mg/Mn] vs [Al/Fe], selecting metal-poor stars (top) and higher-metalstars (bottom). The two plots on the left are from the simulations and the two on the right are from observations}
-%     \label{fig:4waycomp}
-% \end{figure*}
-
-% \begin{figure*}
-% 	\includegraphics[width=\textwidth]{COMP high low alpha (2).png}
-%     \caption{Stars selected in the [Mg/Mn] vs [Al/V] abundance plane, with two different subsets representing the high (lower) and the low (upper) alpha halos. On top of this is the direct comparison between the simulation (left) and the observation (right) data.}
-%     \label{fig:highlowalpha}
-% \end{figure*}
-
-% \begin{figure*}
-% 	\includegraphics[width=\textwidth]{Al against Fe.png}
-%     \caption{The abundance plane of [Al/Fe] against metallicity ([Fe/H]), with simulation on the left and observation on the right. This is just one element of the 9 abundance planes that have been plotted and will be included in the research.}
-%     \label{fig:AlvsFe}
-% \end{figure*}
-
-% Delving deeper, the plots of [Mg/Mn] against [Al/Fe], and [Si/Fe] against [Fe/H] were produced through TopCat and compared, as suggested by \citep{Hawkins2015}. This allowed for a cursory consideration of the limitations of the methods used, through the exploration of subsets and overdensities appearing in distinct abundance planes. This comparative plot is shown in \ref{fig:low_alpha_halo}  
-% Then, in accordance with Hawkins \citeyear{Hawkins2015} and Das et al \citeyear{Das2020}, [C+N/Fe] vs. [Fe/H] will be plotted. This will require some more in-depth manipulation of the data; reverse engineering the fits file so that we are able to use data of C+N. Once this has been done however, it will be compared to the plot the authors have produced from observational data. This plot has not yet been created, but I have included an example plot in Figure \ref{fig:C+N/Fe} from \citep{Das2020} to demonstrate what kind of plot we are expecting from this.  
-
-% \begin{figure}
-% 	\includegraphics[width=\columnwidth]{Das2020C+N.png}
-%     \caption{The plot taken from Das et al \citeyear{Das2020}, that will be compared to the plots produced in this report of the abundance plane [C+N/Fe] vs. [Fe/H]. *** This will be replaced with my own comparative plots when I have made them!}
-%     \label{fig:C+N/Fe}
-% \end{figure}
-
-
-% \begin{figure*}
-% 	\includegraphics[width=\textwidth]{[MgMn] vs [AlV].png}
-%     \caption{The abundance plane of [Mg/Mn] against [Al/V]: a direct comparison of the simulation data (Left) and observational (Right). These plots were created with Figure 4 as the basis}
-%     \label{fig:example_figure}
-% \end{figure*}
-
-
-
-% Amongst the plots created to isolate the separate stellar bodies of in situ and accreted stars are the low and alpha halos (plotted in Figure \ref{fig:highlowalpha}, different subsets of metallicities in Figure \ref{fig:4waycomp} and plotting elements over time as in Figure \ref{fig:lineartime}. The process of finding a precise and quantifiable method of comparison is outlined below, but these plots will all be assessed to determine which one most clearly and with the most statistical confidence highlights two distinct stellar populations. Then, different combinations of elements will be tested to the same end. Equally, these plots will be considered from both the cosmological simulations and the observational data, as below. 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Plots of Chemical Evolution}
-\label{sec:evolution}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Elements are created through a variery of pathways and in particular with a time- and environment-dependent manner \citep{Kobayashi2020}. It is clear therefore that chemical enrichment is intrinsically linked to stellar age, most crucially because chemical abundances remain unchanged from birth. This means that plotting elemental abundances over time should produce clarity between accreted and in situ stars, as there should be clear patterns in how the elements evolved over time.  And in this simulation plot, finally there are distinct stellar populations, represented by two 'streams'. The upper stream in these plots is representative of the in situ population of stars, and the lower, the accreted population. This explains the similarly shaped path of evolution that both follow, but accreted populations tend to join the Milky Way from smaller galaxies with less massive stars. This means that the stars are less metal-heavy and will therefore have a generally lower component of elemental abundance in their evolution, as is shown.  
+Elements are created through a variety of pathways and in particular with a time- and environment-dependent manner \citep{Kobayashi2020}. It is clear therefore that chemical enrichment is intrinsically linked to stellar age, most crucially because chemical abundances remain unchanged from birth. This means that plotting elemental abundances over time should produce clarity between accreted and in situ stars, as there should be clear patterns in how the elements evolved over time.  And in this simulation plot, finally there are distinct stellar populations, represented by two 'streams'. The upper stream in these plots is representative of the in situ population of stars, and the lower, the accreted population. This explains the similarly shaped path of evolution that both follow, but accreted populations tend to join the Milky Way from smaller galaxies with less massive stars. This means that the stars are less metal-heavy and will therefore have a generally lower component of elemental abundance in their evolution, as is shown.  
 
 The simulation plots are very clear- which is not reflected in the observational plots. The reason for this is the statistically massive measurement uncertainties that correspond with age measurements. As explained in Section \ref{sec:intro}, stellar ages are estimated using isochrone fitting and are very reliant on probability, with measurement uncertainties of around $30-50\%$ of the age in question. These uncertainties are responsible for the copious scatter seen in the observational plots, and means that with our current ability to estimate stellar ages, it is impossible to see distinct substructure. With less uncertainty (such as the simulation plots) distinct populations become clear, which provides clear motivation for further investigation into these plots as diagnostic tools. 
 \begin{figure}
@@ -277,118 +201,99 @@ The simulation plots are very clear- which is not reflected in the observational
     \label{fig:BaHtime}
 \end{figure}
 
+\subsection{The importance of notation: [X/Fe] or [X/H]}
 
-Figure \ref{fig:BaHtime} shows the elemental ratio of [Ba/Fe] over time. This same plot was created using every elemental combination available in the dataset, and it was found that the combination of [X/H] over time produced the clearest plot, as in Figure \ref{fig:BaHtime}. Hydrogen, being formed in the Big Bang nucleosynthesis, is not enhanced or affected by time, whereas metals like Fe are. This is why [X/H] plots are decidedly clearer than [X/Fe], as Fe is being simultaneously enriched along with Ba. 
+\begin{itemize}
+    \item Discuss that some previous studies have suggested to use elemental abundances reported as a function of hydrogen number density \citep[see e.g.][]{Fuhrmann2017b, Feuillet2021}.
+\end{itemize}
 
-\begin{center}
-\begin{table}
-    %\caption{One dimensional histograms of each element, used to determine an upper and lower limit so that t}
-    \centering
-    \begin{tabular}{ |c|c| } 
-         \hline
-         Element & {Discrete r-value} \\ 
-         \hline\hline
-          Mg & 6.1  \\ 
-         \hline
-         C & 5.3  \\ 
-         \hline
-         Mn & 5.7 \\
-        \hline
-         Si & 6.0 \\
-         \hline
-         Ba & 4.6 \\
-         \hline
-         V & 6.1 \\
-         \hline
-         Co & 6.4 \\
-         \hline
-         Al & 6.3 \\
-         \hline
-         Cr & 5.9 \\
-         \hline
-         O & 6.0 \\
-         \hline
-    \end{tabular}
-    \caption{The calculated r-values (for separation significance) for each element available in both datasets}
-    \label{table: 1}
-\end{table}
-\end{center}
+Fig.~\ref{fig:BaHtime} shows the elemental ratio of [Ba/Fe] over time. This same plot was created using every elemental combination available in the dataset, and it was found that the combination of [X/H] over time produced the clearest plot, as in Fig.~\ref{fig:BaHtime}. Hydrogen, being formed in the Big Bang nucleosynthesis, is not enhanced or affected by time, whereas metals like Fe are. This is why [X/H] plots are decidedly clearer than [X/Fe], as Fe is being simultaneously enriched along with Ba.
 
-To determine the element (X), that would be the most suitable option for these plots, the r-value of each element was calculated. The full process of this calculation is described in Section \ref{subsec:quant}, and the results are tabulated below. 
+As the abundances show clear sequences in [Ba/H] (and the other abundances), we now want to study how much noise we could allow for both abundance and age estimates, to still be able to separate the sequences.
 
+\subsection{Quantifying differences of age-abundance sequences} \label{sec:ageabundance}
 
+To quantify the separation significance $r$, we use Eq.~\ref{eq:r_value}, adapted from \citet{Lindegren2013}, to quantify the separation between two sequences, for which we assume a Gaussian distribution around a mean value $\mu$ with a standard deviation $\sigma$:
+\begin{equation} \label{eq:r_value}
+r = \frac{|\mu_1 - \mu_2|}{\sqrt{\sigma_1^2 + \sigma_2^2}}
+\end{equation}
 
-The results make it clear that Cobalt has the highest r-value and therefore should produce the clearest plots. However, there is a relatively marginal difference between all elements, particularly the top few, and so these results do not indicate that Co is the only viable element for this purpose. The small margin between elements in separation significance implies that there is need for further consideration of other variables, such as our ability to recognise the elements in spectral lines.  
-The ability to recognise spectral lines is a complex issue with a number of contributors, but for the purposes of this report, one simple way of quantifying this is through mean uncertainty. Table \ref{table: 2} shows each element with its corresponding mean uncertainties calculated. 
-%The reason for including the number of measurements is that if measurements couldn't be taken of an element because the spectra wasn't clear enough, this is important to know. C has a very low number of measurements taken which, on top of the high uncertainty, further disqualifies it as a good candidate. 
-From this table, it is clear that Co has quite a high average measurement error and thus, despite displaying the largest separation significance, would not be the most suitable element to use. Combining the results of Tables \ref{table: 1} and \ref{table: 2} leads to a preliminary conclusion that Al would be one of the most recommendable elements to use for diagnostic purposes, due to its large number of measurements, and corresponding low uncertainty.  
-\begin{center}
+While in the simulation the latter would only incorporate the intrinsic scatter, that is, $\sigma_{1,\text{obs}} = \sigma_1$, the observational scatter (which we assume uniform throughout the parameter space) of actual observations would enter into this equation via
+\begin{equation} \label{eq:scatter}
+    \sigma_{1,\text{obs}} = \sqrt{\sigma_1^2+\sigma_{obs}^2},
+\end{equation}
+leading to a slightly adjusted version of Eq.~\ref{eq:r_value}, that is,
+\begin{equation} \label{eq:r_value_observed}
+r (\sigma_{obs}) = \frac{|\mu_1 - \mu_2|}{\sqrt{\sigma_1^2 + \sigma_2^2 + 2\cdot \sigma_{obs}^2}}.
+\end{equation}
+
+We confirm our assumption of Gaussian distributions for the sequences by looking at the histograms of [Ba/H] for the simulation between 8 and $9\,\mathrm{Gyr}$ in Fig.~\ref{fig:hist_labels}.
+
+\begin{figure}
+	\includegraphics[width=\columnwidth]{figures/hist_labelled.png}
+    \caption{A discrete 1D histogram of Barium (used just as an example), with two distinct Gaussian distributions representative of the accreted and in situ populations. This plot has been labelled with diagramatic indicators of the values of mean ($\mu_1$ and $\mu_2$) and standard deviation ($\sigma_1$ and $\sigma_2$) which are used in this project to quantify the separation between populations.}
+    \label{fig:hist_labels}
+\end{figure}
+
+To determine the positions of the sequences and subsequent separation of data to calculate $\mu_1$ and $\mu_2$, we estimated the mean [X/H] values for in-situ and accreted stars at the ages of $8-9\,\mathrm{Gyr}$. This was done visually, through looking at the histogram of each element as in Fig.~\ref{fig:hist_labels} and setting an upper and lower limit for each sequence. \SB{Need to make this more quantitative via Python.}
+
+We then split the dataset for this particular into 2 and calculated 16th, 50th, and 84th percentiles in order to recover a more robust mean and standard deviation (and monitor our assumption of a Gaussian distribution). \SB{We list the values of 16th, 50th, and 84th percentiles as well as the resulting $r$ values in Tab.~\ref{tab:r_values_simulation}.}
+
 \begin{table}
     \centering
-    \begin{tabular}{ |c|c| } 
-     \hline
-     Element & {Average Uncertainty} \\ 
-     \hline\hline
-      Mg & 0.11  \\ 
-     \hline
-     C & 0.15  \\ 
-     \hline
-     Mn & 0.11 \\
+    \caption{Separation significance for the simulated data between in-situ and accreted (accr.) sequences for abundances ratios [X/H] of ten elements X. \SB{We should automate this script - I will show you how}}
+    \begin{tabular}{cccccc}
     \hline
-     Si & 0.07 \\
+    Element & $\mu_\text{in-situ}$ & $\sigma_\text{in-situ}$ & $\mu_\text{accr.}$ & $\sigma_\text{accr.}$ & $r$\\
+    \hline \hline
+    {[C/H]}  & & & & & 5.3 \\
+    {[O/H]}  & & & & & 6.0 \\
+    {[Mg/H]} & & & & & 6.1 \\
+    {[Al/H]} & & & & & 6.3 \\
+    {[Si/H]} & & & & & 6.0 \\
+    {[V/H]}  & & & & & 6.1 \\
+    {[Cr/H]} & & & & & 5.9 \\
+    {[Mn/H]} & & & & & 5.7 \\
+    {[Co/H]} & & & & & 6.4 \\
+    {[Ba/H]} & & & & & 4.6 \\
+    \hline
+    \end{tabular}
+    \label{tab:r_values_simulation}
+\end{table}
+
+\subsection{Assessing the influence of observational uncertainties}
+
+\begin{itemize}
+    \item abundances uncertainties, entering as $\sigma_{\text{obs}}$ into Eq.~\ref{eq:r_value_observed}.
+    \item age uncertainties, making it hard to distinguish between the sequences for the oldest stars.
+\end{itemize}
+
+Assessing both influences in the observational data is difficult because we do not know the underlying distribution of accreted versus in-situ stars. We therefore turn to the simulations and perform two tests. Firstly, we test how much observational scatter $\sigma_{\text{obs}}$ is allowed to still tell apart the sequences with a confidence of 68 or 95\% ($r$-values of at least 1 or 2)? Secondly, we test how well we can tell the sequences apart when adding age uncertainties. In this particular case, we start from our initial subset selected for ages of $8-9\,\mathrm{Gyr}$ and ask, how would our selection change, if we cannot separate these stars from the even older ones (increasing our selection from $8-9\,\mathrm{Gyr}$ towards $8-10\,\mathrm{Gyr}$, $8-11\,\mathrm{Gyr}$, etc.)?
+
+We plot the results of the first test, $r (\sigma_\text{obs})$ in Fig.~\ref{fig:r_v_obs} and compare it to the average reported uncertainty from GALAH. There is very little range between elements on these plots, and it is clear that all elements require a level of noise to be below approximately 0.4 to be 68\% sure the populations are separate, and below 0.2 to be 95\% confident. Within the accessible GALAH dataset, we can access the corresponding measurement uncertainties, and find that most, but not all, measurements of chemical abundances fall below these thresholds - if they can be measured and are reported.
+
+\begin{figure}
+	\includegraphics[width=\columnwidth]{figures/same_axis_r_sigma.png}
+    \caption{Similar to Fig.~\ref{fig:r_v_age}, this plot shows all elements on an axis of their separation significance $r$ as a function of measurement noise. There are two horizontal lines at $r=1$ and $r=2$ which show the points at which we can be 68\% and 95\% confident (respectively) that we are observing two distinct populations. It is clear that these values are quite similar for all elements.}
+    \label{fig:r_v_obs}
+\end{figure}
+
+\begin{center}
+\begin{table}
+    \centering
+    \caption{Observational uncertainties for each element that allow to separate the in-situ and accreted sequences at $8-9\,\mathrm{Gyr}$ with 95\% ($r>2$) and 68\% ($r>1$) certainty. The last rows report the percentage of measurements and their the median uncertainties for the element reported by GALAH DR3 (as indicators of how often and how well the element can be measured.}
+    \begin{tabular}{ccccc} 
      \hline
-     Ba & 0.12 \\
-     \hline
-     V & 0.15 \\
-     \hline
-     Co & 0.15 \\
-     \hline
-     Al & 0.08 \\
-     \hline
-     Cr & 0.10 \\
-     \hline
-     O & 0.15\\
+     Element & $\sigma_\text{obs}$ 95\% & $\sigma_\text{obs}$ 68\% & Det. Rate & $\sigma_\text{GALAH}$ \\ 
+     \hline\hline
+     {[C/H]}  & 0.20 & 0.40 & 27\% & 0.15 \\
+     {[O/H]}  & 0.20 & 0.40 & 94\% & 0.15 \\
+     {[Mg/H]} & 0.20 & 0.35 & 95\% & 0.11 \\
      \hline
     \end{tabular}
-    \caption{Each element with its corresponding \textit{average} measurement uncertainty, based on the GALAH data.}
-    \label{table: 2}
+    \label{tab:sigma_obs}
 \end{table}
 \end{center}
-
-% \begin{center}
-% \begin{tabular}{ |c|c|c| } 
-%  \hline
-%  Element & {Number of Measurements} & {Average Uncertainty} \\ 
-%  \hline\hline
-%   Mg & 504056 & 0.11  \\ 
-%  \hline
-%  C & 293907 & 0.15  \\ 
-%  \hline
-%  Mn & 515032 & 0.11 \\
-% \hline
-%  Si & 515027 & 0.07 \\
-%  \hline
-%  Ba & 527080 & 0.12 \\
-%  \hline
-%  V & 243784 & 0.15 \\
-%  \hline
-%  Co & 408981 & 0.15 \\
-%  \hline
-%  Al & 522895 & 0.08 \\
-%  \hline
-%  Cr & 507932 & 0.10 \\
-%  \hline
-%  O & 519276 & 0.15\\
-%  \hline
-% \end{tabular}
-% %\caption{Table to test captions and labels}
-% \label{table: 2}
-% \end{center}
-
-The value of r is in units of standard deviation, which means that a separation with r=1 ensures 68\% statistical confidence in the distinct populations being accurate. In turn, if r=2, we can be 95\% confident.
-This calculation is particularly useful to inform future research in this subset of galactic archaeology, particularly when using this specific simulation. Through the simulations (with no measurement errors), we can determine values of uncertainties that are required in order for results to be presented with either 68\% or 95\% confidence, which is valuable information to wield for those intending to complete the observations in the future.  
-Figure \ref{fig:r_v_age} shows each element plotted with r-value against age uncertainty (in Gyr). These particular plots were created using data between 4 and 5 Gyr, which means that a 1 Gyr uncertainty is equivalent to just over 20\%. From these plots, we can see that there is a fair amount of variance between the elements. Regardless, it is clear that at an uncertainty of around 1.25 Gyr (or 25\%) the r-value begins to increase. At the next interval of around 0.75 Gyr (or 15\%) there is a very rapid increase in confidence. This informs us that ideally, we are striving for an uncertainty of less than 15\%, which is significantly lower than the uncertainties we are working with at the moment. 
- 
 
 \begin{figure}
 	\includegraphics[width=\columnwidth]{figures/same_axis_r_age.png}
@@ -396,103 +301,19 @@ Figure \ref{fig:r_v_age} shows each element plotted with r-value against age unc
     \label{fig:r_v_age}
 \end{figure}
 
-\begin{figure}
-	\includegraphics[width=\columnwidth]{figures/same_axis_r_sigma.png}
-    \caption{Similar to Figure \ref{fig:r_v_age}, this plot shows all elements on an axis of their separation significance $r$ as a function of measurement noise. There are two horizontal lines at $r=1$ and $r=2$ which show the points at which we can be 68\% and 95\% confident (respectively) that we are observing two distinct populations. It is clear that these values are quite similar for all elements.}
-    \label{fig:r_v_obs}
-\end{figure}
+This further motivates our second test of the influences of ages. Fig.~\ref{fig:r_v_age} shows each element plotted with r-value against age uncertainty (in Gyr). These particular plots were created using data between \SB{4 and 5 Gyr - have to be adjusted to stellar age}, which means that a 1 Gyr uncertainty is equivalent to just over 20\%. From these plots, we can see that there is a fair amount of variance between the elements. Regardless, it is clear that at an uncertainty of around 1.25 Gyr (or 25\%) the r-value begins to increase. At the next interval of around 0.75 Gyr (or 15\%) there is a very rapid increase in confidence. This informs us that ideally, we are striving for an uncertainty of less than 15\%, which is significantly lower than the uncertainties we are working with at the moment.
 
-
-
-Similarly, we can plot the separation significance over observation noise, instead of age uncertainty. This will inform the limit of noise that we must be observing below to ensure reliable results, shown in Figure \ref{fig:r_v_obs}. 
-To calculate the observational noise ($\sigma_{obs}$), we use Equation \ref{eq:sigma_obs}, which states:
-\begin{equation} \label{eq:sigma_obs}
-r_{obs} = \frac{|\mu_1 - \mu_2|}{\sqrt{\sigma_1^2 + \sigma_2^2}} = 
-\frac{|\mu_1 - \mu_2|}{\sqrt{\sigma_{1,obs}^2 + \sigma_{2,obs}^2}}
-\end{equation}
-And therefore, that
-\begin{equation} \label{eq:sigma_obs_2}
-\sigma_{1,obs}^2 = \sqrt{\sigma_1^2+\sigma_{obs}^2} \end{equation}\begin{equation} 
-\sigma_{2,obs}^2 = \sqrt{\sigma_2^2+\sigma_{obs}^2}\end{equation}
-These equations were used to plot $\sigma_{obs}$ along the x-axis, in units of dex. 
-
- There is very little range between elements on these plots, and it is clear that all elements require a level of noise to be below approximately 0.4 to be 68\% sure the populations are separate, and below 0.2 to be 95\% confident. Within the accessible GALAH dataset, we can access the corresponding measurement uncertainties, and find that most, but not all, measurements of chemical abundances fall below these thresholds - if they can be measured and are reported. This indicates that uncertainties in ages are a much more impactful barrier to these results. 
-  
-
-
-% \begin{figure}
-% 	\includegraphics[width=\columnwidth]{r_vs_noise_Ba_Si.png}
-%     \caption{CAPTION}
-%     \label{fig:r_vs_noise_Ba_Si}
-% \end{figure}
-
-% \begin{figure}
-% 	\includegraphics[width=\columnwidth]{r_vs_noise_Mg_Cr.png}
-%     \caption{CAPTION}
-%     \label{fig:r_vs_noise_Mg_Cr}
-% \end{figure}
-
-% Figure \ref{fig:highlowalpha} shows a plot of the stellar bodies of the high alpha and low alpha stellar halos, which is one possible plot that will be useful in the search for large separations. One of the next steps in this research project will be to quantify the separation between these two populations in a variety of chemical abundance planes to find the largest difference. Figure \ref{fig:4waycomp} shows the plots of low-metal and "high"-metal stars, which visually show a significant difference. Again, this will be determined in numbers, repeating the process through a variety of abundance plane combinations to find the most suitable candidate. 
-
-
-
-
-% The separation between populations referred to here is represented in Figure \ref{fig:Gauss_sep}, which highlights how a difference in separation (in standard deviation units) can allow for distinction between the two populations. The top histogram is separated by r=2.0, the bottom by r=2.4. One can clearly see that with the larger separation, two distinct Gaussian populations are clear. 
-
-
- 
-
-% \begin{figure}
-% 	\includegraphics[width=\columnwidth]{Gaussian separations.png}
-%     \caption{Plot taken from \citep{Lindegren2013} demonstrating the difference in statistical confidence that the r value (in units of standard deviation) can provide. The top histogram has an r value of 2.0 between the two stellar bodies and it is indistinguishable that there are two separate populations in the Gaussian curve of best fit. The bottom histogram meanwhile, has a separation of 2.4 standard deviations, and it is clear that there are two seperate Gaussian-like shapes in the data, reflecting two separate bodies.}
-%     \label{fig:Gauss_sep}
-% \end{figure}
-
-% \begin{figure}
-% 	\includegraphics[width=\columnwidth]{Nvsr.png}
-%     \caption{Plot from \citep{Lindegren2013}, showing the relationship between sample size and standard deviation. It demonstrates that the larger the distinction between the Gaussian distributions, the higher the accuracy can be obtained with a smaller sample size. Separation here refers to the distinction of two separate Gaussians on one axiss shown in the plots above.}
-%     \label{fig:nvsr}
-% \end{figure}
-
-
-
-
-% \begin{figure*}
-% 	\includegraphics[width=\textwidth]{4 way comp.png}
-%     \caption{A quadrant comparison of two subsections of stars in the abundance plane of [Mg/Mn] vs [Al/Fe], selecting metal-poor stars (top) and higher-metal stars (bottom). The two plots on the left are from the simulations and the two on the right are from observations.} 
-%     \label{fig:4waycomp}
-% \end{figure*}
-
-
-% \begin{figure}
-% 	\includegraphics[width=\columnwidth]{rectangles_on_time_Ba.png}
-%     \caption{The plot of Barium's elemental abundance over time, with rectangles selecting increasingly large time ranges.} 
-%     \label{fig:rectangles}
-% \end{figure}
-
-
-% \begin{figure*}
-% 	\includegraphics[width=\textwidth]{(-2 (Fe H) -1.8).png}
-%     \caption{In the abundance plane of [Mg/Mn] against [Al/Fe], this figure shows comparison between the simulation (left) and the observational data (right), taking a subset of stars with the lowest metallicity between -2.0 and -1.8.}
-%     \label{fig:lowmetal}
-% \end{figure*}
-
-% \begin{figure*}
-% 	\includegraphics[width=\textwidth]{(-0.8 (Fe H) -0.5).png}
-%     \caption{The metallicity subset between -0.8 and -0.5 of the abundance plane [Mg/Mn] against [Al/Fe]. The simulation is on the left and observation is on the right.}
-%     \label{fig:highmetal}
-% \end{figure*}
-
+\SB{I believe we should rather perform some MC simulations of relative abundance and age uncertainties. We can do that quite simple by multiplying the ages by a factor that is sampled from a normal distribution around 1 with a scatter value, e.g. 0.15 - is 0.15 corresponding to 15\% uncertainty?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Discussion}
-\label{sec:discussion}
-This project began with the intention of creating a variety of abundance planes and comparing both simulation and observation data to identify substructure within the plots that was representative of accreted stars. Upon doing so, and observing very little clear substructure in the simulation plots, these plots were deemed insufficient to confidently report any results. As discussed in Section \ref{sec:obs_vs_sim}, there are two major advantages to using cosmological simulations. The first of these is that there are no measurement uncertainties to consider, which should produce clear and accurate plots with no doubt of extrinsic scatter. This means that although some distinct populations were seen in the observational plots, the absence of clarity in the simulation-based plots questions that measurement uncertainties are the main difference between observations and simulations.   
+\section{Discussion} \label{sec:discussion}
+
+This project began with the intention of creating a variety of abundance planes and comparing both simulation and observation data to identify substructure within the plots that was representative of accreted stars. Upon doing so, and observing very little clear substructure in the simulation plots, these plots were deemed insufficient to confidently report any results. There are two major advantages to using cosmological simulations. The first of these is that there are no measurement uncertainties to consider, which should produce clear and accurate plots with no doubt of extrinsic scatter. This means that although some distinct populations were seen in the observational plots, the absence of clarity in the simulation-based plots questions that measurement uncertainties are the main difference between observations and simulations.   
 Beyond measurement uncertainties, the second key advantage to the cosmological simulations is that the exact, detailed formation history of the simulated galaxy is known. Knowing what merged with the galaxy and when is crucial in identifying accretion, but this is knowledge that we don't possess to a desirable level for the Milky Way in reality. This poses a challenge in how we can use the cosmological simulations, as we have no guarantee that we are simulating the evolution of the Milky Way. It may also contribute to the discrepancies between the simulations and observations. If the simulations are replicating even a slightly different galaxy, this could explain the lack of clear substructure that we can see in observations. We know that the simulations are based on a merger event that occurred 5Gyr after formation, when a galaxy around $10^9 M_{\odot}$ merged with an in situ galaxy of around $10^{10} M_{\odot}$, values that have been estimated to the order of magnitude by multiplying the number of star particles with their average stellar mass for each sequence of the simulation. Although we do not know the exact sizes or times of accretion events in the Milky Way, the GSE is estimated to be between $10^{8.7}$ and $10^{9.85}\,M_{\odot}$ \citep{Helmi2018,Naidu2020}, which highlights a possible discrepancy between the simulations and the observations. Until we have a more exact understanding of the formation history of the Milky Way, we cannot ensure these simulations are accurate, which is an important caveat to keep in mind.   
-From this, the focus of the project underwent a shift, looking instead at other observables beyond chemical abundance that could be used and plotted to identify accreted stars. As Section \ref{sec:intro} makes clear, one of the key advantages to chemical tagging is the unchanging nature of stellar chemistry over time, meaning that a star's current chemical make-up is indicative of the time and place that it was born. Therefore, plotting elemental abundance over time was hypothesised as a good indicator of accretion, where separate populations should be clear. This was plotted and analysed in Section \ref{sec:evolution}, and found that indeed there are two clear stellar populations in the simulation data, indicative of accreted and in situ stars, that were not seen in the observational data due to measurement uncertainties.  
+From this, the focus of the project underwent a shift, looking instead at other observables beyond chemical abundance that could be used and plotted to identify accreted stars. As Section \ref{sec:intro} makes clear, one of the key advantages to chemical tagging is the unchanging nature of stellar chemistry over time, meaning that a star's current chemical make-up is indicative of the time and place that it was born. Therefore, plotting elemental abundance over time was hypothesised as a good indicator of accretion, where separate populations should be clear. This was plotted and analysed in Section \ref{sec:ageabundance}, and found that indeed there are two clear stellar populations in the simulation data, indicative of accreted and in situ stars, that were not seen in the observational data due to measurement uncertainties.  
 Despite this positive outcome, it is still important to address the possibility of intrinsic overlap between accreted and in situ stars. As discussed, there are two clear streams that have been attributed as accreted and in situ, based on the assumption that the accreted stars would have been born in a smaller galaxy with less massive stars and therefore lower element abundances. This clarity occurs because we know the sizes of the two galaxies that merged. Depending on the size of the real merger in the Milky Way, there could be significantly more overlap between the accreted and in situ populations if the merger was more massive. This means that from the abundance-age plots alone, it is harder to tell if the situ stream is completely made up of Milky Way-born stars. 
 
-A further recommendation is that it would be worth putting effort into further analysing Figures \ref{fig:BaHtime}. Despite the massive amount of scatter in the observations, when Ba was plotted in a ratio with H, there appears to be a hint of an overdensity toward the bottom right of the plot, which could indicate an accreted population. Applying the quality cuts provided in the GALAH data had little effect on how clear this overdensity appears. It is beyond the scope of this project, but with better quality cuts, more time and expertise - and better data, this 'hint' could start indicating something that looks more like the simulations, which would further confirm that plots of elements against time are worth pursuing.  
+A further recommendation is that it would be worth putting effort into further analysing Fig.~\ref{fig:BaHtime}. Despite the massive amount of scatter in the observations, when Ba was plotted in a ratio with H, there appears to be a hint of an overdensity toward the bottom right of the plot, which could indicate an accreted population. Applying the quality cuts provided in the GALAH data had little effect on how clear this overdensity appears. It is beyond the scope of this project, but with better quality cuts, more time and expertise - and better data, this 'hint' could start indicating something that looks more like the simulations, which would further confirm that plots of elements against time are worth pursuing.  
 This project was limited by a number of variables, one of which was simply the number of elements that could be analysed. The caveat for an element to be used in this project was that it had to be included in the datasets of both the simulations, and the GALAH survey. This reduced the total number of elements to just ten. Moreover, although there were quite a number of iron-peak elements, the remaining element groups only contained two options, with Ba being the only neutron capture element. This reduced the ability to make in-depth assessments based on element groups, as the sample size was simply not large enough to consider any trends with certainty. To this end, it could be worth pursuing other datasets with a different choice of elements.  
 Moreover, I would strongly recommend similar research is performed with other cosmological simulations, preferably with varied chemistry and formation histories. This would enable researchers to observe exactly how different variables in the simulation affect outcomes. 
 The main observational limitation to this project was simply measurement uncertainties, particularly in ages. If the errors corresponding to age measurements can be drastically reduced, plotting elements over time has the potential to be a great diagnostic tool for accreted stars. 
@@ -503,47 +324,55 @@ The main observational limitation to this project was simply measurement uncerta
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusions}
 \label{sec:conc}
-The aim of this project was to determine the most suitable diagnostic plot for identifying accreted stars in our Milky Way, through comparison of NIHAO-based cosmological simulations and data from the GALAH survey. The major take-aways from this undertaking were that chemical abundance planes of the simulations possess too much intrinsic overlap to be useful to this particular research project. Plotting elemental abundances against age however, proved fruitful, with very distinct streams representing accreted and in situ populations appearing in the simulation data. These clear streams were not apparent in the observation-based plots, as a result of massive uncertainties that come with the probabilistic nature of estimating stellar ages through isochrone fitting.  
-In plotting elements over time, using comparisons through Gaussian distributions, Cobalt was found to be the most distinct element to use, as it had a marginally larger separation significance between the two populations than the other elements. When taking into account the ability to measure element abundances, for example in GALAH, Al provided the best compromise of separation and measurement uncertainties. Moreover, the elemental combination with H was found to produce the clearest results: plotting element abundances [X/H] as a function of time. Overall, reducing uncertainties in ages is a difficult task that may take a long time, but as data and techniques continue to improve these values, there is much potential in using plots of elemental abundances over time as a diagnostic tool for accreted stars. 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% The last numbered section should briefly summarise what has been done, and describe
-% the final conclusions which the authors draw from their work.
+The aim of this project was to determine suitable diagnostic plots for identifying accreted stars in our Milky Way, through comparison of a cosmological simulation from the NIHAO suite with data from the GALAH survey. The major take-aways from this undertaking were:
+\begin{itemize}
+\item Chemical abundance planes of the simulations possess too much intrinsic overlap to be useful to this particular research project. 
+\item Plotting elemental abundances against age however, proved fruitful, with very distinct streams representing accreted and in situ populations appearing in the simulation data. These clear streams were not apparent in the observation-based plots, as a result of massive uncertainties that come with the probabilistic nature of estimating stellar ages through isochrone fitting.
+\item Elemental abundances as relative to H (rather than Fe) produced more significant separations between in-situ and accreted sequences as a function of stellar age.
+\item Our tests of adding noise to simulated data suggest, that we will be able to more easily tell apart accreted structures, once we undergo a critical age uncertainty of 15\% and can measure elemental abundances [X/H] of accreted structures as good as $\sigma_\text{obs} \sim 0.40\,\mathrm{dex}$.
+\end{itemize}
 
+Overall, reducing uncertainties in ages is a difficult task that may take a long time, but as data and techniques continue to improve these values, there is much potential in using plots of elemental abundances over time as a diagnostic tool for accreted stars.
 
-% Accreted stars appear as overdensities in chemical abundance planes because they are merged with the MW as one galaxy Because they usually come from smaller galaxies than MW, we can assume that they have less massive stars and therefore will be lower in metallicity (lower in [Fe/H])     If I can find an overdensity in one plane that doesn’t correspond with anything interesting in the other plane, it means that there must be a lot of similarities with the MW, which is interesting to note as it means that the galaxy that collided with MW had very similar chemical makeup/stellar formation history/age/mass 
+\section*{Acknowledgements}
 
-% \section*{Acknowledgements}
+We acknowledge the traditional owners of the land on which the AAT and ANU stand, the Gamilaraay, the Ngunnawal and Ngambri people. We pay our respects to elders past, present, and emerging and are proud to continue their tradition of surveying the night sky in the Southern hemisphere.
 
-% The Acknowledgements section is not numbered. Here you can thank helpful
-% colleagues, acknowledge funding agencies, telescopes and facilities used etc.
-% Try to keep it short.
+This work was supported by the Australian Research Council Centre of Excellence for All Sky Astrophysics in 3 Dimensions (ASTRO 3D), through project number CE170100013.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \section*{Data Availability}
+TB acknowledges support from the European Research Council under ERC-CoG grant CRAGSMAN-646955.
 
- 
-% The inclusion of a Data Availability Statement is a requirement for articles published in MNRAS. Data Availability Statements provide a standardised format for readers to understand the availability of data underlying the research results described in the article. The statement may refer to original data generated in the course of the study or to third-party data analysed in the article. The statement should describe and provide means of access, where possible, by linking to the data or providing the required accession numbers for the relevant databases or DOIs.
+\section*{Facilities}
 
+\textbf{AAT with 2df-HERMES at Siding Spring Observatory:}
+The GALAH Survey is based data acquired through the Australian Astronomical Observatory, under programs: A/2013B/13 (The GALAH pilot survey); A/2014A/25, A/2015A/19, A2017A/18 (The GALAH survey phase 1), A2018 A/18 (Open clusters with HERMES), A2019A/1 (Hierarchical star formation in Ori OB1), A2019A/15 (The GALAH survey phase 2), A/2015B/19, A/2016A/22, A/2016B/10, A/2017B/16, A/2018B/15 (The HERMES-TESS program), and A/2015A/3, A/2015B/1, A/2015B/19, A/2016A/22, A/2016B/12, A/2017A/14, (The HERMES K2-follow-up program). This paper includes data that has been provided by AAO Data Central (datacentral.aao.gov.au).
 
-% \section{Cosmological Simulations}
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{\Gaia: } This work has made use of data from the European Space Agency (ESA) mission \Gaia (\url{http://www.cosmos.esa.int/gaia}), processed by the \Gaia Data Processing and Analysis Consortium (DPAC, \url{http://www.cosmos.esa.int/web/gaia/dpac/consortium}). Funding for the DPAC has been provided by national institutions, in particular the institutions participating in the \Gaia Multilateral Agreement. 
 
-% We will use the simulation described in the paper by \citet{Ratcliffe2021}.
+\textbf{Other facilities:} This publication makes use of data products from the Two Micron All Sky Survey \citep{Skrutskie2006} and the CDS VizieR catalogue access tool \citep{Vizier2000}.
 
-% You can download the simulation from \url{https://datashare.mpcdf.mpg.de/s/unLXJDEaro5mydt}
+\section*{Software}
 
-% And there is an example code to read in the abundances from the simulation in the file \texttt{example.py} within this overleaf.
+The research for this publication was coded in \textsc{python} (version 3.7.4) and included its packages
+\textsc{astropy} \citep[v. 3.2.2;][]{Robitaille2013,PriceWhelan2018},
+\textsc{corner} \citep[v. 2.0.1;][]{corner},
+\textsc{IPython} \citep[v. 7.8.0;][]{ipython},
+\textsc{matplotlib} \citep[v. 3.1.3;][]{matplotlib},
+\textsc{NumPy} \citep[v. 1.17.2;][]{numpy},
+\textsc{pynbody} \citep[v. 1.1.0;][]{pynbody},
+\textsc{scipy} \citep[version 1.3.1;][]{scipy},
+\textsc{sklearn} \citep[v. 0.21.3;][]{scikit-learn},
+We further made use of \textsc{topcat} \citep[version 4.7;][]{Taylor2005};
 
-% But we will go through this in detail in January 2022.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Data Availability}
 
+The observational data used for this study is published by \citet{Buder2021} and can be accessed publicly via \url{https://docs.datacentral.org.au/galah/dr3/overview/}
 
+All code to reproduce the analysis and figures can be accessed via \url{https://github.com/svenbuder/Accretion_Clues_ObsSim}.
 
-%TO DO BEFORE SUBMISSION 
-%%% Hyperlink all figures and section references 
-%%% Check figure and equation numbers
-
-
+Simulated data can be retrieved from the authors upon reasonable request.
 
 %%%%%%%%%%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%%%%%
 
@@ -552,7 +381,6 @@ In plotting elements over time, using comparisons through Gaussian distributions
 \bibliography{bib} % if your bibtex file is called example.bib
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 %%%%%%%%%%%%%%%%% APPENDICES %%%%%%%%%%%%%%%%%%%%%
 
 % \newpage
