@@ -90,10 +90,19 @@ cosmology: observations -- Galaxy: formation -- Galaxy: evolution -- Galaxy: abu
 
 The history of the Milky Way is a puzzle that has taunted astronomers for decades. Their long lifetimes and unchanging chemical composition through Galactic evolution means that stars in the Milky Way hold key insights to our understanding of the processes that have led to our Galaxy as we know it today. The advent of new large-scale stellar surveys, providing measurements of elemental abundances\footnote{We define elemental abundances, such as [Fe/H], [Mg/Fe], and [Mg/Mn] as logarithmic ratios of two elemental number densities compared to the Sun, that is, $\left[\frac{X}{Y}\right]=\log_{10}\left(\frac{N_X}{N_Y}\right) -\log_{10}\left(\frac{N_X}{N_Y}\right)_\odot$.} for millions of stars has enabled insights into the long and complex history of our Galaxy that have been previously unattainable. When the first data from the \Gaia satellite was released in 2016 \citep{Brown2016}, it catalysed a cascade of new discoveries and discussions: a product of the survey's unprecedented accuracy and scale \citep{BlandHawthorn2019}. \Gaia's astrometric data complements corresponding advancements in spectroscopic surveys that are allowing for significant improvement in our understanding of the chemical makeup of stars \citep{Buck2021}. The \textit{GALactic Archaeology with HERMES} (GALAH) survey\footnote{\url{https://www.galah-survey.org}}, based at the Australian-Anglo telescope, is at the forefront of our improved spectroscopic capabilities \citep{DeSilva2015}. Created to provide chemical data for up to one million of the stars observed by \Gaia, the combined use of \Gaia and GALAH possesses undeniable potential for the field of galactic archaeology, promising to pave the way for improved analysis and understanding of our Galaxy \citep{Buder2021}. This report aims to contribute a small piece in our burgeoning understanding of galactic evolution: combining cosmological simulations and the spectroscopic GALAH data to explore the best option for diagnostic plots with which we can recognise accreted stars in the Milky Way.  
 
+
 % - difference in the evolution of chemical abundances, both [X/H] and [X/Fe] expected from theoretical predictions of chemical evolution \citep[see e.g.][]{Kobayashi2020}.
 % \begin{equation}
 % \left[\frac{X}{Y}\right]=\log_{10}\left(\frac{N_X}{N_Y}\right)_{star} -\log_{10}\left(\frac{N_X}{N_Y}\right)_{sun}
 % \end{equation}
+
+Interesting papers to keep in mind:
+\begin{itemize}
+    \item \citet{Martig2021}
+    \item \citet{GarciadelaCruz2021, GarciadelaCruz2021b}
+    \item \citet{Pinna2019,Pinna2019b}
+    \item circularity vs. age \citet{Zhu2022}
+\end{itemize}
 
 \subsection{Identifying accreted stars - clues from observations}
 
@@ -174,8 +183,9 @@ In Sec.~\ref{sec:intro}, we have identified several observation-based plots that
 \end{itemize}
 
 \begin{figure*}
-	\includegraphics[width=\textwidth]{figures/[MgMn] vs [AlFe].png}
-    \caption{Simulation (left) vs observation (right) of alpha element Mg against Mn, plotted over [Al/Fe]. The two plots are on separate axes as the observational plot had to be zoomed in significantly to show any sufficient detail. The zeropoints are completely different, with the axes representing the solar abundances at [0,0] not visible on the observational plot. \SB{Luka: Can you try to color the simulation with cmap='plasma' and add this plot to the final notebook?}}
+	\includegraphics[width=\textwidth]{figures/plasma_4.png}
+    \caption{Simulation (left) vs observation (right) of alpha element Mg against Mn, plotted over [Al/Fe]. The two plots are on separate axes as the observational plot had to be zoomed in significantly to show any sufficient detail. The zeropoints are completely different, with the axes representing the solar abundances at [0,0] not visible on the observational plot. %\SB{Luka: Can you try to color the simulation with cmap='plasma' and add this plot to the final notebook?}
+    }
     \label{fig:alfe_mgmn}
 \end{figure*}
 
