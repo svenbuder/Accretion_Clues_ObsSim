@@ -249,27 +249,7 @@ To determine the positions of the sequences and subsequent separation of data to
 
 We then split the dataset for this particular into 2 and calculated 16th, 50th, and 84th percentiles in order to recover a more robust mean and standard deviation (and monitor our assumption of a Gaussian distribution). \SB{We list the values of 16th, 50th, and 84th percentiles as well as the resulting $r$ values in Tab.~\ref{tab:r_values_simulation}.}
 
-\begin{table}
-    \centering
-    \caption{Separation significance for the simulated data between in-situ and accreted (accr.) sequences for abundances ratios [X/H] of ten elements X. \SB{We should automate this script - I will show you how}}
-    \begin{tabular}{cccccc}
-    \hline
-    Element & $\mu_\text{in-situ}$ & $\sigma_\text{in-situ}$ & $\mu_\text{accr.}$ & $\sigma_\text{accr.}$ & $r$\\
-    \hline \hline
-    {[C/H]}  & & & & & 5.3 \\
-    {[O/H]}  & & & & & 6.0 \\
-    {[Mg/H]} & & & & & 6.1 \\
-    {[Al/H]} & & & & & 6.3 \\
-    {[Si/H]} & & & & & 6.0 \\
-    {[V/H]}  & & & & & 6.1 \\
-    {[Cr/H]} & & & & & 5.9 \\
-    {[Mn/H]} & & & & & 5.7 \\
-    {[Co/H]} & & & & & 6.4 \\
-    {[Ba/H]} & & & & & 4.6 \\
-    \hline
-    \end{tabular}
-    \label{tab:r_values_simulation}
-\end{table}
+\input{tables/separation_significance_two_sequences}
 
 \subsection{Assessing the influence of observational uncertainties}
 
