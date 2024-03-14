@@ -1,2 +1,11 @@
+NIHAO_g8.26e11_simulation_data_220118.fits
+GALAH_DR3_all_joined_v2.fits
+Mijnarends_Accretion_GALAHvsNIHAO.pdf
+*.blg
+*.synctex.gz
+*.aux
+*.bbl
+*.log
 .ipynb_checkpoints
+*.out
 .DS_Store
