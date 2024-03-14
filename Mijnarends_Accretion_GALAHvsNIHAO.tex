@@ -33,7 +33,7 @@
 
 % Title of the paper, and the short title which is used in the headers.
 % Keep the title short and informative.
-\title[Accreted stars in NIHAO]{Finding accreted stars in the Milky Way: clues from NIHAO simulations}
+\title[Accreted stars in NIHAO and GALAH]{Finding accreted stars in the Milky Way: clues from NIHAO simulations}
 
 % The list of authors, and the short list which is used in the headers.
 % If you need two or more lines of authors, add an extra line using \newauthor
@@ -102,7 +102,7 @@ Stellar parameters ($T_\text{eff}$, $\log g$, [Fe/H], $v_\text{mic}$, $v_\text{b
 
 In addition to the chemical information, we use the crossmatches of stars with value-added-catalog for stellar ages. The latter incorporates photometric and astrometric information from \Gaia eDR3 \citep{Lindegren2021a} and 2MASS \citep{Skrutskie2006} to estimate isochrone ages with the \textsc{bstep} code \citep{Sharma2018}.
 
-We apply the following general quality and selection cuts to the data, firstly $\texttt{flag\_repeat} = 0$ to get one measurement per star, and secondly $\texttt{flag\_sp} = 0$, $\texttt{flag\_fe\_h} = 0$, $\texttt{flag\_Mg\_fe} = 0$, and $\texttt{snr\_c2\_iraf} > 25$ to get the most reliable stellar parameters while maintaining a sufficient amount of stars. Whenever we use additional elemental abundances of an element X, we also enforce $\texttt{flag\_X\_fe} = 0$. To allow better comparability with the simulations lateron (see Sec.~\ref{sec:location}), we also limit our sample to stars with Galactic latitude $\vert b \vert > 10\,\mathrm{deg}$ and distance $D_\varpi < 4.2\,\mathrm{kpc}$, the 95th distance percentile of GALAH DR3 \citep{Buder2021}.
+We apply the following general quality and selection cuts to the data, firstly $\texttt{flag\_repeat} = 0$ to get one measurement per star, and secondly $\texttt{flag\_sp} = 0$, $\texttt{flag\_fe\_h} = 0$, $\texttt{flag\_Mg\_fe} = 0$, $\texttt{snr\_c2\_iraf} > 25$, and $\mathrm{[Fe/H]} > -2$ to get the most reliable stellar parameters while maintaining a sufficient amount of stars. Whenever we use additional elemental abundances of an element X, we also enforce $\texttt{flag\_X\_fe} = 0$. To ensure reasonably good age estimates, we enforce \textsc{bstep} age uncertainties below 50\%. To allow better comparability with the simulations lateron (see Sec.~\ref{sec:location}), we also limit our sample to stars with Galactic latitude $\vert b \vert > 10\,\mathrm{deg}$ and distance $D_\varpi < 4.2\,\mathrm{kpc}$, the 95th distance percentile of GALAH DR3 \citep{Buder2021}. After applying all these cuts, our sample still consists of 247\,177 stars, allowing a statistically meaningful comparison with theoretical predictions.
 
 \subsection{Theoretical predictions from a NIHAO Zoom-in simulation}\label{sec:sim_data}
 
@@ -112,7 +112,7 @@ Simulations were carried out with the smoothed particle hydrodynamics code \text
 
 Because computational resource still limits the mass resolution of simulations, we are relying on tracer particles that represent simple stellar populations (SSPs) with the same age, overall metallicity and discrete initial mass function (IMF). \citet{Buck2021} have implemented the flexible chemical evolution code \textsc{chempy} \citep{Rybizki2017} to calculate the chemical yields for the SSPs. In particular, we use the alternative (\texttt{alt}) setup of \textsc{chempy} that assumes a \citet{Chabrier2003} IMF with high-mass slope of $\alpha_\text{IMF} = -2.3$ over a mass range of $0.1-100\,\mathrm{M_\odot}$ for SSPs across a metallicity range of $Z/Z_\odot \in [10^{-5},2]$. The code calculates the contribution from asymptotic giant branch (AGB) stars, CC-SN across a mass range of $8-40\,\mathrm{M_\odot}$, and SNIa with a an exponential function with exponent $-1.12$, a delay time of $40\,\mathrm{Myr}$, and a normalization of the SNI rate of -2.9. For each of these nucleosynthetic channels, yields from the following studies are used: \citet{Limongi2018} for CC-SN, \citet{Seitenzahl2013} for SNIa, and \citet{Karakas2016} for AGB stars.
 
-To achieve a roughly similar selection as the observational data (see Sec.~\ref{sec:location}), while maintaining enough star particles, we limit the simulated data set to star particles within a torus at $8.2\,\mathrm{kpc}$ galactocentric radius with a $4.2\,\mathrm{kpc}$ tube radius (corresponding to the 95th distance percentile of the GALAH sample) and neglect star particles within $\vert b \vert~<~10\,\mathrm{deg}$.
+To achieve a roughly similar selection as the observational data (see Sec.~\ref{sec:location}), while maintaining enough star particles, we limit the simulated data set to star particles within a torus at $8.2\,\mathrm{kpc}$ galactocentric radius with a $4.2\,\mathrm{kpc}$ tube radius (corresponding to the 95th distance percentile of the GALAH sample) and neglect star particles within $\vert b \vert~<~10\,\mathrm{deg}$ or $\mathrm{[Fe/H]} < -2$.
 
 The simulation traces the elemental abundances of H, He, C, N, O, Ne, Mg, Al, Si, P, S, V, Cr, Mn, Fe, Co, and Ba. Of these, ten correspond with the GALAH data and allow us to compare diagnostic plots possible with abundances of C, O, Mg, Al, Si, V, Cr, Mn, Co and Ba.
 
@@ -125,7 +125,7 @@ In Sec.~\ref{sec:intro}, we have reviewed several observation-based plots that h
 
 \subsection{Location matters} \label{sec:location}
 
-Fig.~\ref{fig:low_alpha_halo}
+Fig.~\ref{fig:low_alpha_halo} and Fig.~\ref{fig:AlFe_MgMn_selection_Age_FeH_dissection_sim}
 
 \begin{figure}
 	\includegraphics[width=\columnwidth]{figures/low_alpha_halo_convex_hull.png}
@@ -140,6 +140,20 @@ Fig.~\ref{fig:low_alpha_halo}
     \caption{Top panels: Three separate streams clearly identified in the simulation data. Using the simulation data to plot the same populations in different planes makes it clear that there is significant overlap in the groups of in situ and accreted stars in the simulations.}
     \label{fig:AlFe_MgMn_selection_Age_FeH_dissection_sim}
 \end{figure*}
+
+
+\begin{align}
+    \text{Sequence~1} &= \begin{cases}
+        \mathrm{[Fe/H] > -0.2} \text{ or} \\
+        (\mathrm{[Fe/H]} > -1.0 \text{ and } \mathrm{age} < 7\,\mathrm{Gyr}) \text{ or} \\
+        10^{\mathrm{[Fe/H]} + 0.2} > 2.0 - 0.15*\mathrm{age}~/~\mathrm{Gyr}
+    \end{cases} \label{eq:sequence1} \\
+    \text{Sequence~2} &= \begin{cases}
+        \text{Not Sequence~1 and }\mathrm{Age} > 6\,\mathrm{Gyr} \text{ and} \\
+        10^{\mathrm{[Fe/H]} + 0.3} > 1.87 - 0.15*\mathrm{Age}~/~\mathrm{Gyr}
+    \end{cases}  \label{eq:sequence2} \\
+    \text{Sequence~3} &= \text{Not Seq.~2 and not Seq.~3 and } \mathrm{age} > 7~/~\mathrm{Gyr}  \label{eq:sequence3}
+\end{align}
 
 \subsection{Abundance trends: [Fe/H] vs. [X/Fe]} \label{sec:feh_xfe}
 
@@ -399,7 +413,7 @@ I would strongly recommend that similar research is performed with other cosmolo
 
 The aim of this paper was to determine the best diagnostic plots for identifying accreted stars in the Milky Way, through comparison of a cosmological simulation from the NIHAO suite and data from the GALAH survey. 
 
-\SB{Absence of features does not mean that they are not present! We initially thought that the chemical abundance planes of the simulation possessed too much intrinsic overlap to be useful to this particular endeavour. But that was based on diagnostic plots for the whole galaxy!}
+\SB{Absence of features does not mean that they are not present! We initially thought that the chemical abundance planes of the simulation possessed too much intrinsic overlap to be useful to this particular endeavour. But that was based on diagnostic plots for the whole galaxy! Sec.~\ref{sec:location}}
 
 Plotting elemental abundances against age instead proved fruitful. Very distinct stellar streams representing accreted and in-situ stars were clear in the simulated age plots that were not apparent in the observation-based plots, due to the massive uncertainties that come with the probabilistic nature of estimating stellar ages through isochrone fitting. We found therefore that the best plots from the simulations to identify accretion were elemental abundances, relative to H, against stellar age. \par 
 Adding noise to the simulated data suggests that we will be able to more confidently tell apparent accreted structures once we can determine ages within an uncertainty of 15\% and can measure elemental abundances [X/H] of accreted structures as good as $\sigma_{obs}\sim0.40$ dex. We determined that although there were three clear population streams apparent in the simulated data, significant overlap appeared when these were plotted in terms of dynamical and chemical properties. Instead, we have shown how the simulations may be used to clarify the observational plots. We conclude that this study holds exciting prospects for the future of our understanding of accretion in the Milky Way. As our observational data continues to improve, we will increase our confidence in recognising accreted stars in our own Galaxy. 
@@ -432,6 +446,8 @@ Adding noise to the simulated data suggests that we will be able to more confide
 We acknowledge the traditional owners of the land on which the AAT and ANU stand, the Gamilaraay, the Ngunnawal and Ngambri people. We pay our respects to elders past, present, and emerging and are proud to continue their tradition of surveying the night sky in the Southern hemisphere.
 
 This work was supported by the Australian Research Council Centre of Excellence for All Sky Astrophysics in 3 Dimensions (ASTRO 3D), through project number CE170100013.
+
+SB acknowledges support from the Australian Research Council under grant number DE240100150.
 
 TB acknowledges support from the European Research Council under ERC-CoG grant CRAGSMAN-646955.
 
