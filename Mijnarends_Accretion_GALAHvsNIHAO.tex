@@ -121,43 +121,25 @@ The simulation traces the elemental abundances of H, He, C, N, O, Ne, Mg, Al, Si
 \section{Diagnostic plots: Observation vs. Simulation}
 \label{sec:comparison}
 
-In Sec.~\ref{sec:intro}, we have reviewed several observation-based plots that have been used to identify accreted stars in the Milky Way. In this section, we are now interested in the question if the simulated Milky Way analogue shows similar signatures when using these diagnostic plots\footnote{\SB{Come back to this if we figure out that we actually do have to limit the simulation space to the Solar neighborhood - which we have not done yet!}}.
-
-\subsection{Location matters} \label{sec:location}
-
-Fig.~\ref{fig:low_alpha_halo} and Fig.~\ref{fig:AlFe_MgMn_selection_Age_FeH_dissection_sim}
+In Sec.~\ref{sec:intro}, we have reviewed several observation-based plots that have been used to identify accreted stars in the Milky Way. In this section, we are now assessing if the simulated Milky Way analogue shows similar signatures when using these diagnostic plots.
 
 \begin{figure}
 	\includegraphics[width=\columnwidth]{figures/low_alpha_halo_convex_hull.png}
     \caption{
     \textbf{Chemical abundances for all particles of the simulation (color-coded by logarithmic density) and a subset of particles (selected via white polygon in left plot).} 
-    \textbf{Panel a):} iron vs. silicon abundances as tracers of contribution from SNIa and SNII. \textbf{Panel b):} abundance combination [Al/Fe] vs. [Mg/Mn] used to trace accreted stars in observations. A convex hull is used to plot the area of the stars selected via a polygon in panel a).}
+    \textbf{Panel a):} iron vs. silicon abundances as tracers of contribution from SNIa and SNII. \textbf{Panel b):} abundance combination [Al/Fe] vs. [Mg/Mn] used to trace accreted stars in observations. The selection polygon in panel a) is drawn for $\mathrm{([Fe/H],[Si/Fe])} \in {[(-0.7,0.24),(-0.5,0.22),(-0.5,0.23),(-0.7,0.25)]}$. A convex hull is then used for panel b) to plot the area of the stars selected via a polygon in panel a).}
     \label{fig:low_alpha_halo}
 \end{figure}
 
-\begin{figure*}
-	\includegraphics[width=\textwidth]{figures/AlFe_MgMn_selection_Age_FeH_dissection_sim.png}
-    \caption{Top panels: Three separate streams clearly identified in the simulation data. Using the simulation data to plot the same populations in different planes makes it clear that there is significant overlap in the groups of in situ and accreted stars in the simulations.}
-    \label{fig:AlFe_MgMn_selection_Age_FeH_dissection_sim}
-\end{figure*}
+\subsection{Location matters: Full galaxy versus Solar neighborhood} \label{sec:location}
 
+Naïvely, we initially plotted the diagnostic plots of observers, namely the ratio of SNII to SNIa via [Si/Fe] as function of iron abundance [Fe/H] (Fig.~\ref{fig:low_alpha_halo}a) as well as the previously succesful selection plane of [Al/Fe] vs. [Mg/Mn] (Fig.~\ref{fig:low_alpha_halo}b) for the complete Milky Way analogue. Our hope was, that in the absence of observational noise, we would be able to identify clearly separated areas of in-situ and accreted stars. To our big surprise, the [Al/Fe] vs. [Mg/Mn] showed seemingly even more scatter than the observations. Tracing the selection of accreted stars, that is, the stars with lower [Si/Fe] around $\mathrm{[Fe/H]} \sim -0.6$ with a selection box, does not lead to a unique location in the [Al/Fe] vs. [Mg/Mn] in Fig.~\ref{fig:low_alpha_halo}b when showing the extend of these stars with a convex hull outline.
 
-\begin{align}
-    \text{Sequence~1} &= \begin{cases}
-        \mathrm{[Fe/H] > -0.2} \text{ or} \\
-        (\mathrm{[Fe/H]} > -1.0 \text{ and } \mathrm{age} < 7\,\mathrm{Gyr}) \text{ or} \\
-        10^{\mathrm{[Fe/H]} + 0.2} > 2.0 - 0.15*\mathrm{age}~/~\mathrm{Gyr}
-    \end{cases} \label{eq:sequence1} \\
-    \text{Sequence~2} &= \begin{cases}
-        \text{Not Sequence~1 and }\mathrm{Age} > 6\,\mathrm{Gyr} \text{ and} \\
-        10^{\mathrm{[Fe/H]} + 0.3} > 1.87 - 0.15*\mathrm{Age}~/~\mathrm{Gyr}
-    \end{cases}  \label{eq:sequence2} \\
-    \text{Sequence~3} &= \text{Not Seq.~2 and not Seq.~3 and } \mathrm{age} > 7~/~\mathrm{Gyr}  \label{eq:sequence3}
-\end{align}
+Before giving up on our endeavour, we applied a similar selection to NIHAO as would be expected from GALAH observations, in particular the limiting of the sample to be within $4.2\,\mathrm{kpc}$ of the Solar radius while leaving out significant fractions of the galactic plane. Surprisingly, both the [Fe/H] vs. [Si/Fe] plane in Fig.~\ref{fig:low_alpha_halo}c as well as the [Al/Fe] vs. [Mg/Mn] plane in Fig.~\ref{fig:low_alpha_halo}d cleared up significantly, with the accreted sequence becoming more prominent around $\mathrm{[Al/Fe]}$ of -0.3. Encouraged by these results, we continue to investigate the behavior of chemical abundances in NIHAO simulations.
 
 \subsection{Abundance trends: [Fe/H] vs. [X/Fe]} \label{sec:feh_xfe}
 
-We begin our comparison by plotting the elemental abundances of then elements X that overlap between GALAH observations and NIHAO simulations. Fig.~\ref{fig:FeH_XFe} shows the elemental abundances [X/Fe] as a function of iron abundance [Fe/H]. To first order we see an agreement of general trends for most elements, that is, elements that are produced by CC-SN like O, Mg, and Si are showing a high plateau for low [Fe/H] and a decrease towards higher iron abundances. The iron-peak elements Cr as well as Mn and Co show increasing abundances from low values at low [Fe/H] towards solar values at solar [Fe/H]. A similar agreement can be found for V and Co when neglecting the high [X/Fe] stars as recommended by \citet{Buder2021}. For Ba, we also large enhancements at solar [Fe/H] and another sequence with high [Ba/Fe] at iron abundances around -1.
+We begin our comparison by plotting the elemental abundances of then elements X that overlap between GALAH observations and NIHAO simulations. Fig.~\ref{fig:FeH_XFe} shows the elemental abundances [X/Fe] as a function of iron abundance [Fe/H]. To first order we see an agreement of general trends for most elements, that is, elements that are produced by CC-SN like O, Mg, and Si are showing a high plateau for low [Fe/H] and a decrease towards higher iron abundances - as expected by the onset of Fe-producing SNIa. The iron-peak elements Cr as well as Mn and Co show increasing abundances from low values at low [Fe/H] towards solar values at solar [Fe/H]. Abundance estimates for V and Co do not agree, which is partially (but not fully) caused by unreliably high measurements of [V/Fe] and [Co/Fe] in GALAH \citet{Buder2021}. For Ba, we note tightly increasing enhancements towards Solar [Fe/H], starting from initially low values around $\mathrm{[Ba/Fe]} \sim -0.5$. Furthermore, we notice a clear second (accreted) sequences below $\mathrm{[Fe/H]} < -0.5$ for C as well as Ba.
 
 \begin{figure*}
 	\includegraphics[width=\textwidth]{figures/Overview_FeH_XFe_Obs_Sim.png}
@@ -167,17 +149,26 @@ We begin our comparison by plotting the elemental abundances of then elements X 
     \label{fig:FeH_XFe}
 \end{figure*}
 
-Upon quantitative inspection, however, we see significant differences between the chemical evolution sequences, despite showing most data points around the solar iron abundances $\mathrm{[Fe/H]} \sim 0$, most notably the significant difference in actual abundance values. To understand this difference, we first need to remind ourselves that the observational data is limited by the ability to measure abundances (note the missing abundances of [C/Fe] for low metallicities due to detection limits) and includes measurement noise, while the theoretical data does not necessarily have to reproduce the formation scenario of the Milky Way. Trying to identify key features that agree between observation and simulation, we find two sequences in both observation and simulation. In the observations we find a sequence of solar (or low) [Mg/Fe] and an enhanced one at $\mathrm{[Mg/Fe] \sim 0.3}$. \SB{Tobias: Where is the high-alpha sequence in the simulation data?}
+When focusing on the actual absolute abundances (note the difference in y-axis), we note significant differences between the chemical evolution sequences. To understand this difference, we first need to remind ourselves that the observational data is limited by the ability to measure abundances (note the missing abundances of [C/Fe] for low metallicities due to detection limits) and includes measurement noise, while the theoretical data does not necessarily have to reproduce the formation scenario of the Milky Way and chemical enrichment tracing is limited to our best current understanding of nucleosynthesis.
 
-Looking at the metal-poor regime below $\mathrm{[Fe/H]} < -0.5$, [C/Fe] shows a significant separation, this cannot be followed up in the incomplete observational data. [Ba/Fe], however, shows significantly separated sequences in both observations and simulations.
+That said, we note that none of the abundance sequences in the Solar metallicity regime of $\mathrm{[Fe/H]} \sim 0$ intercept with the expected Solar value. While C, O, Si, Cr, Mn, and Ba are significantly overproduced between $0.05$ (for Cr) and $0.5\,\mathrm{dex}$ (for Ba), we notice a significant under-abundance on the $-0.3..-0.1\,\mathrm{dex}$ level for Mg, Al, V, and Co.
 
-\textbf{Key Takeaway:} While simple abundance-metallicity plots do not reveal accreted structures and are thus not robust method of identifying accreted stars, both C and Ba abundances show the potential to identify different abundance sequences.
+\textbf{Key Takeaway:} While simple abundance-metallicity plots do not easily reveal accreted structures for most elements, both C and Ba abundances show the potential to identify different abundance sequences - if the nucleosynthetic processes of the simulations is accurate.
 
 \subsection{Abundance-abundance plots: [Al/Fe] vs. [Mg/Mn]} \label{sec:alfe_mgmn}
 
-The inscrutable results of Fig.~\ref{fig:low_alpha_halo} led to abundance vs metallicity plots being deemed unusable for identifying accreted stars. We turn then to abundance-abundance plots of [Al/Fe] vs. [Mg/Mn]. These plots combine the enrichment channels of CC-SN vs. SNIa, that is [Mg/Mn], and the enrichment of Al with more complex metallicity-dependent enrichment pathways \citep{Hawkins2015, Das2020, Kobayashi2020}. The enhancements of these elements should differ significantly when comparing in-situ stars born in the early Milky Way with the less massive system that it accreted because of the expected lower star formation intensity (and thus iron abundance) and occurrence of CC-SN in the latter. 
+We now turn then to abundance-abundance plots of [Al/Fe] vs. [Mg/Mn] that were already mentioned in Sec.~\ref{sec:location}. These plots combine the enrichment channels of CC-SN vs. SNIa, that is [Mg/Mn], and the enrichment of Al with more complex metallicity-dependent enrichment pathways \citep{Hawkins2015, Das2020, Kobayashi2020}. The enhancements of these elements should differ significantly when comparing in-situ stars born in the early Milky Way with the less massive system that it accreted because of the expected lower star formation intensity (and thus iron abundance) and occurrence of CC-SN in the latter. 
 
-In Fig.~\ref{fig:low_alpha_halo}, we contrast the simulations with the observations, starting with the simulations (top) and observations (bottom) on the same axes in the left panels. The disagreement between both figures is striking and suggests that either the chemical enrichment evolution of the simulation is significantly different from the Milky Way or the simulation does not reproduce these nuances in the chemical enrichment of different pathways.
+\begin{figure}
+	\includegraphics[width=\columnwidth]{figures/mgmn_alfe.png}
+    \caption{
+    \textbf{Comparison of the diagnostic plot of odd-Z elements [Al/Fe] or [Na/Fe] vs. the ratio of CC-SN and SNIa elements [Mg/Mn] in simulation (top) and observation (bottom), with accreted stars being expected in the upper left of the distributions.}
+    \textbf{Left panels a and c} use the same axis limits, whereas \textbf{panel b} is a zoomed version of the simulation. \textbf{Panel d} complements the picture, as [Al/Fe] is hard to measure in GALAH (see missing data points in top left of panel c).
+    }
+    \label{fig:NaFe_MgMn_selection_Age_FeH_dissection}
+\end{figure}
+
+In Fig.~\ref{fig:NaFe_MgMn_selection_Age_FeH_dissection}, we contrast the simulations with the observations, starting with the simulations (top) and observations (bottom) on the same axes in the left panels. The disagreement between both figures is striking and suggests that either the chemical enrichment evolution of the simulation is significantly different from the Milky Way or the simulation does not reproduce these nuances in the chemical enrichment of different pathways.
 
 
  Looking first at the observations, there are clear overdensities visible in both plots, as expected. Both [Na/Fe] and [Al/Fe] plots show the overdensity for the thin/low-alpha disk at the expected solar abundances at (0,0). The high-alpha disk is seen in an overdensity at around (0.4,0.5). More importantly, although not clear for [Al/Fe] with the GALAH data in this report, accreted stars are visible in the [Na/Fe] plot at around (-0.4,0.4). These observations concur with Das et al (2020) and Horta et al (2020), which both used APOGEE data and the [Al/Fe] ratio instead. \par 
@@ -199,14 +190,30 @@ In the simulations, there is very significant zeropoint shift from the observati
 %     \item Interpretation: different chemical evolution in simulation and Milky Way (either because truly different or because chemical enrichment in simulation not accurate).
 % \end{itemize}
 
+\section{A new angle: age-abundance-distributions}\label{sec:Age-abundance}
+
+Fig.~\ref{fig:AlFe_MgMn_selection_Age_FeH_dissection_sim}
+
 \begin{figure*}
-	\includegraphics[width=\textwidth]{figures/mgmn_alfe.png}
-    \caption{Simulation (left) vs observation (right) of alpha element Mg against Mn, plotted over [Al/Fe]. The two plots are on separate axes as the observational plot had to be zoomed in significantly to show any sufficient detail. The zeropoints are completely different, with the axes representing the solar abundances at [0,0] not visible on the observational plot.
-    }
-    \label{fig:NaFe_MgMn_selection_Age_FeH_dissection}
+	\includegraphics[width=\textwidth]{figures/AlFe_MgMn_selection_Age_FeH_dissection_sim.png}
+    \caption{Top panels: Three separate streams clearly identified in the simulation data. Using the simulation data to plot the same populations in different planes makes it clear that there is significant overlap in the groups of in situ and accreted stars in the simulations.}
+    \label{fig:AlFe_MgMn_selection_Age_FeH_dissection_sim}
 \end{figure*}
 
-\section{A new angle: age-abundance-distributions}\label{sec:Age-abundance}
+
+\begin{align}
+    \text{Sequence~1} &= \begin{cases}
+        \mathrm{[Fe/H] > -0.2} \text{ or} \\
+        (\mathrm{[Fe/H]} > -1.0 \text{ and } \mathrm{age} < 7\,\mathrm{Gyr}) \text{ or} \\
+        10^{\mathrm{[Fe/H]} + 0.2} > 2.0 - 0.15*\mathrm{age}~/~\mathrm{Gyr}
+    \end{cases} \label{eq:sequence1} \\
+    \text{Sequence~2} &= \begin{cases}
+        \text{Not Sequence~1 and }\mathrm{Age} > 6\,\mathrm{Gyr} \text{ and} \\
+        10^{\mathrm{[Fe/H]} + 0.3} > 1.87 - 0.15*\mathrm{Age}~/~\mathrm{Gyr}
+    \end{cases}  \label{eq:sequence2} \\
+    \text{Sequence~3} &= \text{Not Seq.~2 and not Seq.~3 and } \mathrm{age} > 7~/~\mathrm{Gyr}  \label{eq:sequence3}
+\end{align}
+
 
 Fortunately, chemistry is not the only conserved property of stars. We therefore turn to stellar ages and assess age-abundance trends in the data. Observations still suffer from incredibly large uncertainties on the order of $30-50\%$ for most stars, so examining simulation plots removes this barrier and allow us to determine chemical enrichment as a function of age. We note here that age is based on the age of the simulated universe being 14.14 Gyr \citep{Buck2021}. Although the observational plots showed incomprehensible results, there is very clear substructure in the simulated age-abundance plots, with two distinct streams for the two populations (in-situ and accreted). The comparison of observed and simulated age-abundance plots is shown in Figs \ref{fig:BaFetime} and \ref{fig:BaHtime}. The top stream in the plots is likely representative of the in-situ population, as we know that accreted populations tend to join the Milky Way from smaller galaxies with less massive stars. This means that the stars are less metal-heavy and explains the lower stream of accreted stars that can be observed in the simulation data. \par 
 
@@ -325,7 +332,7 @@ We then must consider the second facet of uncertainty: the age uncertainties of 
 Fig.~\ref{fig:nihao_with_scatter}
 
 \begin{figure*}
-	\includegraphics[width=\textwidth]{figures/nihao_with_scatter.pdf}
+	\includegraphics[width=\textwidth]{figures/nihao_with_scatter.png}
     \caption{
     \textbf{Comparison of age-metallicity relation for different scatter realisations for NIHAO simulations.}
     \textbf{Panel a)} show NIHAO without scatter, \textbf{panels b-e} show realisations of the same plot with increasingly more scatter sampling. \textbf{Panel f} show the GALAH DR3 age-metallicity relationship for comparison.
