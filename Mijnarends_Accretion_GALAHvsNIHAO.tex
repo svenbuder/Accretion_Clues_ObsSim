@@ -100,9 +100,9 @@ Observations are provided through the GALactic Archaeology with HERMES (GALAH) s
 
 Stellar parameters ($T_\text{eff}$, $\log g$, [Fe/H], $v_\text{mic}$, $v_\text{broad}$, and $v_\text{rad}$) and abundances for up to 31\footnote{Li*, C*, O*, Na*, Mg*, Al*, Si*, K*, Ca*, Sc, Ti, V, Cr, Mn*, Fe*, Co, Ni, Cu, Zn, Rb, Sr, Y, Zr, Mo, Ru, Ba*, La, Ce, Nd, Sm, and Eu, with * denoting elements calculated not in 1D in local thermodynamic equilibrium (LTE), but 1D non-LTE.} different elements across multiple nucleosynthesis channels are estimated using a modified version of the spectrum synthesis code Spectroscopy Made Easy \citep[\textsc{sme}][]{Valenti1996, Piskunov2017} and 1D \textsc{marcs} model atmospheres \citep{Gustafsson2008}. Eleven elements are computed in non-LTE \citep{Amarsi2020}, the others in local thermodynamic equilibrium (LTE), and additional constraints on the surface gravities are incorporated through inferred distances by \citet{BailerJones2021} and their limit on absolute magnitudes and luminosities.
 
-In addition to the chemical information, we use the crossmatches of stars with value-added-catalog for stellar ages. The latter incorporates photometric and astrometric information from \Gaia eDR3 \citep{Lindegren2021a} and 2MASS \citep{Skrutskie2006} to estimate isochrone ages with the \textsc{BSTEP} code \citep{Sharma2018}.
+In addition to the chemical information, we use the crossmatches of stars with value-added-catalog for stellar ages. The latter incorporates photometric and astrometric information from \Gaia eDR3 \citep{Lindegren2021a} and 2MASS \citep{Skrutskie2006} to estimate isochrone ages with the \textsc{bstep} code \citep{Sharma2018}.
 
-We apply the following general quality and selection cuts to the data, firstly $\texttt{flag\_repeat} = 0$ to get one measurement per star, and secondly $\texttt{flag\_sp} = 0$, $\texttt{flag\_fe\_h} = 0$, $\texttt{flag\_Mg\_fe} = 0$, and $\texttt{snr\_c2\_iraf} > 25$ to get the most reliable stellar parameters while maintaining a sufficient amount of stars. Whenever we use additional elemental abundances of an element X, we also enforce $\texttt{flag\_X\_fe} = 0$.
+We apply the following general quality and selection cuts to the data, firstly $\texttt{flag\_repeat} = 0$ to get one measurement per star, and secondly $\texttt{flag\_sp} = 0$, $\texttt{flag\_fe\_h} = 0$, $\texttt{flag\_Mg\_fe} = 0$, and $\texttt{snr\_c2\_iraf} > 25$ to get the most reliable stellar parameters while maintaining a sufficient amount of stars. Whenever we use additional elemental abundances of an element X, we also enforce $\texttt{flag\_X\_fe} = 0$. To allow better comparability with the simulations lateron (see Sec.~\ref{sec:location}), we also limit our sample to stars with Galactic latitude $\vert b \vert > 10\,\mathrm{deg}$ and distance $D_\varpi < 4.2\,\mathrm{kpc}$, the 95th distance percentile of GALAH DR3 \citep{Buder2021}.
 
 \subsection{Theoretical predictions from a NIHAO Zoom-in simulation}\label{sec:sim_data}
 
@@ -112,7 +112,7 @@ Simulations were carried out with the smoothed particle hydrodynamics code \text
 
 Because computational resource still limits the mass resolution of simulations, we are relying on tracer particles that represent simple stellar populations (SSPs) with the same age, overall metallicity and discrete initial mass function (IMF). \citet{Buck2021} have implemented the flexible chemical evolution code \textsc{chempy} \citep{Rybizki2017} to calculate the chemical yields for the SSPs. In particular, we use the alternative (\texttt{alt}) setup of \textsc{chempy} that assumes a \citet{Chabrier2003} IMF with high-mass slope of $\alpha_\text{IMF} = -2.3$ over a mass range of $0.1-100\,\mathrm{M_\odot}$ for SSPs across a metallicity range of $Z/Z_\odot \in [10^{-5},2]$. The code calculates the contribution from asymptotic giant branch (AGB) stars, CC-SN across a mass range of $8-40\,\mathrm{M_\odot}$, and SNIa with a an exponential function with exponent $-1.12$, a delay time of $40\,\mathrm{Myr}$, and a normalization of the SNI rate of -2.9. For each of these nucleosynthetic channels, yields from the following studies are used: \citet{Limongi2018} for CC-SN, \citet{Seitenzahl2013} for SNIa, and \citet{Karakas2016} for AGB stars.
 
-To achieve a roughly similar selection as the observational data, while maintaining enough star particles, we limit the simulated data set to star particles within a torus at $8.2\,\mathrm{kpc}$ galactocentric radius with a $4.2\,\mathrm{kpc}$ tube radius (corresponding to the 95th distance percentile of the GALAH sample) and neglect star particles within $\vert b \vert < 10\,mathrm{deg}$.
+To achieve a roughly similar selection as the observational data (see Sec.~\ref{sec:location}), while maintaining enough star particles, we limit the simulated data set to star particles within a torus at $8.2\,\mathrm{kpc}$ galactocentric radius with a $4.2\,\mathrm{kpc}$ tube radius (corresponding to the 95th distance percentile of the GALAH sample) and neglect star particles within $\vert b \vert~<~10\,\mathrm{deg}$.
 
 The simulation traces the elemental abundances of H, He, C, N, O, Ne, Mg, Al, Si, P, S, V, Cr, Mn, Fe, Co, and Ba. Of these, ten correspond with the GALAH data and allow us to compare diagnostic plots possible with abundances of C, O, Mg, Al, Si, V, Cr, Mn, Co and Ba.
 
@@ -263,7 +263,7 @@ r (\sigma_{obs}) = \frac{|\mu_1 - \mu_2|}{\sqrt{\sigma_1^2 + \sigma_2^2 + 2\cdot
     \label{fig:hist_labels}
 \end{figure}
 
-To determine the positions of the sequences and subsequent separation of data, we fit a bimodal Gaussian model to the data, for each element. These values are tabulated in Table.~\ref{tab:separation_significance_two_sequences}, along with the calculated r-value.\par 
+To determine the positions of the sequences and subsequent separation of data, we fit a bimodal Gaussian model to the data, for each element. These values are tabulated in Table.~\ref{tab:r_values_simulation}, along with the calculated r-value.\par 
 
 \textbf{Key Takeaway:} The data is in the form of a Gaussian model, which could be used to determine the standard deviations and means of both populations, and quantify the separation significance. 
 
@@ -271,7 +271,7 @@ To determine the positions of the sequences and subsequent separation of data, w
 % We then split the dataset for this particular into 2 and calculated 16th, 50th, and 84th percentiles in order to recover a more robust mean and standard deviation (and monitor our assumption of a Gaussian distribution).
 % \SB{We list the values of 16th, 50th, and 84th percentiles as well as the resulting $r$ values in Tab.~\ref{tab:r_values_simulation}.}
 
-\input{tables/separation_significance_two_sequences} % \label{tab:separation_significance_two_sequences}
+\input{tables/separation_significance_two_sequences} % \label{tab:r_values_simulation}
 
 \subsection{Assessing the influence of observational uncertainties}
 
