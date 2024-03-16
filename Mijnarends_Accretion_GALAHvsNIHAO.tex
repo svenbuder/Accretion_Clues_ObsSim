@@ -115,6 +115,13 @@ Because computational resource still limits the mass resolution of simulations, 
 To achieve a roughly similar selection as the observational data (see Secs.~\ref{sec:obs_data} and \ref{sec:location}), while maintaining enough star particles, we limit the simulated data set to star particles within a torus at $8.2\,\mathrm{kpc}$ galactocentric radius with a $4.2\,\mathrm{kpc}$ tube radius (corresponding to the 95th distance percentile of the GALAH sample) and neglect star particles within $\vert b \vert~<~10\,\mathrm{deg}$ or $\mathrm{[Fe/H]} < -2$. We 
 use the last simulation snapshot time of $14.14\,\mathrm{Gyr}$ to estimate the ages from the reported formation time.
 
+\begin{table}
+    \centering
+    \caption{Caption}
+    \input{tables/tabular_shift_by_4_to_5_gyr.tex}
+    \label{tab:shift_4to5gyr}
+\end{table}
+
 \SB{IMPORTANT ADJUSTMENT: SHIFTING MEDIAN([X/H]) TO 0.0 FOR STARS WITH 4-5 GYR!!! In particular, we shift the individual abundances by the median abundance [X/H] of stars between 4-5 Gyr by \input{tex_text/shift_by_4_to_5_gyr_median.tex}.}
 
 The simulation traces the elemental abundances of H, He, C, N, O, Ne, Mg, Al, Si, P, S, V, Cr, Mn, Fe, Co, and Ba. Of these, ten correspond with the GALAH data and allow us to compare diagnostic plots possible with abundances of C, O, Mg, Al, Si, V, Cr, Mn, Co and Ba.
