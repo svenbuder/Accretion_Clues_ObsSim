@@ -102,7 +102,9 @@ Stellar parameters ($T_\text{eff}$, $\log g$, [Fe/H], $v_\text{mic}$, $v_\text{b
 
 In addition to the chemical information, we use the crossmatches of stars with value-added-catalog for stellar ages. The latter incorporates photometric and astrometric information from \Gaia eDR3 \citep{Lindegren2021a} and 2MASS \citep{Skrutskie2006} to estimate isochrone ages with the \textsc{bstep} code \citep{Sharma2018}.
 
-We apply the following general quality and selection cuts to the data, firstly $\texttt{flag\_repeat} = 0$ to get one measurement per star, and secondly $\texttt{flag\_sp} = 0$, $\texttt{flag\_fe\_h} = 0$, $\texttt{flag\_Mg\_fe} = 0$, $\texttt{snr\_c2\_iraf} > 25$, and $\mathrm{[Fe/H]} > -2$ to get the most reliable stellar parameters while maintaining a sufficient amount of stars. Whenever we use additional elemental abundances of an element X, we also enforce $\texttt{flag\_X\_fe} = 0$. To ensure reasonably good age estimates, we enforce \textsc{bstep} age uncertainties below 50\%. To allow better comparability with the simulations lateron (see Sec.~\ref{sec:location}), we also limit our sample to stars with Galactic latitude $\vert b \vert > 10\,\mathrm{deg}$ and distance $D_\varpi < 4.2\,\mathrm{kpc}$, the 95th distance percentile of GALAH DR3 \citep{Buder2021}. After applying all these cuts, our sample still consists of \input{tex_text/nr_stars_in_galah_after_cuts}stars, allowing a statistically meaningful comparison with theoretical predictions.
+We apply the following general quality and selection cuts to the data, firstly $\texttt{flag\_repeat} = 0$ to get one measurement per star, and secondly $\texttt{flag\_sp} = 0$, $\texttt{flag\_fe\_h} = 0$, $\texttt{flag\_Mg\_fe} = 0$, $\texttt{snr\_c2\_iraf} > 25$, and $\mathrm{[Fe/H]} > -2$ to get the most reliable stellar parameters while maintaining a sufficient amount of stars. Whenever we use additional elemental abundances of an element X, we also enforce $\texttt{flag\_X\_fe} = 0$. 
+\SB{Not implemented anymore, because it did not make a huge difference: To ensure reasonably good age estimates, we enforce \textsc{bstep} age uncertainties below 50\%.}
+To allow better comparability with the simulations lateron (see Sec.~\ref{sec:location}), we also limit our sample to stars with Galactic latitude $\vert b \vert > 10\,\mathrm{deg}$ and distance $D_\varpi < 4.2\,\mathrm{kpc}$, the 95th distance percentile of GALAH DR3 \citep{Buder2021}. After applying all these cuts, our sample still consists of \input{tex_text/nr_stars_in_galah_after_cuts}stars, allowing a statistically meaningful comparison with theoretical predictions.
 
 \subsection{Theoretical predictions from a NIHAO Zoom-in simulation}\label{sec:sim_data}
 
@@ -262,9 +264,27 @@ In Fig.~\ref{fig:age_xfe_xh_nxh} we show the age-abundance distributions for six
 
 First, we discuss the top panels of Fig.~\ref{fig:age_xfe_xh_nxh}s showing the age-[X/Fe] trends. As pointed out in our description of Fig.~\ref{fig:FeH_XFe}, the NIHAO simulation show an rather flat, enhanced [C/Fe] abundance for accreted stars, that is, $\mathrm{[C/Fe]} \sim 0.11$ compared to  $\mathrm{[C/Fe]} < 0.07$ at around $10\,\mathrm{Gyr}$. For O in Fig.~\ref{fig:age_xfe_xh_nxh}b, we notice a decrease of high [O/Fe] abundance with decreasing stellar age and an emergine bifurcation with higher $\mathrm{[O/Fe]} \sim 0.1$ for accreted stars. For Mg, the in-situ and accreted components overlap in the age-[Mg/Fe] plane (Fig.~\ref{fig:age_xfe_xh_nxh}c). For both [Al/Fe] and [Mn/Fe], we see $~0.05\,\mathrm{dex}$ lower abundance for accreted stars than for in-situ stars, with a clearer separation of sequences for [Al/Fe] at oldest ages. Finally, the [Ba/Fe] plane shows a lower initial abundance of [Ba/Fe] at oldest ages, which is expected - at least qualitatively - due to the delay of Ba-production by AGB stars \citep{Karakas2016}. We note here that the production of Ba relative to Fe for accreted stars actually surpasses those of in-situ ones, as can be seen from the crossing of Sequence 1 and 2 in Fig.~\ref{fig:age_xfe_xh_nxh}f at around $9\,\mathrm{Gyr}$. At face value, these differences would exclude both the age-[Mg/Fe] and age-[Ba/Fe] plane as useful diagnostics, whereas all other elements show offsets in the age-[X/Fe] plane for at least the youngest ($8-11\,\mathrm{Gyr}$) accreted stars.
 
-Moving towards the age-[X/H] plane in the middle row of Fig.~\ref{fig:age_xfe_xh_nxh}, we notice a very similar qualitative behaviour of all elements. However, we note that the separation of accreted and in-situ sequences in this plane is roughly five times larger, that is, around $0.5\,\mathrm{dex}$, than in the age-[X/Fe] plane. Finally, we consider the age-$N_\mathrm{X/H}$ plane in the bottom rows of Fig.~\ref{fig:age_xfe_xh_nxh}, where we again see a qualitatively similar trend. When focussing on the accreted sequence, we note a roughly linear enhancement of $N_\mathrm{X/H}$ for all elements except for Ba, which show an increasingly enhance curve towards younger ages, in line with an expected increase of Ba-production by AGB stars. The difference between sequences starts very small at oldest ages, but then increases to $\Delta N_\mathrm{X/H} \sim 0.7$ around $8\,\mathrm{Gyr}$.
+Moving towards the age-[X/H] plane in the middle row of Fig.~\ref{fig:age_xfe_xh_nxh}, we notice a very similar qualitative behaviour of all elements. However, we note that the separation of accreted and in-situ sequences in this plane is roughly five times larger, that is, around $0.5\,\mathrm{dex}$, than in the age-[X/Fe] plane. Finally, we consider the age-$N_\mathrm{X/H}$ plane in the bottom rows of Fig.~\ref{fig:age_xfe_xh_nxh}, where we again see a qualitatively similar trend. When focusing on the accreted sequence, we note a roughly linear enhancement of $N_\mathrm{X/H}$ for all elements except for Ba, which show an increasingly enhance curve towards younger ages, in line with an expected increase of Ba-production by AGB stars. The difference between sequences starts very small at oldest ages, but then increases to $\Delta N_\mathrm{X/H} \sim 0.7$ around $8\,\mathrm{Gyr}$.
+
+For a comparison with these simulated results, we have created Fig.~\ref{fig:age_xfe_xh_nxh_galah}
+
+\begin{figure*}
+	\includegraphics[width=\textwidth]{figures/age_xfe_xh_nxh_galah.png}
+    \caption{
+    \textbf{Age-Abundance trends of the Milky Way Solar neighbourhood as observed by GALAH DR3.}.
+    \textbf{Columns} show the different the elements C, O, Mg, Al, Mn, and Ba (from left column to right column), respectively.
+    \textbf{Rows} show different notations of abundances, that is, logarithmic abundance {[X/Fe]} relative to iron (top row), logarithmic abundance {[X/H]} relative to hydrogen (middle row), and linear number density ratio {$N_\mathrm{X/H}$} (bottom row).
+    }
+    \label{fig:age_xfe_xh_nxh_galah}
+\end{figure*}
 
 
+\begin{figure*}
+	\includegraphics[width=\textwidth]{figures/histograms_xh_in_age_bins_Al.pdf}
+    \caption{
+    \textbf{Major Caption} Minor Caption.}
+    \label{fig:histograms_xh_in_age_bins_Al}
+\end{figure*}
 
 \SB{CONTINUE HERE} \\ $\,$
 
@@ -550,6 +570,8 @@ Simulated data can be retrieved from the authors upon reasonable request.
 
 \section{Abundance trends of simulations that are not covered by GALAH observations} \label{sec:appendix_other_abundances}
 
+In this section, we append abundance-abundance figures (Fig.~\ref{fig:appendix_feh_xfe_nneps}) and age-abundance figures (Fig.~\ref{fig:appendix_xfe_xh_nx}) that were not shown in the main manuscript, mainly because the shown elements were either not measured in the GALAH Survey and would thus not provide further insight for the analyses of observations.
+
 
 \begin{figure*}
 	\includegraphics[width=\textwidth]{figures/Overview_FeH_XFe_Sim_only.png}
@@ -570,9 +592,6 @@ Simulated data can be retrieved from the authors upon reasonable request.
     }
     \label{fig:appendix_xfe_xh_nx}
 \end{figure*}
-
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
