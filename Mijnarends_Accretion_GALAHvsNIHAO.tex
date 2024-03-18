@@ -104,7 +104,7 @@ In addition to the chemical information, we use the crossmatches of stars with v
 
 We apply the following general quality and selection cuts to the data, firstly $\texttt{flag\_repeat} = 0$ to get one measurement per star, and secondly $\texttt{flag\_sp} = 0$, $\texttt{flag\_fe\_h} = 0$, $\texttt{flag\_Mg\_fe} = 0$, $\texttt{snr\_c2\_iraf} > 25$, and $\mathrm{[Fe/H]} > -2$ to get the most reliable stellar parameters while maintaining a sufficient amount of stars. Whenever we use additional elemental abundances of an element X, we also enforce $\texttt{flag\_X\_fe} = 0$.
 
-While we have considered enforcing \textsc{bstep} age uncertainties below 50\%, we have decided against implementing a sharp limit, both to avoid complex influences\footnote{\input{tex_text/age_above_8gyr_above50perc_ageunc}, \input{tex_text/age_above_8gyr_above40perc_ageunc}, and \input{tex_text/age_above_8gyr_above30perc_ageunc} of the \input{tex_text/age_above_8gyr.tex} stars above $8\,\mathrm{Gyr}$ have uncertainties above $50\%$, $40\%$, and $30\%$, respectively. Of the \input{tex_text/age_below_8gyr.tex} stars below $8\,\mathrm{Gyr}$ already \input{text_text/age_below_8gyr_above50perc_ageunc.tex} have uncertainties above $50\%$.} in the selection function and because it does not really impact the stars with ages above $8\,\mathrm{Gyr}$.
+While we have considered enforcing \textsc{bstep} age uncertainties below 50\%, we have decided against implementing a sharp limit, both to avoid complex influences\footnote{Of the \input{tex_text/age_above_8gyr.tex} stars above $8\,\mathrm{Gyr}$ \input{tex_text/age_above_8gyr_above50perc_ageunc}, \input{tex_text/age_above_8gyr_above40perc_ageunc}, and \input{tex_text/age_above_8gyr_above30perc_ageunc} have uncertainties above $50\%$, $40\%$, and $30\%$, respectively. Of the \input{tex_text/age_below_8gyr.tex} stars below $8\,\mathrm{Gyr}$ already \input{tex_text/age_below_8gyr_above50perc_ageunc.tex} have uncertainties above $50\%$.} in the selection function and because it does not significantly impact the stars with ages above $8\,\mathrm{Gyr}$.
 
 To allow better comparability with the simulations lateron (see Sec.~\ref{sec:location}), we also limit our sample to stars with Galactic latitude $\vert b \vert > 10\,\mathrm{deg}$ and distance $D_\varpi < 4.2\,\mathrm{kpc}$, the 95th distance percentile of GALAH DR3 \citep{Buder2021}. After applying all these cuts, our sample still consists of \input{tex_text/nr_stars_in_galah_after_cuts}stars, allowing a statistically meaningful comparison with theoretical predictions.
 
@@ -275,17 +275,17 @@ For a comparison with these simulated results, we have created Fig.~\ref{fig:age
     \caption{
     \textbf{Age-Abundance trends of the Milky Way Solar neighbourhood as observed by GALAH DR3.}.
     \textbf{Columns} show the different the elements C, O, Mg, Al, Mn, and Ba (from left column to right column), respectively.
-    \textbf{Rows} show different notations of abundances, that is, logarithmic abundance {[X/Fe]} relative to iron (top row), logarithmic abundance {[X/H]} relative to hydrogen (middle row), and linear number density ratio {$N_\mathrm{X/H}$} (bottom row).
+    \textbf{Rows} show different notations of abundances, that is, logarithmic abundance {[X/Fe]} relative to iron (top row), logarithmic abundance {[X/H]} relative to hydrogen (middle row), and linear number density ratio {$N_\mathrm{X/H}$} (bottom row). Error bars in middle row indicate median uncertainties for stars below and above $7\,\mathrm{Gyr}$.
     }
     \label{fig:age_xfe_xh_nxh_galah}
 \end{figure*}
 
 
 \begin{figure*}
-	\includegraphics[width=\textwidth]{figures/histograms_xh_in_age_bins_Al.pdf}
+	\includegraphics[width=\textwidth]{figures/histograms_xh_in_age_bins_Mn.pdf}
     \caption{
-    \textbf{Major Caption} Minor Caption.}
-    \label{fig:histograms_xh_in_age_bins_Al}
+    \textbf{Histograms of {[Mn/H]} in $0.5\,\mathrm{Gyr}$ age bins for the three age-abundance sequences (Eqs.~\ref{eq:sequence1}-\ref{eq:sequence3}).} Colors are the same as in Fig.~\ref{fig:three_sequences_traced}. Panel titles show age bins and total number of particles within each bin. Inset text with same colors show contribution (in percent) of each sequence to the age bins as well as 16/50/84th percentile. Values are only calculated if more than 100 particles of sequence are within a given age bin.}
+    \label{fig:histograms_xh_in_age_bins_Mn}
 \end{figure*}
 
 \SB{CONTINUE HERE} \\ $\,$
