@@ -117,6 +117,14 @@ use the last simulation snapshot time of $14.14\,\mathrm{Gyr}$ to estimate the a
 
 The simulation traces the elemental abundances of H, He, C, N, O, Ne, Mg, Al, Si, P, S, V, Cr, Mn, Fe, Co, and Ba. Of these, ten correspond with the GALAH data and allow us to compare diagnostic plots possible with abundances of C, O, Mg, Al, Si, V, Cr, Mn, Co and Ba. To allow a better comparison of simulated to observed abundance patterns, we shift the abundance patterns [X/H] by the values listed in Table~\ref{tab:shift_4to5gyr}, such that the median abundance for [X/H] is Solar for the stars with ages of Solar age ($4-5\,\mathrm{Gyr}$) in the GALAH-like footprint of the Milky Way analogue.
 
+The simulation record galactocentric Cartesian positions $(X,Y,Z)$ and velocities $(V_X,V_Y,V_Z)$ for each particle, which we transform into a galactocentric Cylindrical coordinate frame via
+\begin{align}
+    R = \sqrt{X^2 + Y^2} \qquad &\& \qquad V_R = \frac{X*V_X + Y*V_Y}{R} \\
+    \phi = \arctan(X/Y) \qquad &\& \qquad V_\phi = \frac{-Y*V_X + X*V_Y}{R} \\
+    Z = Z  \qquad &\& \qquad V_Z = V_Z,
+\end{align}
+while using the \textsc{numpy} \textsc{arctan2} package.
+
 \begin{table}
     \centering
     \caption{
@@ -146,7 +154,7 @@ In Sec.~\ref{sec:intro}, we have reviewed several observation-based plots that h
 
 \subsection{Location matters: Full galaxy versus Solar neighborhood} \label{sec:location}
 
-Naïvely, we initially plot the diagnostic plots of observers, namely the ratio of CCSN to SNIa via [Si/Fe] as function of iron abundance [Fe/H] in Fig.~\ref{fig:low_alpha_halo}a as well as the previously successful selection plane of [Al/Fe] vs. [Mg/Mn] in Fig.~\ref{fig:low_alpha_halo}b for the complete Milky Way analogue. In the absence of observational noise, it could be expected that areas of in-situ and accreted stars might clearly separate. To the contrary, the [Al/Fe] vs. [Mg/Mn] for the whole galaxy show seemingly even more scatter than the observations. Tracing the selection of accreted stars, that is, the stars with lower [Si/Fe] around $-0.90 < \mathrm{[Fe/H]} < -0.65$ with a selection box, does not lead to a unique location in the [Al/Fe] vs. [Mg/Mn] in Fig.~\ref{fig:low_alpha_halo}b when showing the extend of these stars with a convex hull outline.
+Naïvely, we initially plot the diagnostic plots of observers, namely the ratio of CCSN to SNIa via [Si/Fe] as function of iron abundance [Fe/H] in Fig.~\ref{fig:low_alpha_halo}a as well as the previously successful selection plane of [Al/Fe] vs. [Mg/Mn] in Fig.~\ref{fig:low_alpha_halo}b for the complete Milky Way analogue. In the absence of observational noise, it could be expected that areas of in-situ and accreted stars might clearly separate. To the contrary, the [Al/Fe] vs. [Mg/Mn] for the whole galaxy show seemingly even more scatter than the observations when inspecting the whole galaxy. Tracing the selection of accreted stars, that is, the stars with lower [Si/Fe] around $-0.90 < \mathrm{[Fe/H]} < -0.65$ with a selection box, does not lead to a unique location in the [Al/Fe] vs. [Mg/Mn] in Fig.~\ref{fig:low_alpha_halo}b when showing the extend of these stars with a convex hull outline.
 
 When applying a similar selection to NIHAO as would be expected from GALAH observations in the Solar vicinity (see Sec.~\ref{sec:sim_data}), both the [Fe/H] vs. [Si/Fe] plane in Fig.~\ref{fig:low_alpha_halo}d as well as the [Al/Fe] vs. [Mg/Mn] plane in Fig.~\ref{fig:low_alpha_halo}e cleared up significantly, with the accreted sequence becoming more prominent around $\mathrm{[Al/Fe]}$ of -0.3.
 
@@ -212,7 +220,7 @@ Based on Fig.~\ref{fig:low_alpha_halo}f, we identify two definite and one tentat
 \begin{figure*}
 	\includegraphics[width=\textwidth]{figures/three_sequences_traced.png}
     \caption{
-    \textbf{Chronochemodynamic properties of the three separate sequences identified in the age-[Fe/H] relation (first column) - blue for Sequence 1 in the top row, red for Sequence 2 in the middle row, and purple for Sequence 3 in the bottom row.
+    \textbf{Logarithmic density distributions of chronochemodynamic properties of the three separate sequences identified in the age-[Fe/H] relation (first column) - blue for Sequence 1 in the top row, red for Sequence 2 in the middle row, and purple for Sequence 3 in the bottom row.
     }
     \textbf{The second column} shows the spatial density of stars in $R$-$z$.
     \textbf{The third column} shows the kinematic extend of stars in the Toomre diagram of $V$ vs. $\sqrt{U^2+W^2}$.
@@ -223,7 +231,7 @@ Based on Fig.~\ref{fig:low_alpha_halo}f, we identify two definite and one tentat
 
 In Fig.~\ref{fig:three_sequences_traced}, we trace three sequences in separate rows in their chronochemodynamic properties, starting with the age-[Fe/H] relation.
 
-For Sequence~1, the most metal-rich sequence with \input{tex_text/sequence_1_fraction} of particles in the footprint, we see the stars being distributed closest to the galactic plane ($\vert Z \vert < 2\,\mathrm{kpc}$) in Fig.~\ref{fig:three_sequences_traced}b. Their kinematics in Fig.~\ref{fig:three_sequences_traced}c) likens a Toomre diagram of the Milky Way  \citep[][see their Fig.~1a]{Helmi2018} but with a smoother transition of thin and thick disk that is mirrored around $V$. While the mirroring effect is expected based on our 3-dimensional selection of a torus rather than a sphere, the smooth transition of thin and thick disk in kinematic space could lead to the question if the galaxy truly has a thick disk \citep{Bovy2012b}. This impression is confirmed in chemical space of [Fe/H] vs. [Si/Fe] in Fig.~\ref{fig:three_sequences_traced}d with its smooth sequence from higher $\mathrm{[Si/Fe]} \sim 0.3$ at $\mathrm{[Fe/H] \sim -1}$ to $\mathrm{[Si/Fe]} \sim 0.2$ at $\mathrm{[Fe/H] \sim 0}$. Similarly, we see a smooth distribution with highest $\mathrm{[Al/Fe]} \sim -0.22$ in the [Al/Fe] vs. [Mg/Mn] plane. We refrain from further dissecting this population in old and young sequence to establish a thin and thick disk as this is not the focus of this work.
+For Sequence~1, the most metal-rich sequence with \input{tex_text/sequence_1_fraction} of particles in the footprint, we see the stars being distributed closest to the galactic plane ($\vert Z \vert < 2\,\mathrm{kpc}$) in Fig.~\ref{fig:three_sequences_traced}b. Their kinematics in Fig.~\ref{fig:three_sequences_traced}c) likens a Toomre diagram of the Milky Way  \citep[][see their Fig.~1a]{Helmi2018} but with a smoother transition of thin and thick disk. The smooth transition of thin and thick disk in kinematic space could lead to the question if the Milky Way analogue truly has a thick disk \citep[see][who raised the same question for the actual Milky Way]{Bovy2012b}. This impression is confirmed in chemical space of [Fe/H] vs. [Si/Fe] in Fig.~\ref{fig:three_sequences_traced}d with its smooth sequence from higher $\mathrm{[Si/Fe]} \sim 0.3$ at $\mathrm{[Fe/H] \sim -1}$ to $\mathrm{[Si/Fe]} \sim 0.2$ at $\mathrm{[Fe/H] \sim 0}$. Similarly, we see a smooth distribution with highest $\mathrm{[Al/Fe]} \sim -0.22$ in the [Al/Fe] vs. [Mg/Mn] plane. We refrain from further dissecting this population in old and young sequence to establish a thin and thick disk as this is not the focus of this work.
 
 Sequence~2 with \input{tex_text/sequence_2_fraction} of particles in the footprint shows the behaviour of kinematic halo stars with a spatial distribution not restricted to the galactic plane (Fig.~\ref{fig:three_sequences_traced}g) and angular momentum (or here: azimuthal velocity) consistent with no net rotation (Fig.~\ref{fig:three_sequences_traced}h). Once again, we notice the offset towards lower abundance enhancement of this sequence in the [Fe/H] vs. [Si/Fe] plane as well as the [Al/Fe] vs. [Mg/Mn] plane with respect to sequence 1 (Figs.~\ref{fig:three_sequences_traced}i and j, respectively).
 
@@ -233,12 +241,10 @@ Finally, we notice that the smallest Sequence~3 (only \input{tex_text/sequence_3
 
 \subsection{Age-abundance relations beyond age-[Fe/H]} \label{sec:age-abundance-sequences}
 
-Given the various abundance distributions in the [Fe/H] vs. [X/Fe] space from Fig.~\ref{fig:FeH_XFe}, we are now interested in the trends for different elements with age. Given the previous suggestions that not necessarily [X/Fe], but even [X/H] may be a better tracer of accreted stars \citep[e.g.][for [Mg/H]{Fuhrmann2017, Feuillet2021}, we are testing both age-[X/Fe] and age-[X/H] relations. Furthermore, we are inspired by the work by \citet{Weinberg2019, Weinberg2021} as well as \cite{Griffith2019, Griffith2022}, who modeled nucleosynthetic contributions by SNIa and CCSN with a amplitudes such as $A_\text{cc} = 10^\mathrm{[Mg/H]}$ \citep{Weinberg2019}. To avoid confusion with both the abundance notation $A(X)$ and their notation $A_\mathrm{cc}$/$A_\mathrm{Ia}$, we want to explicitly lay out our notation of rewriting the element abundances in a linear way as $N_\text{X/H}$, so that they are linearly proportional to the ratio of number densities $N_\text{X}/N_\text{H}$:
+Given the various abundance distributions in the [Fe/H] vs. [X/Fe] space from Fig.~\ref{fig:FeH_XFe}, we are now interested in the trends for different elements with age. Previous research has suggested that not necessarily [X/Fe], but [X/H] may be a better tracer of accreted stars \citep[e.g.][for [Mg/H]{Fuhrmann2017, Feuillet2021}. Furthermore, we are inspired by the work by \citet{Weinberg2019, Weinberg2021} as well as \cite{Griffith2019, Griffith2022}, who modeled nucleosynthetic contributions by SNIa and CCSN with a amplitudes such as $A_\text{cc} = 10^\mathrm{[Mg/H]}$ \citep{Weinberg2019}. To avoid confusion with both the abundance notation $A(X)$ and their notation $A_\mathrm{cc}$/$A_\mathrm{Ia}$, we want to explicitly lay out our notation of rewriting the element abundances in a linear way as $N_\text{X/H}$, so that they are linearly proportional to the ratio of number densities $N_\text{X}/N_\text{H}$:
 \begin{align}
     \left[\text{X/H}\right] \varpropto \log_{10}\left(\frac{N_\text{X}}{N_\text{H}}\right) \quad \Rightarrow \quad N_\text{X/H} = 10^{\mathrm{[X/H]}} \varpropto \frac{N_\text{X}}{N_\text{H}}
 \end{align}
-
-\subsubsection{Age-[X/Fe] or age-[X/H] or age-$N_{X/H}$?}
 
 \begin{figure*}
 	\includegraphics[width=\textwidth]{figures/age_xfe_xh_nxh.png}
@@ -250,11 +256,15 @@ Given the various abundance distributions in the [Fe/H] vs. [X/Fe] space from Fi
     \label{fig:age_xfe_xh_nxh}
 \end{figure*}
 
-Things to note for Fig.~\ref{fig:age_xfe_xh_nxh}:
-\begin{itemize}
-    \item [Ba/Fe] significantly lower 
-    \item Ba enhancement shows onset of AGB production late into accreted stars -> Additional non-linear enhancement!!
-\end{itemize}
+\subsubsection{Age-[X/Fe] or age-[X/H] or age-$N_{X/H}$?}
+
+In Fig.~\ref{fig:age_xfe_xh_nxh}, we show the age-abundance distributions for six of the elements overlapping between NIHAO and GALAH, namely C, O, Mg, Al, Mn, and Ba. We do not show Si, V, Cr, and Co here, as the trend for Si likens Mg and the trends of V, Cr, and Co liken those of Mn and therefore do not add new insight.
+
+First, we discuss the top panels of Fig.~\ref{fig:age_xfe_xh_nxh}s showing the age-[X/Fe] trends. As pointed out in our description of Fig.~\ref{fig:FeH_XFe}, the NIHAO simulation show an rather flat, enhanced [C/Fe] abundance for accreted stars, that is, $\mathrm{[C/Fe]} \sim 0.11$ compared to  $\mathrm{[C/Fe]} < 0.07$ at around $10\,\mathrm{Gyr}$. For O in Fig.~\ref{fig:age_xfe_xh_nxh}b, we notice a decrease of high [O/Fe] abundance with decreasing stellar age and an emergine bifurcation with higher $\mathrm{[O/Fe]} \sim 0.1$ for accreted stars. For Mg, the in-situ and accreted components overlap in the age-[Mg/Fe] plane (Fig.~\ref{fig:age_xfe_xh_nxh}c). For both [Al/Fe] and [Mn/Fe], we see $~0.05\,\mathrm{dex}$ lower abundance for accreted stars than for in-situ stars, with a clearer separation of sequences for [Al/Fe] at oldest ages. Finally, the [Ba/Fe] plane shows a lower initial abundance of [Ba/Fe] at oldest ages, which is expected - at least qualitatively - due to the delay of Ba-production by AGB stars \citep{Karakas2016}. We note here that the production of Ba relative to Fe for accreted stars actually surpasses those of in-situ ones, as can be seen from the crossing of Sequence 1 and 2 in Fig.~\ref{fig:age_xfe_xh_nxh}f at around $9\,\mathrm{Gyr}$. At face value, these differences would exclude both the age-[Mg/Fe] and age-[Ba/Fe] plane as useful diagnostics, whereas all other elements show offsets in the age-[X/Fe] plane for at least the youngest ($8-11\,\mathrm{Gyr}$) accreted stars.
+
+Moving towards the age-[X/H] plane in the middle row of Fig.~\ref{fig:age_xfe_xh_nxh}, we notice a very similar qualitative behaviour of all elements. However, we note that the separation of accreted and in-situ sequences in this plane is roughly five times larger, that is, around $0.5\,\mathrm{dex}$, than in the age-[X/Fe] plane. Finally, we consider the age-$N_\mathrm{X/H}$ plane in the bottom rows of Fig.~\ref{fig:age_xfe_xh_nxh}, where we again see a qualitatively similar trend. When focussing on the accreted sequence, we note a roughly linear enhancement of $N_\mathrm{X/H}$ for all elements except for Ba, which show an increasingly enhance curve towards younger ages, in line with an expected increase of Ba-production by AGB stars. The difference between sequences starts very small at oldest ages, but then increases to $\Delta N_\mathrm{X/H} \sim 0.7$ around $8\,\mathrm{Gyr}$.
+
+
 
 \SB{CONTINUE HERE} \\ $\,$
 
@@ -291,7 +301,7 @@ The stark difference in clarity of results between the uncertainty-free simulati
 
 \par\textbf{Key Takeaway:} The abundance vs age plots are clearest when the abundance is relative to H rather than Fe. Establishing the relationships relative to the number density $N_X$ should also be explored in future work as they bear to potential to allow the tracing of trace linear and non-linear contributions through chemical yields (Fig.~\ref{fig:Fe_H_lin_time}).
 
-\subsection{Quantifying differences of age-abundance sequences} \label{sec:ageabundance}
+\subsection{Quantifying differences of age-{[X/H]} sequences} \label{sec:ageabundance}
 
 To determine two different stellar populations as being accreted and in situ, we need to be able to quantify the difference between the two groups. This is done using separation significance $r$. This value is found using Eq.~\ref{eq:r_value}, which has been adapted from \citet{Lindegren2013}, and assumes a Gaussian distribution around a mean value $\mu$ with a standard deviation $\sigma$, for each population. This assumption is confirmed by plotting a histogram of [X/H] for the simulation between 8 and $9\,\mathrm{Gyr}$, an example of which is found in Fig.~\ref{fig:hist_labels}. The larger peak (with subscripts of 2) represents the in-situ population, and the smaller (1) is the accreted population. 
 
