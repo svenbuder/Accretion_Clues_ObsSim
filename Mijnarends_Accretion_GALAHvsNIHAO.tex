@@ -17,6 +17,7 @@
 \usepackage{fontawesome}
 \usepackage{gensymb}
 \usepackage{multirow}
+\usepackage{mathtools}
 
 %%%%% AUTHORS - PLACE YOUR OWN COMMANDS HERE %%%%%
 \newcommand{\ToDo}[1]{\textbf{\textcolor{blue}{ToDo: #1}}}
@@ -288,16 +289,25 @@ For a comparison with these simulated results, we have created Fig.~\ref{fig:age
     \label{fig:histograms_xh_in_age_bins_Mn}
 \end{figure*}
 
-\begin{table}
+\begin{equation} \label{eq:r_value}
+r_{12} (\sigma_{obs}) = \frac{|\mu_1 - \mu_2|}{\sqrt{\sigma_1^2 + \sigma_2^2 + 2\cdot \sigma_{obs}^2}} ~ \xrightarrow[\text{for Sim.}]{\sigma_\text{obs}\,=\,0} ~ r_{12} = \frac{|\mu_1 - \mu_2|}{\sqrt{\sigma_1^2 + \sigma_2^2}}
+\end{equation}
+
+\begin{table*}
     \centering
-    \caption{\textbf{Major Caption.} Minor Caption.}
-    \input{tex_text/tabular_separation_r12.tex}
+    \caption{\textbf{Separation significance $r_{12}$ (Eq.~\ref{eq:r_value}) between Sequence 1 and 2 in {[X/H]} of the Milky Way analogue for different age bins.} Values are calculated for the observable footprint without observational noise.}
+    \input{tables/tabular_separation_r12.tex}
     \label{tab:tabular_separation_r12}
-\end{table}
+\end{table*}
+
+\begin{itemize}
+    \item Table~\ref{tab:tabular_separation_r12} shows us that the most significant separations $r_{12} > 10$ in the age-[X/H] space are expected among the youngest accreted stars, most notably for Al (maximum $r_{12} = 12.7$), Mg (maximum $r_{12} = 12.0$), and Mn (maximum $r_{12} = 11.5$).
+\end{itemize}
 
 
 
-\SB{CONTINUE HERE} \\ $\,$
+\SB{CONTINUE HERE}
+
 
 Several existing studies have suggested using elemental abundances reported as a function of Hydrogen number density \citep{Fuhrmann2017,Feuillet2021}. We produced the age-abundance plots using a range of chemical abundances, and confirmed this finding— that [X/H] produced the most clarified plots. This is highlighted in Figures \ref{fig:BaHtime}a and \ref{fig:BaHtime}b where we compare age plots of [X/Fe] and [X/H], and see much more clearly separated stellar populations in the H plot. Fe is being simultaneously enriched along with the element we are comparing it to (Ba is used here as an arbitrary example), which results in less clarity in the overall plot. As Hydrogen was formed in the Big Bang nucleosynthesis, it is not enhanced or affected by time in the same way that metals like Fe are. Having determined the most suitable plot for identifying accreted populations via the simulations, it is now important to consider the problem from a realistic perspective, and quantitatively determine how much noise we could allow for both abundance and age estimates to still be able to separate the sequences.
 
@@ -335,19 +345,6 @@ The stark difference in clarity of results between the uncertainty-free simulati
 \subsection{Quantifying differences of age-{[X/H]} sequences} \label{sec:ageabundance}
 
 To determine two different stellar populations as being accreted and in situ, we need to be able to quantify the difference between the two groups. This is done using separation significance $r$. This value is found using Eq.~\ref{eq:r_value}, which has been adapted from \citet{Lindegren2013}, and assumes a Gaussian distribution around a mean value $\mu$ with a standard deviation $\sigma$, for each population. This assumption is confirmed by plotting a histogram of [X/H] for the simulation between 8 and $9\,\mathrm{Gyr}$, an example of which is found in Fig.~\ref{fig:hist_labels}. The larger peak (with subscripts of 2) represents the in-situ population, and the smaller (1) is the accreted population. 
-
-\begin{equation} \label{eq:r_value}
-r = \frac{|\mu_1 - \mu_2|}{\sqrt{\sigma_1^2 + \sigma_2^2}}
-\end{equation}
-
-In the simulation the standard deviation would only incorporate the intrinsic scatter, that is, $\sigma_{1,\text{obs}} = \sigma_1$. In the observations, the observational scatter (which we assume uniform throughout the parameter space) would enter into Eq. \ref{eq:r_value} via
-\begin{equation} \label{eq:scatter}
-    \sigma_{1,\text{obs}} = \sqrt{\sigma_1^2+\sigma_{obs}^2},
-\end{equation}
-leading to a slightly adjusted version of Eq.~\ref{eq:r_value}, that is,
-\begin{equation} \label{eq:r_value_observed}
-r (\sigma_{obs}) = \frac{|\mu_1 - \mu_2|}{\sqrt{\sigma_1^2 + \sigma_2^2 + 2\cdot \sigma_{obs}^2}}.
-\end{equation}
 
 \begin{figure}
 	\includegraphics[width=\columnwidth]{figures/hist_labelled.png}
