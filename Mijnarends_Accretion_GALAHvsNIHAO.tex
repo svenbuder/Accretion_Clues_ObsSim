@@ -359,37 +359,16 @@ Having determined the most suitable plot for identifying accreted populations vi
 
 \SB{CONTINUE HERE}
 
-
-Having identified age-abundance plots as the clearest diagnostic tool of accreted stars, and having quantified our results, we now seek to determine what uncertainty limit is acceptable in our observations. We do this two-fold. Firstly, we test how much observational scatter $\sigma_{obs}$ is allowable, while still being able to tell apart the sequences with a confidence of 68\% or 95\% (r-values of at least 1 or 2). This is plotted in Fig.~\ref{fig:r_v_obs}, and quantified in Tab.~\ref{tab:r_values_simulation}. It is clear that all elements have a relatively similar error allowance of 0.18 for 95\% confidence and 0.38 for 68\%. Comparing these values to GALAH data used in this study finds that most measured element uncertainties, but not all, fall below our calculated threshold. \par  
-We then must consider the second facet of uncertainty: the age uncertainties of the data. We expect the sequences will be significantly more difficult to distinguish in older stars with corresponding larger uncertainties. This is plotted in Fig.~\ref{fig:r_v_age}, using a subset of data within 4-5Gyr. This age subset is used as it is the range within which there is the clearest separation between the two populations in the simulated plots, shown in Figs. \ref{fig:BaHtime}a and \ref{fig:BaHtime}b. We see there is more deviation among elements than in Fig.~\ref{fig:r_v_obs}, but there remains a similar cut-off point where separation significance increases notably, at approximately 1Gyr. Because we are working within the age range of 4-5Gyr, this means that a 1Gyr uncertainty is equivalent to just over 20\%. We can see from the plot that we require an uncertainty of around 15\% before the r-value begins to increase, which is much lower than the age uncertainties we currently have from GALAH data. \par
+We then must consider the second facet of uncertainty: the age uncertainties of the data. We expect the sequences will be significantly more difficult to distinguish in older stars with corresponding larger uncertainties. This is plotted in Fig.~\ref{fig:age_sigma_vs_r}, using a subset of data within 4-5Gyr. This age subset is used as it is the range within which there is the clearest separation between the two populations in the simulated plots, shown in Figs. \ref{fig:BaHtime}a and \ref{fig:BaHtime}b. We see there is more deviation among elements than in Fig.~\ref{fig:r_v_obs}, but there remains a similar cut-off point where separation significance increases notably, at approximately 1Gyr. Because we are working within the age range of 4-5Gyr, this means that a 1Gyr uncertainty is equivalent to just over 20\%. We can see from the plot that we require an uncertainty of around 15\% before the r-value begins to increase, which is much lower than the age uncertainties we currently have from GALAH data. \par
 \textbf{Key Takeaway:} We are able to quantify the level of uncertainty (both in element and age measurements) allowable for clear populations, and find the GALAH data has sufficient element measurements, but significantly too high age uncertainties. 
 
-
-
-% \begin{itemize}
-%     \item abundances uncertainties, entering as $\sigma_{\text{obs}}$ into Eq.~\ref{eq:r_value_observed}.
-%     \item age uncertainties, making it hard to distinguish between the sequences for the oldest stars.
-% \end{itemize}
-
-% Assessing both influences in the observational data is difficult because we do not know the underlying distribution of accreted versus in-situ stars. We therefore turn to the simulations and perform two tests. Firstly, we test how much observational scatter $\sigma_{\text{obs}}$ is allowed to still tell apart the sequences with a confidence of 68 or 95\% ($r$-values of at least 1 or 2)? Secondly, we test how well we can tell the sequences apart when adding age uncertainties. In this particular case, we start from our initial subset selected for ages of $8-9\,\mathrm{Gyr}$ and ask, how would our selection change, if we cannot separate these stars from the even older ones (increasing our selection from $8-9\,\mathrm{Gyr}$ towards $8-10\,\mathrm{Gyr}$, $8-11\,\mathrm{Gyr}$, etc.)?
-
-% We plot the results of the first test, $r (\sigma_\text{obs})$ in Fig.~\ref{fig:r_v_obs} and compare it to the average reported uncertainty from GALAH. There is very little range between elements on these plots, and it is clear that all elements require a level of noise to be below approximately 0.4 to be 68\% sure the populations are separate, and below 0.2 to be 95\% confident. Within the accessible GALAH dataset, we can access the corresponding measurement uncertainties, and find that most, but not all, measurements of chemical abundances fall below these thresholds - if they can be measured and are reported.
-
 \begin{figure}
-	\includegraphics[width=\columnwidth]{figures/same_axis_r_sigma.png}
-    \caption{Similar to Fig.~\ref{fig:r_v_age}, this plot shows all elements on an axis of their separation significance $r$ as a function of measurement noise. There are two horizontal lines at $r=1$ and $r=2$ which show the points at which we can be 68\% and 95\% confident (respectively) that we are observing two distinct populations. It is clear that these values are quite similar for all elements.}
-    \label{fig:r_v_obs}
-\end{figure}
-
-\input{tables/table_2_test} % \label{tab:uncertainties_simulation}
-
-\begin{figure}
-	\includegraphics[width=\columnwidth]{figures/same_axis_r_age.png}
+	\includegraphics[width=\columnwidth]{figures/age_sigma_vs_r.png}
     \caption{Separation significance $r$ against age uncertainty (in Gyr) for all elements. These plots were made using data in the time-span between 4 and 5 Gyr after formation. So a 1 Gyr uncertainty is just over 20\% uncertainty. The five elements in the right-side plot have notably higher r-values than those in the left plot. The figure clearly demonstrates the age uncertainty at which we can become quite confident that we are observing two separate populations.}
-    \label{fig:r_v_age}
+    \label{fig:age_sigma_vs_r}
 \end{figure}
 
-% This further motivates our second test of the influences of ages. Fig.~\ref{fig:r_v_age} shows each element plotted with r-value against age uncertainty (in Gyr). These particular plots were created using data between \SB{4 and 5 Gyr - have to be adjusted to stellar age}, which means that a 1 Gyr uncertainty is equivalent to just over 20\%. From these plots, we can see that there is a fair amount of variance between the elements. Regardless, it is clear that at an uncertainty of around 1.25 Gyr (or 25\%) the r-value begins to increase. At the next interval of around 0.75 Gyr (or 15\%) there is a very rapid increase in confidence. This informs us that ideally, we are striving for an uncertainty of less than 15\%, which is significantly lower than the uncertainties we are working with at the moment.
+% This further motivates our second test of the influences of ages. Fig.~\ref{fig:age_sigma_vs_r} shows each element plotted with r-value against age uncertainty (in Gyr). These particular plots were created using data between \SB{4 and 5 Gyr - have to be adjusted to stellar age}, which means that a 1 Gyr uncertainty is equivalent to just over 20\%. From these plots, we can see that there is a fair amount of variance between the elements. Regardless, it is clear that at an uncertainty of around 1.25 Gyr (or 25\%) the r-value begins to increase. At the next interval of around 0.75 Gyr (or 15\%) there is a very rapid increase in confidence. This informs us that ideally, we are striving for an uncertainty of less than 15\%, which is significantly lower than the uncertainties we are working with at the moment.
 
 % \SB{I believe we should rather perform some MC simulations of relative abundance and age uncertainties. We can do that quite simple by multiplying the ages by a factor that is sampled from a normal distribution around 1 with a scatter value, e.g. 0.15 - is 0.15 corresponding to 15\% uncertainty?}
 
