@@ -282,6 +282,23 @@ For a comparison with these simulated results, we have created Fig.~\ref{fig:age
 \end{figure*}
 
 
+\SB{Note interesting points regarding the linear $N_{X/H}$ plots:
+\begin{itemize}
+    \item Clear separation in sequences
+    \item Linear increase of accreted stars.
+    \item Onset of chemical scatter for in-situ stars of simulation coincides with end of star formation in accreted sequence (compare with Lucy's work!)
+    \item Gap in stars also in observable space. Where are the GSE stars? 0.3 or below 0.1?
+\end{itemize}
+}
+
+\textbf{Key Takeaway:} Across the different age bins, we find Gaussian distributions of abundances in the {[X/Fe]} and {[X/H]} space. At face value, the abundance vs age plots are separated most clearly when the abundance are noted relative to H rather than Fe. Establishing the relationships relative to the number density $N_{X/H}$ should also be explored in future work as they bear to potential to allow the tracing of trace linear and non-linear contributions through chemical yields.
+
+\subsubsection{Quantifying the difference of age-{[X/H]} sequences}
+
+In this section, we are concerned with the significance of separation between the in-situ and accreted sequences in the simulations - for now in the idealised case without observational noise (we will study the latter in Sec.~\ref{sec:noise_influence}).
+
+\SB{Describe how Fig.~\ref{fig:histograms_xh_in_age_bins_Mn}} is calculated.
+
 \begin{figure*}
 	\includegraphics[width=\textwidth]{figures/histograms_xh_in_age_bins_Mn.pdf}
     \caption{
@@ -289,9 +306,12 @@ For a comparison with these simulated results, we have created Fig.~\ref{fig:age
     \label{fig:histograms_xh_in_age_bins_Mn}
 \end{figure*}
 
+To determine the significance of separation, we are inspired by the previous study by \citet{Lindegren2013}, who computed a separation significance $r$ based on the differences of mean abundances weighted by the combined standard deviation of abundances. Having convinced ourselves that the distributions are Gaussian in the previous section, we now expand their formulation by adding observational Gaussian noise as another additive to the weights and thus arrive at the formulation
 \begin{equation} \label{eq:r_value}
 r_{12} (\sigma_{obs}) = \frac{|\mu_1 - \mu_2|}{\sqrt{\sigma_1^2 + \sigma_2^2 + 2\cdot \sigma_{obs}^2}} ~ \xrightarrow[\text{for Sim.}]{\sigma_\text{obs}\,=\,0} ~ r_{12} = \frac{|\mu_1 - \mu_2|}{\sqrt{\sigma_1^2 + \sigma_2^2}}
 \end{equation}
+
+Assume no observational noise, we calculate $r_{12}$ based only on the means and standard deviations for the age bins and elements {[X/H]} listed in Tab.~\ref{tab:tabular_separation_r12} for the sequences defined in Eqs.~\ref{eq:sequence1}-Eqs.~\ref{eq:sequence3}. For completeness, we also list the properties of Sequence 3, when more than 100 particles are present.
 
 \begin{table*}
     \centering
@@ -311,6 +331,15 @@ r_{12} (\sigma_{obs}) = \frac{|\mu_1 - \mu_2|}{\sqrt{\sigma_1^2 + \sigma_2^2 + 2
 
 \textbf{Key Takeaway:} In the simulation, accreted and in-situ components separate most significantly among youngest stars across a common age range.
 
+\subsubsection{A more realistic picture: The influence of observational noise on age-{[X/H]} sequence} \label{sec:noise_influence}
+
+Having determined the most suitable plot for identifying accreted populations via the simulations, it is now important to consider the problem from a realistic perspective, and quantitatively determine how much noise we could allow for both abundance and age estimates to still be able to separate the sequences.
+
+\begin{itemize}
+    \item Tab.~\ref{tab:tabular_separation_r12_noise}
+    \item Fig.~\ref{fig:r12_for_sigmaobs}
+\end{itemize}
+
 \begin{table*}
     \centering
     \caption{\textbf{Separation significance $r_{12}$ between Sequence 1 and 2 in {[X/H]} for different elements (first column) and simulated observational noise (second column) across different age bins (third column onwards, in Gyr).} Values are calculated for the observable footprint according to Eq.~\ref{eq:r_value}.}
@@ -321,79 +350,17 @@ r_{12} (\sigma_{obs}) = \frac{|\mu_1 - \mu_2|}{\sqrt{\sigma_1^2 + \sigma_2^2 + 2
 \begin{figure*}
 	\includegraphics[width=\textwidth]{figures/r12_for_sigmaobs.pdf}
     \caption{
-    \textbf{Separation significance $r_{12}$ between Sequences 1 and 2 across different elements (panels) as a function of age bins (top panels) and added observational noise (bottom panels).} Lines are calculated for added observational noise in the top panels and different age bins in the bottom panels, respecitvely, as indicated in the legend.}
+    \textbf{Separation significance $r_{12}$ between Sequences 1 and 2 across different elements (panels) as a function of age bins (top panels) and added observational noise (bottom panels).} Lines are calculated for added observational noise in the top panels and different age bins in the bottom panels, respectively, as indicated in the legend. For reference, we also add the median observational noise of GALAH DR3 in the first column for each element.}
     \label{fig:r12_for_sigmaobs}
 \end{figure*}
 
 
-\begin{figure*}
-	\includegraphics[width=\textwidth]{figures/accretion_rates.pdf}
-    \caption{
-    \textbf{Relative contributions of Sequence 2 (panel a) and Sequence 3 (panel b) across the galactic area $R$ vs. $z$.} The observational footprint within the Milky Way is indicated with a pink. The larger coverage of $R$ vs. $z$ with bin sizes $1$ and $0.5\,\mathrm{kpc}$, respectively, is inspired by the extragalactic study by \citet[][their Fig.~16]{Martig2021}. For visual reasons, we only show bins with contributions above 10\% in panel b).
-    }
-    \label{fig:accretion_rate}
-\end{figure*}
 
 
 \SB{CONTINUE HERE}
 
 
-Several existing studies have suggested using elemental abundances reported as a function of Hydrogen number density \citep{Fuhrmann2017,Feuillet2021}. We produced the age-abundance plots using a range of chemical abundances, and confirmed this finding— that [X/H] produced the most clarified plots. This is highlighted in Figures \ref{fig:BaHtime}a and \ref{fig:BaHtime}b where we compare age plots of [X/Fe] and [X/H], and see much more clearly separated stellar populations in the H plot. Fe is being simultaneously enriched along with the element we are comparing it to (Ba is used here as an arbitrary example), which results in less clarity in the overall plot. As Hydrogen was formed in the Big Bang nucleosynthesis, it is not enhanced or affected by time in the same way that metals like Fe are. Having determined the most suitable plot for identifying accreted populations via the simulations, it is now important to consider the problem from a realistic perspective, and quantitatively determine how much noise we could allow for both abundance and age estimates to still be able to separate the sequences.
-
-The comparison of observed and simulated age-abundance plots is shown in Figs \ref{fig:BaHtime}a and \ref{fig:BaHtime}b. The top stream in the plots is likely representative of the in-situ population, as we know that accreted populations tend to join the Milky Way from smaller galaxies with less massive stars. This means that the stars are less metal-heavy and explains the lower stream of accreted stars that can be observed in the simulation data.
-
-The stark difference in clarity of results between the uncertainty-free simulation data and the high-uncertainty GALAH data highlights the importance of reducing observation noise, and provides clear motivation for further investigation into these plots as diagnostic tools. Similar plots have been used already with GALAH data to identify accreted substructure in galaxies other than the Milky Way \citep{Martig2021}.
-
-\begin{figure}
-	\includegraphics[width=0.49\columnwidth]{figures/Ba_Fe_time.png}
-	\includegraphics[width=0.49\columnwidth]{figures/Ba_H_time.png}
-    \caption{
-    \textbf{Barium abundances, [Ba/Fe] in left panels and [Ba/H] in right panels, as a function of age in simulations (top) and observations (bottom).}
-    Although not entirely separate, it is clear that there are two different overdensities in sequeunces
-    }
-    \label{fig:BaHtime}
-\end{figure}
-
-\SB{Note interesting facts in Fig.~\ref{fig:Fe_H_lin_time}:
-\begin{itemize}
-    \item Clear separation in sequences
-    \item Linear increase of accreted stars.
-    \item Onset of chemical scatter for in-situ stars of simulation coincides with end of star formation in accreted sequence (compare with Lucy's work!)
-    \item Gap in stars also in observable space. Where are the GSE stars? 0.3 or below 0.1?
-\end{itemize}
-}
-
-\begin{figure}
-	\includegraphics[width=\columnwidth]{figures/Fe_H_lin_time.png}
-    \caption{Age-metallicity relation in logarithmic and linear space.}
-    \label{fig:Fe_H_lin_time}
-\end{figure}
-
-\textbf{Key Takeaway:} The abundance vs age plots are clearest when the abundance is relative to H rather than Fe. Establishing the relationships relative to the number density $N_X$ should also be explored in future work as they bear to potential to allow the tracing of trace linear and non-linear contributions through chemical yields (Fig.~\ref{fig:Fe_H_lin_time}).
-
-\subsection{Quantifying differences of age-{[X/H]} sequences} \label{sec:ageabundance}
-
-To determine two different stellar populations as being accreted and in situ, we need to be able to quantify the difference between the two groups. This is done using separation significance $r$. This value is found using Eq.~\ref{eq:r_value}, which has been adapted from \citet{Lindegren2013}, and assumes a Gaussian distribution around a mean value $\mu$ with a standard deviation $\sigma$, for each population. This assumption is confirmed by plotting a histogram of [X/H] for the simulation between 8 and $9\,\mathrm{Gyr}$, an example of which is found in Fig.~\ref{fig:hist_labels}. The larger peak (with subscripts of 2) represents the in-situ population, and the smaller (1) is the accreted population. 
-
-\begin{figure}
-	\includegraphics[width=\columnwidth]{figures/hist_labelled.png}
-    \caption{A discrete 1D histogram of Barium (used just as an example), with two distinct Gaussian distributions representative of the accreted and in situ populations. This plot has been labelled with diagramatic indicators of the values of mean ($\mu_1$ and $\mu_2$) and standard deviation ($\sigma_1$ and $\sigma_2$) which are used in this project to quantify the separation between populations.}
-    \label{fig:hist_labels}
-\end{figure}
-
-To determine the positions of the sequences and subsequent separation of data, we fit a bimodal Gaussian model to the data, for each element. These values are tabulated in Table.~\ref{tab:r_values_simulation}, along with the calculated r-value.\par 
-
-\textbf{Key Takeaway:} The data is in the form of a Gaussian model, which could be used to determine the standard deviations and means of both populations, and quantify the separation significance. 
-
-
-% We then split the dataset for this particular into 2 and calculated 16th, 50th, and 84th percentiles in order to recover a more robust mean and standard deviation (and monitor our assumption of a Gaussian distribution).
-% \SB{We list the values of 16th, 50th, and 84th percentiles as well as the resulting $r$ values in Tab.~\ref{tab:r_values_simulation}.}
-
-\input{tables/separation_significance_two_sequences} % \label{tab:r_values_simulation}
-
-\subsection{Assessing the influence of observational uncertainties}
-
-Having identified age-abundance plots as the clearest diagnostic tool of accreted stars, and having quantified our results, we now seek to determine what uncertainty limit is acceptable in our observations. We do this two-fold. Firstly, we test how much observational scatter $\sigma_{obs}$ is allowable, while still being able to tell apart the sequences with a confidence of 68\% or 95\% (r-values of at least 1 or 2). This is plotted in Fig.~\ref{fig:r_v_obs}, and quantified in Table \ref{tab:r_values_simulation}. It is clear that all elements have a relatively similar error allowance of 0.18 for 95\% confidence and 0.38 for 68\%. Comparing these values to GALAH data used in this study finds that most measured element uncertainties, but not all, fall below our calculated threshold. \par  
+Having identified age-abundance plots as the clearest diagnostic tool of accreted stars, and having quantified our results, we now seek to determine what uncertainty limit is acceptable in our observations. We do this two-fold. Firstly, we test how much observational scatter $\sigma_{obs}$ is allowable, while still being able to tell apart the sequences with a confidence of 68\% or 95\% (r-values of at least 1 or 2). This is plotted in Fig.~\ref{fig:r_v_obs}, and quantified in Tab.~\ref{tab:r_values_simulation}. It is clear that all elements have a relatively similar error allowance of 0.18 for 95\% confidence and 0.38 for 68\%. Comparing these values to GALAH data used in this study finds that most measured element uncertainties, but not all, fall below our calculated threshold. \par  
 We then must consider the second facet of uncertainty: the age uncertainties of the data. We expect the sequences will be significantly more difficult to distinguish in older stars with corresponding larger uncertainties. This is plotted in Fig.~\ref{fig:r_v_age}, using a subset of data within 4-5Gyr. This age subset is used as it is the range within which there is the clearest separation between the two populations in the simulated plots, shown in Figs. \ref{fig:BaHtime}a and \ref{fig:BaHtime}b. We see there is more deviation among elements than in Fig.~\ref{fig:r_v_obs}, but there remains a similar cut-off point where separation significance increases notably, at approximately 1Gyr. Because we are working within the age range of 4-5Gyr, this means that a 1Gyr uncertainty is equivalent to just over 20\%. We can see from the plot that we require an uncertainty of around 15\% before the r-value begins to increase, which is much lower than the age uncertainties we currently have from GALAH data. \par
 \textbf{Key Takeaway:} We are able to quantify the level of uncertainty (both in element and age measurements) allowable for clear populations, and find the GALAH data has sufficient element measurements, but significantly too high age uncertainties. 
 
@@ -519,6 +486,15 @@ I would strongly recommend that similar research is performed with other cosmolo
 % Moreover, I would strongly recommend similar research is performed with other cosmological simulations, preferably with varied chemistry and formation histories. This would enable researchers to observe exactly how different variables in the simulation affect outcomes. 
 % The main observational limitation to this project was simply measurement uncertainties, particularly in ages. If the errors corresponding to age measurements can be drastically reduced, plotting elements over time has the potential to be a great diagnostic tool for accreted stars. 
 
+\SB{Putting our work into greater context of extragalactic work \citep[e.g.][]{Pinna2019, Pinna2019b, Martig2021} and ongoing observational projects such as the large MUSE program GECKOS \citep{GECKOS2023}.}
+
+\begin{figure*}
+	\includegraphics[width=\textwidth]{figures/accretion_rates.pdf}
+    \caption{
+    \textbf{Relative contributions of Sequence 2 (panel a) and Sequence 3 (panel b) across the galactic area $R$ vs. $z$.} The observational footprint within the Milky Way is indicated with a pink. The larger coverage of $R$ vs. $z$ with bin sizes $1$ and $0.5\,\mathrm{kpc}$, respectively, is inspired by the extragalactic study by \citet[][their Fig.~16]{Martig2021}. For visual reasons, we only show bins with contributions above 10\% in panel b).
+    }
+    \label{fig:accretion_rate}
+\end{figure*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
