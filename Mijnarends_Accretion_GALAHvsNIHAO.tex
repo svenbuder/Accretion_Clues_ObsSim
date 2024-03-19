@@ -303,9 +303,10 @@ r_{12} (\sigma_{obs}) = \frac{|\mu_1 - \mu_2|}{\sqrt{\sigma_1^2 + \sigma_2^2 + 2
 \end{table*}
 
 \begin{itemize}
-    \item intrinsic scatter in {[X/H]} is larger ($\sim 0.1-0.4\,\mathrm{dex}$) for older stars as a result of larger change in this logarithmic scale when compared to youngest stars ($\sim 0.02-0.05\,\mathrm{dex}$).
+    \item intrinsic scatter in {[X/H]} is larger ($\sim 0.1-0.4\,\mathrm{dex}$) for older stars as a result of larger change in this logarithmic scale when compared to youngest stars ($\sim 0.02-0.05\,\mathrm{dex}$). Also shown in top rows of Fig.~\ref{fig:r12_for_sigmaobs}.
     \item Table~\ref{tab:tabular_separation_r12} shows us that the most significant separations $r_{12} > 10$ in the age-[X/H] space are expected among the youngest accreted stars.
     \item Separation significance decreases in order \input{tex_text/r12_sorted.tex}.
+    \item In the absence of age uncertainties, we would expect to tell apart Sequence 1 and 2 by $2\sigma$ for $\sigma_\mathrm{obs} < 0.15\,\mathrm{dex}$ (Fig.~\ref{fig:r12_for_sigmaobs}, bottom row).
 \end{itemize}
 
 
@@ -327,7 +328,7 @@ r_{12} (\sigma_{obs}) = \frac{|\mu_1 - \mu_2|}{\sqrt{\sigma_1^2 + \sigma_2^2 + 2
 \begin{figure}
 	\includegraphics[width=\columnwidth]{figures/accretion_rate.pdf}
     \caption{
-    \textbf{Major Caption.} Minor Caption.}
+    \textbf{Major Caption.} Minor Caption. Compare to \citet{Martig2021}.}
     \label{fig:accretion_rate}
 \end{figure}
 
@@ -342,7 +343,15 @@ The comparison of observed and simulated age-abundance plots is shown in Figs \r
 
 The stark difference in clarity of results between the uncertainty-free simulation data and the high-uncertainty GALAH data highlights the importance of reducing observation noise, and provides clear motivation for further investigation into these plots as diagnostic tools. Similar plots have been used already with GALAH data to identify accreted substructure in galaxies other than the Milky Way \citep{Martig2021}.
 
-
+\begin{figure}
+	\includegraphics[width=0.49\columnwidth]{figures/Ba_Fe_time.png}
+	\includegraphics[width=0.49\columnwidth]{figures/Ba_H_time.png}
+    \caption{
+    \textbf{Barium abundances, [Ba/Fe] in left panels and [Ba/H] in right panels, as a function of age in simulations (top) and observations (bottom).}
+    Although not entirely separate, it is clear that there are two different overdensities in sequeunces
+    }
+    \label{fig:BaHtime}
+\end{figure}
 
 \SB{Note interesting facts in Fig.~\ref{fig:Fe_H_lin_time}:
 \begin{itemize}
@@ -352,6 +361,12 @@ The stark difference in clarity of results between the uncertainty-free simulati
     \item Gap in stars also in observable space. Where are the GSE stars? 0.3 or below 0.1?
 \end{itemize}
 }
+
+\begin{figure}
+	\includegraphics[width=\columnwidth]{figures/Fe_H_lin_time.png}
+    \caption{Age-metallicity relation in logarithmic and linear space.}
+    \label{fig:Fe_H_lin_time}
+\end{figure}
 
 \par\textbf{Key Takeaway:} The abundance vs age plots are clearest when the abundance is relative to H rather than Fe. Establishing the relationships relative to the number density $N_X$ should also be explored in future work as they bear to potential to allow the tracing of trace linear and non-linear contributions through chemical yields (Fig.~\ref{fig:Fe_H_lin_time}).
 
@@ -575,7 +590,9 @@ The observational data used for this study is published by \citet{Buder2021} and
 
 All code to reproduce the analysis and figures can be accessed via \url{https://github.com/svenbuder/Accretion_Clues_ObsSim}.
 
-Simulated data can be retrieved from the authors upon reasonable request.
+\SB{The repository also includes the chemical and kinematic data of the simulated Milky Way analogue \texttt{g8.26e11} for last snapshot of the simulation for the observable footprint that were used for this study.}
+
+If you are using either of these data to follow up on this research, remember to give appropriate credit to the researchers who created and curated either data set, that is, at least to \citet{Buder2021} and \citet{Buck2021}.
 
 %%%%%%%%%%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%%%%%
 
