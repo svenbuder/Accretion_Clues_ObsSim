@@ -296,12 +296,19 @@ In this section, we are concerned with the significance of separation between th
 
 \begin{table*}
     \centering
-    \caption{\textbf{Mean values and standard deviations of {[X/H]} in different age bins for the three age-abundance sequences of the Milky Way analogue as identified in Eqs.~\ref{eq:sequence1}-\ref{eq:sequence3} as well as the separation significance $r_{12}$ between Sequence 1 and 2 as defined in Eq.~\ref{eq:r_value}.} Values are calculated for the observable footprint without observational noise if more than 10 particles are within a bin.}
+    \caption{\textbf{Mean values and standard deviations of {[X/H]} in different age bins for the three age-abundance sequences of the Milky Way analogue as identified in Eqs.~\ref{eq:sequence1}-\ref{eq:sequence3} as well as the separation significance $r_{12}$ between Sequence 1 and 2 as defined in Eq.~\ref{eq:r_value}.} Values are calculated for the observable footprint without observational noise if more than 10 particles are within a bin. We do not show Ne and P, as they are commonly not measured by stellar surveys.}
     % Note: Currently tiny font. Can move sigma values to next rows if tiny font is not accepted.
     \tiny
     \input{tables/tabular_separation_r12.tex}
     \label{tab:tabular_separation_r12}
 \end{table*}
+
+\begin{figure*}
+	\includegraphics[width=\textwidth]{figures/r12_for_sigmaobs.pdf}
+    \caption{
+    \textbf{Separation significance $r_{12}$ between Sequences 1 and 2 across different elements (panels) as a function of age bins (top panels) and added observational noise (bottom panels).} Lines are calculated for added observational noise in the top panels and different age bins in the bottom panels, respectively, as indicated in the legend. For reference, we also add the median observational noise of GALAH DR3 in the first column for each element.}
+    \label{fig:r12_for_sigmaobs}
+\end{figure*}
 
 For this purpose, we trace the distribution of abundances [X/H] for the three sequences defined by Eqs.~\ref{eq:sequence1}-\ref{eq:sequence3} in histograms across different age bins. In Fig.~\ref{fig:histograms_xh_in_age_bins_Mn}, we show the histograms for the different sequences in age bins of $0.5\,\mathrm{Gyr}$ above $8.5\,\mathrm{Gyr}$, the youngest age of stars in Sequence 2. The panels of each figure include further useful information. Following the color-scheme from Fig.~\ref{fig:three_sequences_traced}, they state the relative contribution of each sequence to the age bin in percent, followed by the median abundance as well as the difference to the $16^\mathrm{th}$ and $84^\mathrm{th}$ percentile. We note firstly that for the contribution of accreted stars is increasing from $8\%$ for $8.5-9.0\,\mathrm{Gyr}$ to $78\%$ for $12.5-13.0\,\mathrm{Gyr}$. In addition to the decrease of overall [Mn/H] towards older ages, we note that the scatter of both distributions increases from the youngest stars ($\sim 0.02-0.05\,\mathrm{dex}$) to the oldest ($\sim 0.1-0.4\,\mathrm{dex}$), while the distributions remain in a Gaussian shape for the most part, with larger tails towards lower [Mn/H] only noticeable for the oldest stars ($> 12.5\,\mathrm{Gyr}$).
 
@@ -320,20 +327,7 @@ Table~\ref{tab:tabular_separation_r12} shows that the most significant separatio
 
 Having determined the most suitable plots for identifying accreted populations in simulations, we now consider this problem from a more realistic perspective, and quantitatively determine how much noise we could allow for both abundance and age estimates to still be able to separate the sequences.
 
-To get an intuition for the influence of measurement noise of abundances, we test different ranges of abundance uncertainties of $\sigma_\mathrm{obs}~/~\mathrm{dex} \in [0.02, 0.05, 0.10, 0.20]$. Resulting values are listed in Tab.~\ref{tab:tabular_separation_r12_noise}, which also includes median uncertainties of the measurements for GALAH DR3 \citep{Buder2021}, ranging from $\sigma_\mathrm{GALAH} = 0.06$ for [Si/H] to $\sigma_\mathrm{GALAH} = 0.13$ for [O/H] and [V/H].
-
-
-
-\SB{CONTINUE HERE}
-
-
-
-
-
-\begin{itemize}
-    \item Tab.~\ref{tab:tabular_separation_r12_noise}
-    \item Fig.~\ref{fig:r12_for_sigmaobs}
-\end{itemize}
+To get an intuition for the influence of measurement noise on the separation significance of abundances, we test different ranges of abundance uncertainties of $\sigma_\mathrm{obs}$ as input for Eq.~\ref{eq:r_value}. The resulting values are visualised in Fig.~\ref{fig:r12_for_sigmaobs} and representative values listed in Tab.~\ref{tab:tabular_separation_r12_noise}, which also includes median uncertainties of the measurements for GALAH DR3 \citep{Buder2021}, ranging from $\sigma_\mathrm{GALAH} = 0.06$ for [Si/H] to $\sigma_\mathrm{GALAH} = 0.13$ for [O/H] and [V/H].
 
 \begin{table*}
     \centering
@@ -342,31 +336,19 @@ To get an intuition for the influence of measurement noise of abundances, we tes
     \label{tab:tabular_separation_r12_noise}
 \end{table*}
 
-\begin{figure*}
-	\includegraphics[width=\textwidth]{figures/r12_for_sigmaobs.pdf}
-    \caption{
-    \textbf{Separation significance $r_{12}$ between Sequences 1 and 2 across different elements (panels) as a function of age bins (top panels) and added observational noise (bottom panels).} Lines are calculated for added observational noise in the top panels and different age bins in the bottom panels, respectively, as indicated in the legend. For reference, we also add the median observational noise of GALAH DR3 in the first column for each element.}
-    \label{fig:r12_for_sigmaobs}
-\end{figure*}
-
-
-
-
-We then must consider the second facet of uncertainty: the age uncertainties of the data. We expect the sequences will be significantly more difficult to distinguish in older stars with corresponding larger uncertainties. This is plotted in Fig.~\ref{fig:age_sigma_vs_r}, using a subset of data within 4-5Gyr. This age subset is used as it is the range within which there is the clearest separation between the two populations in the simulated plots, shown in Figs. \ref{fig:BaHtime}a and \ref{fig:BaHtime}b. We see there is more deviation among elements than in Fig.~\ref{fig:r_v_obs}, but there remains a similar cut-off point where separation significance increases notably, at approximately 1Gyr. Because we are working within the age range of 4-5Gyr, this means that a 1Gyr uncertainty is equivalent to just over 20\%. We can see from the plot that we require an uncertainty of around 15\% before the r-value begins to increase, which is much lower than the age uncertainties we currently have from GALAH data.
-
-\textbf{Key Takeaway:} In the absence of age uncertainties, we would expect to tell apart Sequence 1 and 2 by more than $2\sigma$ for $\sigma_\mathrm{obs} < 0.15\,\mathrm{dex}$ for in-situ and accreted stars younger than $12\,\mathrm{Gyr}$ (Fig.~\ref{fig:r12_for_sigmaobs}, bottom row). We find that GALAH data has sufficient element measurement precision, but significantly too high age uncertainties.
+We then must consider the second facet of uncertainty: the age uncertainties of the data. We expect the sequences will be significantly more difficult to distinguish in older stars with corresponding larger uncertainties. This is plotted in Fig.~\ref{fig:age_sigma_vs_r}, using a subset of data within $8.5-10\,\mathrm{Gyr}$. This age subset is used as it is the range within which there is the clearest separation between the two populations in the simulated plots (Fig.~\ref{fig:r12_for_sigmaobs}).
 
 \begin{figure}
 	\includegraphics[width=\columnwidth]{figures/age_sigma_vs_r.png}
-    \caption{Separation significance $r$ against age uncertainty (in Gyr) for all elements. These plots were made using data in the time-span between 4 and 5 Gyr after formation. So a 1 Gyr uncertainty is just over 20\% uncertainty. The five elements in the right-side plot have notably higher r-values than those in the left plot. The figure clearly demonstrates the age uncertainty at which we can become quite confident that we are observing two separate populations.}
+    \caption{
+    \textbf{Separation significance $r_{12}$ against age uncertainty (in Gyr) for stars with ages between $8.5-10\,\mathrm{Gyr}$ for all elements.
+    } An age uncertainty of $2\,\mathrm{Gyr}$ uncertainty for this sample would correspond to just over 20\%.}
     \label{fig:age_sigma_vs_r}
 \end{figure}
 
-% This further motivates our second test of the influences of ages. Fig.~\ref{fig:age_sigma_vs_r} shows each element plotted with r-value against age uncertainty (in Gyr). These particular plots were created using data between \SB{4 and 5 Gyr - have to be adjusted to stellar age}, which means that a 1 Gyr uncertainty is equivalent to just over 20\%. From these plots, we can see that there is a fair amount of variance between the elements. Regardless, it is clear that at an uncertainty of around 1.25 Gyr (or 25\%) the r-value begins to increase. At the next interval of around 0.75 Gyr (or 15\%) there is a very rapid increase in confidence. This informs us that ideally, we are striving for an uncertainty of less than 15\%, which is significantly lower than the uncertainties we are working with at the moment.
+Because we are working within the age range of $8.5-10\,\mathrm{Gyr}$, this means that a $2\,\mathrm{Gyr}$ uncertainty is equivalent to just over 20\%. We can see from the plot that we require an uncertainty of less than 15\% to achieve the highest separation significance $r$-value.
 
-% \SB{I believe we should rather perform some MC simulations of relative abundance and age uncertainties. We can do that quite simple by multiplying the ages by a factor that is sampled from a normal distribution around 1 with a scatter value, e.g. 0.15 - is 0.15 corresponding to 15\% uncertainty?}
-
-Fig.~\ref{fig:nihao_with_scatter}
+Our tests on the influence of abundance and age uncertainties, however, neglects an important both are present at the same time in observations. Guided by our previous results on abundance and age uncertainties, and with the actual uncertainties of GALAH DR3 in mind, we therefore have added both noises to the properties of the simulated galaxy and replicated the age-[Fe/H] in Fig.~\ref{fig:nihao_with_scatter}. The figure shows the extremes of no noise on the left (Fig.~\ref{fig:nihao_with_scatter}a) and the actual observed Milky Way age-[Fe/H] relation in the Solar neighbourhood (Fig.~\ref{fig:nihao_with_scatter}f), with different realisations of noise in panels b (10\% age uncertainty, $0.025\,\mathrm{dex}$ noise on [Fe/H]), panels c (15\% for age, $0.05\,\mathrm{dex}$ for [Fe/H]), panels d (30\% for age, $0.075\,\mathrm{dex}$ for [Fe/H], and panels e (50\% for age, $0.15\,\mathrm{dex}$ for [Fe/H]).
 
 \begin{figure*}
 	\includegraphics[width=\textwidth]{figures/nihao_with_scatter.png}
@@ -376,6 +358,18 @@ Fig.~\ref{fig:nihao_with_scatter}
     }
     \label{fig:nihao_with_scatter}
 \end{figure*}
+Fig.~\ref{fig:nihao_with_scatter}
+
+
+\textbf{Key Takeaway:} In the absence of age uncertainties, we would expect to tell apart Sequence 1 and 2 by more than $2\sigma$ for $\sigma_\mathrm{obs} < 0.15\,\mathrm{dex}$ for in-situ and accreted stars younger than $12\,\mathrm{Gyr}$ (Fig.~\ref{fig:r12_for_sigmaobs}, bottom row). We find that GALAH data has sufficient element measurement precision, but significantly too high age uncertainties. When assessing only age uncertainties, we find a significant decrease in separation significance $r_{12}$, when we cannot select ages better than 20\% (or $2\,\mathrm{Gyr}$ for stars with ages $8.5-10\,\mathrm{Gyr}$).
+
+
+\SB{CONTINUE HERE}
+
+
+
+
+
 
 \textbf{Key Takeaways:} We can quantify the results and determine exactly what level of noise and age uncertainty is permissible to be able to separate the populations with 68\% and 95\% confidence. 
 
