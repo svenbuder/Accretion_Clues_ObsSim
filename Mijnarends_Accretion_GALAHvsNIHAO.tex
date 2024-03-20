@@ -314,18 +314,21 @@ Assuming no observational noise, we calculate $r_{12}$ based only on the means a
 
 Table~\ref{tab:tabular_separation_r12} shows that the most significant separations $r_{12} > 10$ in the age-[X/H] space are expected among the youngest accreted stars. The separation significance decreases in order \input{tex_text/r12_sorted.tex}.
 
-
-
-
-In the absence of age uncertainties, we would expect to tell apart Sequence 1 and 2 by $2\sigma$ for $\sigma_\mathrm{obs} < 0.15\,\mathrm{dex}$ (Fig.~\ref{fig:r12_for_sigmaobs}, bottom row).
-
-
-
-\textbf{Key Takeaway:} The intrinsic scatter in {[X/H]} is larger ($\sim 0.1-0.4\,\mathrm{dex}$) for older stars as a result of larger change in this logarithmic scale when compared to youngest stars ($\sim 0.02-0.05\,\mathrm{dex}$). This can also be seen in the top rows of Fig.~\ref{fig:r12_for_sigmaobs}. 
+\textbf{Key Takeaway:} The intrinsic scatter in {[X/H]} for both in-situ and accreted sequences is larger ($\sim 0.1-0.4\,\mathrm{dex}$) for older stars ($> 12\,\mathrm{Gyr}$) as a result of larger change in this logarithmic scale when compared to stars born at the younger age of $8.5-11.0\,\mathrm{Gyr}$ ($\sim 0.02-0.05\,\mathrm{dex}$). This would make the younger accreted stars a better candidate to trace the chemical enrichment history and infer progenitor masses than old stars. While most elements, with the exception of the less suitable Ba, showed a similarly large separation significance, the odd-Z elements P and Al would be slightly more preferable than the iron-peak and alpha-process elements, which all outperform the lightest simulated elements C, N, O, and Ne.
 
 \subsubsection{A more realistic picture: The influence of observational noise on age-{[X/H]} sequence} \label{sec:noise_influence}
 
-Having determined the most suitable plot for identifying accreted populations via the simulations, it is now important to consider the problem from a realistic perspective, and quantitatively determine how much noise we could allow for both abundance and age estimates to still be able to separate the sequences.
+Having determined the most suitable plots for identifying accreted populations in simulations, we now consider this problem from a more realistic perspective, and quantitatively determine how much noise we could allow for both abundance and age estimates to still be able to separate the sequences.
+
+To get an intuition for the influence of measurement noise of abundances, we test different ranges of abundance uncertainties of $\sigma_\mathrm{obs}~/~\mathrm{dex} \in [0.02, 0.05, 0.10, 0.20]$. Resulting values are listed in Tab.~\ref{tab:tabular_separation_r12_noise}, which also includes median uncertainties of the measurements for GALAH DR3 \citep{Buder2021}, ranging from $\sigma_\mathrm{GALAH} = 0.06$ for [Si/H] to $\sigma_\mathrm{GALAH} = 0.13$ for [O/H] and [V/H].
+
+
+
+\SB{CONTINUE HERE}
+
+
+
+
 
 \begin{itemize}
     \item Tab.~\ref{tab:tabular_separation_r12_noise}
@@ -349,11 +352,9 @@ Having determined the most suitable plot for identifying accreted populations vi
 
 
 
-\SB{CONTINUE HERE}
-
 We then must consider the second facet of uncertainty: the age uncertainties of the data. We expect the sequences will be significantly more difficult to distinguish in older stars with corresponding larger uncertainties. This is plotted in Fig.~\ref{fig:age_sigma_vs_r}, using a subset of data within 4-5Gyr. This age subset is used as it is the range within which there is the clearest separation between the two populations in the simulated plots, shown in Figs. \ref{fig:BaHtime}a and \ref{fig:BaHtime}b. We see there is more deviation among elements than in Fig.~\ref{fig:r_v_obs}, but there remains a similar cut-off point where separation significance increases notably, at approximately 1Gyr. Because we are working within the age range of 4-5Gyr, this means that a 1Gyr uncertainty is equivalent to just over 20\%. We can see from the plot that we require an uncertainty of around 15\% before the r-value begins to increase, which is much lower than the age uncertainties we currently have from GALAH data.
 
-\textbf{Key Takeaway:} We are able to quantify the level of uncertainty (both in element and age measurements) allowable for clear populations, and find the GALAH data has sufficient element measurements, but significantly too high age uncertainties. 
+\textbf{Key Takeaway:} In the absence of age uncertainties, we would expect to tell apart Sequence 1 and 2 by more than $2\sigma$ for $\sigma_\mathrm{obs} < 0.15\,\mathrm{dex}$ for in-situ and accreted stars younger than $12\,\mathrm{Gyr}$ (Fig.~\ref{fig:r12_for_sigmaobs}, bottom row). We find that GALAH data has sufficient element measurement precision, but significantly too high age uncertainties.
 
 \begin{figure}
 	\includegraphics[width=\columnwidth]{figures/age_sigma_vs_r.png}
