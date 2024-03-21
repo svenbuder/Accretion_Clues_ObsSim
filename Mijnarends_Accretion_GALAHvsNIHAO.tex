@@ -66,7 +66,7 @@ $^{5}$Leibniz-Institut f{\"u}r Astrophysik Potsdam (AIP), An der Sternwarte 16, 
 % Abstract of the paper
 \begin{abstract}
 %Context: 
-Galactic accretion, the process wherein smaller galaxies merge with the Milky Way, has been posited as a plausible explanation for several properties of the present-day Galaxy, including old stars on dynamically hot orbits and the bimodality of chemical composition within the stellar disk. Testing this hypothesis has so far been hindered by our ability to find and characterise accreted stars and their now-dispersed host galaxies. We will use a cosmological zoom-in simulation from the NIHAO suite, which now also traces the chemical composition of selected elements, to explore a simulated Milky Way analogue. Comparing the noise-free simulations to noisy and incomplete observations of our Milky Way, provided by the spectroscopic stellar GALAH survey, we assess several diagnostic plots in chemical and age-abundance space to identify accreted stars. We confirm the strength of chemical planes such as [Al/Fe] vs [Mg/Mn], but find a stronger potential for separating accretion events in the age-abundance plane. We therefore analyse the necessary quality of observations to capitalise on this premise and find a significant separation of accreted and in-situ sequences at 68\% confidence for 0.2 dex and 15\% abundance and age uncertainties, respectively. Once this uncertainty threshold is overcome, we will be able to better identify and characterise accretion in the Milky Way—confirming the need for more precise ages and abundances, as will be delivered by the second phase of the GALAH survey. 
+Galactic accretion, the process wherein smaller galaxies merge with the Milky Way, has been posited as a plausible explanation for several properties of the present-day Galaxy, including old stars on dynamically hot orbits and the bimodality of chemical composition within the stellar disk. Testing this hypothesis has so far been hindered by our ability to find and characterise accreted stars and their now-dispersed host galaxies. We will use a cosmological zoom-in simulation from the NIHAO suite, which now also traces the chemical composition of selected elements, to explore a simulated Milky Way analogue. Comparing the noise-free simulations to noisy and incomplete observations of our Milky Way, provided by the spectroscopic stellar GALAH survey, we assess several diagnostic plots in chemical and age-abundance space to identify accreted stars. We confirm the strength of chemical planes such as [Al/Fe] vs [Mg/Mn], but find a stronger potential for separating accretion events in the age-abundance plane. We therefore analyse the necessary quality of observations to capitalise on this premise and find a significant separation of accreted and in-situ sequences at 68\% confidence for 0.15 dex and 20\% abundance and age uncertainties, respectively. Once this uncertainty threshold is overcome, we will be able to better identify and characterise accretion in the Milky Way—confirming the need for more precise ages and abundances, as will be delivered by the second phase of the GALAH survey. 
 \end{abstract}
 % Select between one and six entries from the list of approved keywords.
 % Don't make up new ones.
@@ -160,6 +160,8 @@ In Sec.~\ref{sec:intro}, we have reviewed several observation-based plots that h
 \subsection{Location matters: Full galaxy versus Solar neighborhood} \label{sec:location}
 
 Naïvely, we initially plot the diagnostic plots of observers, namely the ratio of CCSN to SNIa via [Si/Fe] as function of iron abundance [Fe/H] in Fig.~\ref{fig:low_alpha_halo}a as well as the previously successful selection plane of [Al/Fe] vs. [Mg/Mn] in Fig.~\ref{fig:low_alpha_halo}b for the complete Milky Way analogue. In the absence of observational noise, it could be expected that areas of in-situ and accreted stars might clearly separate. To the contrary, the [Al/Fe] vs. [Mg/Mn] for the whole galaxy show seemingly even more scatter than the observations when inspecting the whole galaxy. Tracing the selection of accreted stars, that is, the stars with lower [Si/Fe] around $-0.90 < \mathrm{[Fe/H]} < -0.65$ with a selection box, does not lead to a unique location in the [Al/Fe] vs. [Mg/Mn] in Fig.~\ref{fig:low_alpha_halo}b when showing the extend of these stars with a convex hull outline.
+
+\SB{Regarding washed out appearence of [Fe/H] vs. [Si/Fe] in Fig.~\ref{fig:low_alpha_halo}a: compare to \citep[][their Fig.~A2]{Rey2023}}
 
 When applying a similar selection to NIHAO as would be expected from GALAH observations in the Solar vicinity (see Sec.~\ref{sec:sim_data}), both the [Fe/H] vs. [Si/Fe] plane in Fig.~\ref{fig:low_alpha_halo}d as well as the [Al/Fe] vs. [Mg/Mn] plane in Fig.~\ref{fig:low_alpha_halo}e cleared up significantly, with the accreted sequence becoming more prominent around $\mathrm{[Al/Fe]}$ of -0.3.
 
@@ -310,7 +312,31 @@ In this section, we are concerned with the significance of separation between th
     \label{fig:r12_for_sigmaobs}
 \end{figure*}
 
+\begin{table*}
+    \centering
+    \caption{\textbf{Separation significance $r_{12}$ between Sequence 1 and 2 in {[X/H]} for different elements (first column) and simulated observational noise (second column) across different age bins (third column onwards, in Gyr).} Values are calculated for the observable footprint according to Eq.~\ref{eq:r_value}.}
+    \input{tables/tabular_separation_r12_noise.tex}
+    \label{tab:tabular_separation_r12_noise}
+\end{table*}
+
 For this purpose, we trace the distribution of abundances [X/H] for the three sequences defined by Eqs.~\ref{eq:sequence1}-\ref{eq:sequence3} in histograms across different age bins. In Fig.~\ref{fig:histograms_xh_in_age_bins_Mn}, we show the histograms for the different sequences in age bins of $0.5\,\mathrm{Gyr}$ above $8.5\,\mathrm{Gyr}$, the youngest age of stars in Sequence 2. The panels of each figure include further useful information. Following the color-scheme from Fig.~\ref{fig:three_sequences_traced}, they state the relative contribution of each sequence to the age bin in percent, followed by the median abundance as well as the difference to the $16^\mathrm{th}$ and $84^\mathrm{th}$ percentile. We note firstly that for the contribution of accreted stars is increasing from $8\%$ for $8.5-9.0\,\mathrm{Gyr}$ to $78\%$ for $12.5-13.0\,\mathrm{Gyr}$. In addition to the decrease of overall [Mn/H] towards older ages, we note that the scatter of both distributions increases from the youngest stars ($\sim 0.02-0.05\,\mathrm{dex}$) to the oldest ($\sim 0.1-0.4\,\mathrm{dex}$), while the distributions remain in a Gaussian shape for the most part, with larger tails towards lower [Mn/H] only noticeable for the oldest stars ($> 12.5\,\mathrm{Gyr}$).
+
+\begin{figure*}
+	\includegraphics[width=\textwidth]{figures/nihao_with_scatter.png}
+    \caption{
+    \textbf{Comparison of age-metallicity relation for different scatter realisations for NIHAO simulations.}
+    \textbf{Panel a)} show NIHAO without scatter, \textbf{panels b-e} show realisations of the same plot with increasingly more scatter sampling. \textbf{Panel f} show the GALAH DR3 age-metallicity relationship for comparison.
+    }
+    \label{fig:nihao_with_scatter}
+\end{figure*}
+
+\begin{figure}
+	\includegraphics[width=\columnwidth]{figures/age_sigma_vs_r.png}
+    \caption{
+    \textbf{Separation significance $r_{12}$ against age uncertainty (in Gyr) for stars with ages between $8.5-10\,\mathrm{Gyr}$ for all elements.
+    } An age uncertainty of $2\,\mathrm{Gyr}$ uncertainty for this sample would correspond to just over 20\%.}
+    \label{fig:age_sigma_vs_r}
+\end{figure}
 
 To determine the significance of separation, we are inspired by the previous study by \citet{Lindegren2013}, who computed a separation significance $r$ based on the differences of mean abundances weighted by the combined standard deviation of abundances. Having convinced ourselves that the distributions are Gaussian in the previous section, we now expand their formulation by adding observational Gaussian noise as another additive to the weights and thus arrive at the formulation
 \begin{equation} \label{eq:r_value}
@@ -329,50 +355,21 @@ Having determined the most suitable plots for identifying accreted populations i
 
 To get an intuition for the influence of measurement noise on the separation significance of abundances, we test different ranges of abundance uncertainties of $\sigma_\mathrm{obs}$ as input for Eq.~\ref{eq:r_value}. The resulting values are visualised in Fig.~\ref{fig:r12_for_sigmaobs} and representative values listed in Tab.~\ref{tab:tabular_separation_r12_noise}, which also includes median uncertainties of the measurements for GALAH DR3 \citep{Buder2021}, ranging from $\sigma_\mathrm{GALAH} = 0.06$ for [Si/H] to $\sigma_\mathrm{GALAH} = 0.13$ for [O/H] and [V/H].
 
-\begin{table*}
-    \centering
-    \caption{\textbf{Separation significance $r_{12}$ between Sequence 1 and 2 in {[X/H]} for different elements (first column) and simulated observational noise (second column) across different age bins (third column onwards, in Gyr).} Values are calculated for the observable footprint according to Eq.~\ref{eq:r_value}.}
-    \input{tables/tabular_separation_r12_noise.tex}
-    \label{tab:tabular_separation_r12_noise}
-\end{table*}
+When comparing the figures of simulated noiseless age-[Fe/H] relation of the Milky Way analogue in Fig.~\ref{fig:nihao_with_scatter}a with the noisy but actually observed age-[Fe/H] relation of the Milky Way within the GALAH footprint of Fig.~\ref{fig:nihao_with_scatter}f, it becomes clear that the driving factor behind the uncertainty in this plane is actually the age uncertainties of the data. We expect the sequences will be significantly more difficult to distinguish in older stars with corresponding larger uncertainties. To get a better intuition, at which age uncertainties we gain or loose more diagnostic power, we are performing a simple experiment. Assume that we know that our best chances to distinguish the sequences is to look at the youngest accreted stars, that is, those within our data set closest to $8.5\,\mathrm{Gyr}$. Using the smallest reasonable age bin ($8.5-9\,\mathrm{Gyr}$), we estimate a reasonable separation of Sequence 2 to 1 by estimating the mean and standard deviation of the sequence and adding a reasonable observational noise of $\sigma_\mathrm{obs} = 0.05\,\mathrm{dex}$ to it. This allows us to discern Sequence 1 from 2 with a rather simple cut of stars being above or below $\mu_2 + 3 \sqrt{\sigma_1^2 + \sigma_\mathrm{obs}^2}$, as shown in Fig.~\ref{fig:age_sigma_vs_r}a for [Fe/H]. Using this abundance limit as the boundary, we can then test the distributions of Sequence 1 and 2 for increasingly large age bins of $0.5..(0.5)..4.0\,\mathrm{Gyr}$, as visualised with the selection boxes in Fig.~\ref{fig:age_sigma_vs_r}a. Performing this experiment for the various elements, we reach the distributions of $r_{12}$ in Figs.~\ref{fig:age_sigma_vs_r}a and \ref{fig:age_sigma_vs_r}b with increasing age bins size (which we equate with twice the age uncertainty).
 
-We then must consider the second facet of uncertainty: the age uncertainties of the data. We expect the sequences will be significantly more difficult to distinguish in older stars with corresponding larger uncertainties. This is plotted in Fig.~\ref{fig:age_sigma_vs_r}, using a subset of data within $8.5-10\,\mathrm{Gyr}$. This age subset is used as it is the range within which there is the clearest separation between the two populations in the simulated plots (Fig.~\ref{fig:r12_for_sigmaobs}).
+Because we are working within the age range of $8.5-12.5\,\mathrm{Gyr}$, this means that an age bin of $2\,\mathrm{Gyr}$ would be equivalent to an age uncertainty of just over 20\%. We can see from the plot that we require an uncertainty of less than 20\% to achieve the highest separation significance $r$-value.
 
-\begin{figure}
-	\includegraphics[width=\columnwidth]{figures/age_sigma_vs_r.png}
-    \caption{
-    \textbf{Separation significance $r_{12}$ against age uncertainty (in Gyr) for stars with ages between $8.5-10\,\mathrm{Gyr}$ for all elements.
-    } An age uncertainty of $2\,\mathrm{Gyr}$ uncertainty for this sample would correspond to just over 20\%.}
-    \label{fig:age_sigma_vs_r}
-\end{figure}
-
-Because we are working within the age range of $8.5-10\,\mathrm{Gyr}$, this means that a $2\,\mathrm{Gyr}$ uncertainty is equivalent to just over 20\%. We can see from the plot that we require an uncertainty of less than 15\% to achieve the highest separation significance $r$-value.
-
-Our tests on the influence of abundance and age uncertainties, however, neglects an important both are present at the same time in observations. Guided by our previous results on abundance and age uncertainties, and with the actual uncertainties of GALAH DR3 in mind, we therefore have added both noises to the properties of the simulated galaxy and replicated the age-[Fe/H] in Fig.~\ref{fig:nihao_with_scatter}. The figure shows the extremes of no noise on the left (Fig.~\ref{fig:nihao_with_scatter}a) and the actual observed Milky Way age-[Fe/H] relation in the Solar neighbourhood (Fig.~\ref{fig:nihao_with_scatter}f), with different realisations of noise in panels b (10\% age uncertainty, $0.025\,\mathrm{dex}$ noise on [Fe/H]), panels c (15\% for age, $0.05\,\mathrm{dex}$ for [Fe/H]), panels d (30\% for age, $0.075\,\mathrm{dex}$ for [Fe/H], and panels e (50\% for age, $0.15\,\mathrm{dex}$ for [Fe/H]).
-
-\begin{figure*}
-	\includegraphics[width=\textwidth]{figures/nihao_with_scatter.png}
-    \caption{
-    \textbf{Comparison of age-metallicity relation for different scatter realisations for NIHAO simulations.}
-    \textbf{Panel a)} show NIHAO without scatter, \textbf{panels b-e} show realisations of the same plot with increasingly more scatter sampling. \textbf{Panel f} show the GALAH DR3 age-metallicity relationship for comparison.
-    }
-    \label{fig:nihao_with_scatter}
-\end{figure*}
-Fig.~\ref{fig:nihao_with_scatter}
-
-
-\textbf{Key Takeaway:} In the absence of age uncertainties, we would expect to tell apart Sequence 1 and 2 by more than $2\sigma$ for $\sigma_\mathrm{obs} < 0.15\,\mathrm{dex}$ for in-situ and accreted stars younger than $12\,\mathrm{Gyr}$ (Fig.~\ref{fig:r12_for_sigmaobs}, bottom row). We find that GALAH data has sufficient element measurement precision, but significantly too high age uncertainties. When assessing only age uncertainties, we find a significant decrease in separation significance $r_{12}$, when we cannot select ages better than 20\% (or $2\,\mathrm{Gyr}$ for stars with ages $8.5-10\,\mathrm{Gyr}$).
-
+While being a possibly insightful gedankenexperiment, our tests on the influence of abundance and age uncertainties, however, neglect an important fact. That is, that both uncertainties are present at the same time in observations in more complicated ways and a selection like ours with prior knowledge of the sequence positions is not possible for the Milky Way. Guided by our previous results on abundance and age uncertainties, and with the actual uncertainties of GALAH DR3 in mind, we have added both noises to the properties of the simulated galaxy and replicated the age-[Fe/H] in Fig.~\ref{fig:nihao_with_scatter}, an idea that was also neatly implemented by \citet[][see their Fig.~12]{Renaud2021} to create more realistic noisy simulation data. Our figure shows the extremes of no noise on the left (Fig.~\ref{fig:nihao_with_scatter}a) and the actual observed Milky Way age-[Fe/H] relation in the Solar neighbourhood (Fig.~\ref{fig:nihao_with_scatter}f), with different realisations of noise in panels b (10\% age uncertainty, $0.025\,\mathrm{dex}$ noise on [Fe/H]), panels c (15\% for age, $0.05\,\mathrm{dex}$ for [Fe/H]), panels d (30\% for age, $0.075\,\mathrm{dex}$ for [Fe/H], and panels e (50\% for age, $0.15\,\mathrm{dex}$ for [Fe/H]).
 
 \SB{CONTINUE HERE}
 
+\SB{Discuss Fig.~\ref{fig:nihao_with_scatter}b-e!}
 
+\SB{For age vs. [Fe/H] uncertainty: Z-like shape from \cite{Sahlholdt2022} later also found by \citet{Xiang2022}}
 
+\SB{Best comparison in [X/H] direction would require largers scatter $\sigma_\mathrm{[Fe/H]}> 0.15\,\mathrm{dex}$ for simulation to match observed scatter. Suggests that radial migration (which brings stars with larger [Fe/H] from the inner galaxy and lower [Fe/H] from the outer galaxy towards the observable footprint) is not as strong in this simulation.}
 
-
-
-\textbf{Key Takeaways:} We can quantify the results and determine exactly what level of noise and age uncertainty is permissible to be able to separate the populations with 68\% and 95\% confidence. 
-
+\textbf{Key Takeaway:} In the absence of age uncertainties, we would expect to tell apart Sequence 1 and 2 by more than $2\sigma$ for $\sigma_\mathrm{obs} < 0.15\,\mathrm{dex}$ for in-situ and accreted stars younger than $12\,\mathrm{Gyr}$ (Fig.~\ref{fig:r12_for_sigmaobs}, bottom row). We find that GALAH data has sufficient element measurement precision, but significantly too high age uncertainties. When assessing only age uncertainties, we find a significant decrease in separation significance $r_{12}$, when we cannot select ages better than 20\% (or $2\,\mathrm{Gyr}$ for stars with ages $8.5-10\,\mathrm{Gyr}$).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Discussion} \label{sec:discussion}
@@ -387,7 +384,7 @@ Fig.~\ref{fig:nihao_with_scatter}
 
 \SB{Again, it is important to note that the simulated galaxy may have different characteristics to our own Galaxy. As discussed, there are two clear streams that have been attributed as accreted and in situ, based on the assumption that the accreted stars would have been born in a smaller galaxy with less massive stars and therefore lower element abundances. This clarity occurs because we know the sizes of the two galaxies that merged. Depending on the size of the real merger in the Milky Way, there could be significantly more overlap between the accreted and in situ populations if the merger was more massive. Even within the simulated data, we see significant overlap in the kinematic and chemical characteristics of the three separate streams, which is clear in Fig \ref{fig:NaFe_MgMn_selection_Age_FeH_dissection}. This indicates that within the simulated data, and potentially the real Milky Way, there may be significant uncertainty in distinguishing between the accreted and in situ populations, using the dynamic or chemical information.}
 
-\SB{However, there is potential in using the simulations to ‘clean up’ the observational data. In assessment of Fig. \ref{fig:BaHtime}a and \ref{fig:BaHtime}b, we see large amounts of scatter in the observations. However, there is a hint of an overdensity toward the bottom right of the plot, which could be indicative of an accreted population. Applying the quality cute provided with the GALAH data had little effect on the clarity of this overdensity, but with better quality cuts, more time and expertise- and better data- this ‘hint’ could start looking more like what is shown in the observations.}
+\SB{However, there is potential in using the simulations to ‘clean up’ the observational data. We see large amounts of scatter in the observations. However, there is a hint of an overdensity toward the bottom right of the plot, which could be indicative of an accreted population. Applying the quality cute provided with the GALAH data had little effect on the clarity of this overdensity, but with better quality cuts, more time and expertise- and better data- this ‘hint’ could start looking more like what is shown in the observations.}
 
 \SB{Similar research should be performed with other cosmological simulations, preferably with varied chemistry and formation histories. This would enable researchers to observe exactly how different variables in the simulation affect outcomes. More importantly, the research was limited by the uncertainties present in the observations, especially in the ages. If the error margins corresponding to age measurements can be drastically reduced, we have found that plotting element abundance over age holds significant potential for the identification of accreted stars.}
 
@@ -417,8 +414,8 @@ Fig.~\ref{fig:age_xfe_xh_nxh},
 Fig.~\ref{fig:age_xfe_xh_nxh_galah},
 Fig.~\ref{fig:histograms_xh_in_age_bins_Mn},
 Fig.~\ref{fig:r12_for_sigmaobs},
-Fig.~\ref{fig:r_v_age},
-Fig.~\ref{fig:nihao_with_scatter}, and 
+Fig.~\ref{fig:nihao_with_scatter}, 
+Fig.~\ref{fig:age_sigma_vs_r}, and 
 Fig.~\ref{fig:accretion_rate}
 }
 
@@ -428,7 +425,7 @@ Fig.~\ref{fig:accretion_rate}
 \item We determined that although there were three clear population streams apparent in the simulated data, significant overlap appeared when these were plotted in terms of dynamical and chemical properties (Fig.~\ref{fig:three_sequences_traced}).
 \item Plotting elemental abundances against age however, proved fruitful, with very distinct streams representing accreted and in situ populations appearing in the simulation data. These clear streams were not as clear in the observation-based plots , as a result of massive uncertainties that come with the probabilistic nature of estimating stellar ages through isochrone fitting.
 \item Elemental abundances as relative to H (rather than Fe) produced more significant separations between in-situ and accreted sequences as a function of stellar age.
-\item Our tests of adding noise to simulated data suggest, that we will be able to more easily tell apart accreted structures, once we undergo a critical age uncertainty of 15\% and can measure elemental abundances [X/H] of accreted structures as good as $\sigma_\text{obs} \sim 0.40\,\mathrm{dex}$.
+\item Our tests of adding noise to simulated data suggest, that we will be able to more easily tell apart accreted structures, once we undergo a critical age uncertainty of 20\% and can measure elemental abundances [X/H] of accreted structures as good as $\sigma_\text{obs} \sim 0.40\,\mathrm{dex}$.
 \end{itemize}
 }
 
@@ -449,10 +446,22 @@ Fig.~\ref{fig:accretion_rate}
 \SB{Selection does not affect the age-metallicity relations, but definitely the [Al/Fe] vs. [Mg/Mn] plane! Just because don't something in one the planes does not mean it's not there!}
 
 
-\SB{These observations of stellar and gaseous components complement the advancements from the modelling perspective, where recent studies have found significant impacts of massive mergers on the cold gas metallicity gradients \citep{Buck2023}. \citet{Buck2023} analyse the impact of mergers on the abundance gradients for example in the age-metallicity relation. Also cite Agertz etc.}
+\SB{These observations of stellar and gaseous components complement the advancements from the modelling perspective, where recent studies have found significant impacts of massive mergers on the cold gas metallicity gradients \citep{Buck2023}. \citet{Buck2023} analyse the impact of mergers on the abundance gradients for example in the age-metallicity relation.}
 
+\SB{\textsc{VINTERGATAN} simulations by \citep{Agertz2021} and \citep{Renaud2021, Renaud2021b}}
 
-% Overall, reducing uncertainties in ages is a difficult task that may take a long time, but as data and techniques continue to improve these values, there is much potential in using plots of elemental abundances over time as a diagnostic tool for accreted stars.
+\SB{especially \textsc{VINTERGATAN} II \citep{Renaud2021} is focused on the accreted stars. Their accreted stars do, when inspecting their Fig.~4, appear to have higher [$\upalpha$/Fe] compared to the in-situ stars, a behaviour that we do not find in our Milky Way analogue (Fig.~\ref{fig:three_sequences_traced}i) or the Milky Way itself. That said, we believe that in this case the definition of \textit{accreted} may vary slightly, as in them using stars born outside, whereas we refer to a whole sequence of stars born outside - an impression based on the comparison of their age-[Fe/H] relation without a secondary sequence and our Milky Way analogue with a clear secondary sequence.}
+
+\SB{No clear indication of stars formed in the outer disk as in \citet[][see their Fig.~8]{Renaud2021b}}
+
+\SB{\citep{Renaud2022}: "Starbursts, i.e. episodes of fast star formation, are connected with the onset of tidal compression, itself induced by mergers. However, this compression becomes strong enough to trigger starbursts only after the formation of the galactic disc."}
+
+\SB{\citep{Rey2023}: \textsc{VINTERGATAN}-GM: The cosmological imprints of early mergers on Milky-Way-mass galaxies: smaller vs. larger mergers at $z=2$ (especially their Fig.~5 and their Fig.~A2 - reference to the [Si/Fe] vs. [Fe/H] picture from \citep[][their Fig.~A2]{Rey2023})}
+\SB{\citep{Rey2023} cosmological mergers -> changing impact of GSE-like mergers towards smaller or larger! If much larger: you get a very different looking galaxy -> constraint in itself (you cannot make the sausage indefinitely large, see their Fig.~5: you typically get ) -> create $V_R$ vs. $V_\phi$}
+
+\SB{\citep{Deason2024} Review}
+
+\SB{\textsc{HESTIA} simulations and the effect of mergers \citep{Khoperskov2023}, the accreted component \citep{Khoperskov2023b}, and the chemical abundance relations for accreted and in-situ stars \citep{Khoperskov2023c}}
 
 \section*{Acknowledgements}
 
