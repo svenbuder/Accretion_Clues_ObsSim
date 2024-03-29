@@ -112,7 +112,7 @@ We apply the following general quality and selection cuts to the data, firstly $
 
 While we have considered enforcing \textsc{bstep} age uncertainties below 50\%, we have decided against implementing a sharp limit, both to avoid complex influences\footnote{Of the \input{tex_text/age_above_8gyr.tex} stars above $8\,\mathrm{Gyr}$ \input{tex_text/age_above_8gyr_above50perc_ageunc}, \input{tex_text/age_above_8gyr_above40perc_ageunc}, and \input{tex_text/age_above_8gyr_above30perc_ageunc} have uncertainties above $50\%$, $40\%$, and $30\%$, respectively. Of the \input{tex_text/age_below_8gyr.tex} stars below $8\,\mathrm{Gyr}$ already \input{tex_text/age_below_8gyr_above50perc_ageunc.tex} have uncertainties above $50\%$.} in the selection function and because it does not significantly impact the stars with ages above $8\,\mathrm{Gyr}$.
 
-To allow better comparability with the simulations lateron (see Sec.~\ref{sec:location}), we also limit our sample to stars with Galactic latitude $\vert b \vert > 10\,\mathrm{deg}$ and distance $D_\varpi < 4.2\,\mathrm{kpc}$, the 95th distance percentile of GALAH DR3 \citep{Buder2021}. After applying all these cuts, our sample still consists of \input{tex_text/nr_stars_in_galah_after_cuts}stars, allowing a statistically meaningful comparison with theoretical predictions.
+To allow better comparability with the simulations lateron (see Sec.~\ref{sec:location}), we also limit our sample to stars with Galactic latitude $\vert b \vert > 10\,\mathrm{deg}$ and distance $D_\varpi < 4.2\,\mathrm{kpc}$ \citep[based on photogeometric distances from][]{BailerJones2021}, the 95th distance percentile of GALAH DR3 \citep{Buder2021}. After applying all these cuts, our sample still consists of \input{tex_text/nr_stars_in_galah_after_cuts}stars, allowing a statistically meaningful comparison with theoretical predictions.
 
 \subsection{Theoretical predictions from a NIHAO Zoom-in simulation}\label{sec:sim_data}
 
@@ -266,7 +266,7 @@ Given the various abundance distributions in the [Fe/H] vs. [X/Fe] space from Fi
     \label{fig:age_xfe_xh_nxh}
 \end{figure*}
 
-\subsubsection{Age-[X/Fe] or age-[X/H] or age-$N_{X/H}$?}
+\subsubsection{Age-[X/Fe] or age-[X/H] or age-$N_{X/H}$?} \label{sec:age_xfe_xh_nxh}
 
 In Fig.~\ref{fig:age_xfe_xh_nxh} we show the age-abundance distributions for six of the elements overlapping between NIHAO and GALAH, namely C, O, Mg, Al, Mn, and Ba. The other abundance trends are appended in Fig.~\ref{fig:appendix_xfe_xh_nx} as their trends liken those already shown in Fig.~\ref{fig:age_xfe_xh_nxh} and they thus do not add new insights.
 
@@ -369,42 +369,40 @@ Setting these concerns aside when looking at Fig.~\ref{fig:nihao_with_scatter}, 
 
 For completeness, we also want to note that the simulation at similar noise levels to GALAH DR3 shows a much tighter disk sequence than the actual Milky Way (compare the top of Figs.~\ref{fig:nihao_with_scatter}d~and~\ref{fig:nihao_with_scatter}e). This abundance spread would only be replicated if we were to add a noise of $\sigma_\mathrm{[Fe/H]}> 0.15\,\mathrm{dex}$ to the simulation. This suggests that the well-documented radial migration \citep[e.g.][]{Haywood2008b, Frankel2018} of more metal-rich stars from the inner Galaxy and more metal-poor stars from the outer Galaxy to the Solar vicinity is not happening at the same strength in the Milky Way analogue.
 
-\textbf{Key Takeaway:} When adding noise to the simulations, we see a significant de
-
-\SB{CONTINUE HERE}
-
-\textbf{Key Takeaway:} 
+\textbf{Key Takeaway:} Testing the uncertainties in the age-abundance planes independently and in concert, we find critical uncertainties of $\sigma_{[X/H]} = 0.15\,\mathrm{dex}$ and $\sigma_\mathrm{age} = 20\%$ above which we loose the ability to tell apart accreted and in-situ sequences with certainty. Adding noise at the level at current pioneering studies to the simulations confirms the qualitative impression of a ``Z-shaped structure'' \citep{Xiang2022} in the noisy age-[Fe/H] plane for two underlying sequences (Fig.~\ref{fig:nihao_with_scatter}b).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Discussion} \label{sec:discussion}
 
+The initial motivation of this research was to create a variety of abundance planes and compare them using both the simulated and observed data to determine the best abundance-abundance plots for identifying substructure that could be representative of an accreted population of stars. In this section, we therefore discuss not only the question which information reveals accreted structures best (Sec.~\ref{sec:discussion_best_information}, but also how comparable the simulation at hand is to the Milky Way - and what that means for the findings of our comparison; also in the context of galaxy evolution (Sec.~\ref{sec:discussion_how_comparable_are_nihao_and_milkyway}).
 
+\subsection{Which information reveals accreted structures best?} \label{sec:discussion_best_information}
 
-do significantly change the outcome of galaxy evolution and the properties that we observe in galaxies at lower redshift - most importantly our Milky Way - or if the. Simulations can provide us with important insights to understand if mergers are 
+In an evolving galaxy, the kinematic and dynamic information of stars that were born together is expected to change. This memory may not be completely lost throughout a galaxy's vivid evolution. This is exemplified by the many recovered structures \citep{Deason2024} and even metallicity gradients \cite{Khoperskov2023d} in velocity and energy-angular momentum space. Nonetheless, orbits are certainly expected to be blurred throughout evolution. Even within our simulated data, we see significant overlap in the kinematic characteristics of the three separate sequences (Fig.~\ref{fig:three_sequences_traced}). Depending on the size and time of mergers there could be significantly more overlap between accreted and in-situ populations.
 
+Chemical compositions and ages - although harder to infer - are expected to be more conserved in stellar atmospheres than dynamic properties, a paradigm of the idea of \textit{chemical tagging} \citep{FreemanBlandHawthorn2002}. Our analyses, in agreement with previous analyses \citep[e.g.][]{Khoperskov2023c, Rey2023}, however found that while stars that were born together may share similar chemistry, this chemistry does not have to be significantly different from other birth places for the light elements inspected in this study. This problem brings the study by \citet{Ness2018} to mind, who found it difficult to tell apart stars of the stellar disk with light element abundances for $0.3\%$ of their inspected field star pairs. Extending this study to heavy elements with GALAH, \citep{Manea2023} found that heavy elements help to decrease such doppelgänger rates by an additional factor of 6. The simulation of this study does only follow up Ba with the currently limited understanding of neutron-capture enhancement. Although we have highlighted the interesting observational pattern of age-[Ba/H] and age-$N_\mathrm{[Ba/H]}$ earlier (see Sec.~\ref{sec:age_xfe_xh_nxh} and the discussion of Figs.~\ref{fig:age_xfe_xh_nxh_galah}f, \ref{fig:age_xfe_xh_nxh_galah}l, and \ref{fig:age_xfe_xh_nxh_galah}s), this avenue needs to be explored in future studies - both observationally and through chemical evolution modelling.
 
+In some cases the chemical information of some structures (e.g. Sequence 3) is quite compact in abundance-abundance space (see Fig.~\ref{fig:three_sequences_traced}n for [Fe/H] vs. [Si/Fe]). A careful selection and combination may still provide a useful avenue to trace back such substructure that has lost its kinematic memory, even though not all chemical elements may provide useful insight (see e.g. for Al in Fig.~\ref{fig:three_sequences_traced}o).
 
+Again, it is important to note that the simulated galaxy may have different characteristics to our own Galaxy. As discussed, there are two clear streams that have been attributed as accreted and in situ, based on the assumption that the accreted stars would have been born in a smaller galaxy with less massive stars and therefore lower element abundances.
 
+\begin{figure*}
+	\includegraphics[width=\textwidth]{figures/accretion_rates.pdf}
+    \caption{
+    \textbf{Relative contributions of Sequence 2 (panel a) and Sequence 3 (panel b) across the galactic area $R$ vs. $z$.} The observational footprint within the Milky Way is indicated with a pink. The larger coverage of $R$ vs. $z$ with bin sizes $1$ and $0.5\,\mathrm{kpc}$, respectively, is inspired by the extragalactic study by \citet[][their Fig.~16]{Martig2021}. For visual reasons, we only show bins with contributions above 10\% in panel b).
+    }
+    \label{fig:accretion_rate}
+\end{figure*}
 
-\SB{The initial motivation of this research was to create a variety of abundance planes and compare them using both the simulated and observed data to determine the best abundance-abundance plots for identifying substructure that could be representative of an accreted population of stars. Upon doing so, and observing very little distinct substructure in the simulated plots, these methods were deemed insufficient to confidently report any results.}
+While the jury on the best information for identifying is still out, this study yet again underlines that the survey of the whole galaxy is important to identify smaller accretion events. While for example a non-negligible amount of stars of the accreted Sequence 2 can be found in the observable footprint (see Fig.~\ref{fig:accretion_rate}a), we find stars of Sequence 3 only far outside of the GALAH-like footprint at galactic heights of $\vert z \vert > 10\,\mathrm{kpc}$ (see Fig.~\ref{fig:accretion_rate}b). This area is being probed by the H3 Survey \citep{Conroy2019} in the actual Milky Way and has indeed found a significant amount of substructure, with more findings expected by the upcoming 4MOST halo surveys \citep{4MOST_HR_Halo, 4MOST_LR_Halo} as well as the 4MOST dwarf galaxies and streams survey \textit{4DWARFS} \citep{4DWARFS2023}.
 
-\SB{Due to the lack of potential observational uncertainties in the simulations, we expected to find significantly clearer substructure and distinct populations than had already been identified in observations \citep{Buder2022}. The fact that this wasn’t the case indicated a potential underlying problem in the theory behind this undertaking.}
+\subsection{How comparable is the NIHAO Milky Way analogue to the Milky Way and other galaxies?} \label{sec:discussion_how_comparable_are_nihao_and_milkyway}
 
-\SB{Beyond a lack of observational errors, one of the key advantages of the simulations is that we know the exact history of formation and accretion  of the simulated galaxy. Unfortunately, we do not yet have the same level of certainty surrounding our own Galaxy’s evolution. We know that the simulated Milky Way analogue experienced a merger event that occurred $5\,\mathrm{Gyr}$ after formation, when a galaxy around $10^9 M_{\odot}$ merged with an in situ galaxy of around $10^{10} M_{\odot}$, values that have been estimated to the order of magnitude by multiplying the number of star particles with their average stellar mass for each sequence of the simulation. Although we do not know the exact sizes or times of accretion events in the Milky Way, the GSE is estimated to be between $10^{8.7}$ and $10^{9.85}\,M_{\odot}$ \citep{Helmi2018,Naidu2020}, which highlights a possible discrepancy between the simulations and the observations.}
-
-\SB{The lack of reportable findings from comparing abundance-abundance planes led to a shift in focus. As discussed in Sec. \ref{sec:intro}, one of the key advantages to chemical tagging is the unchanging nature of stellar chemistry over time. This means that a star’s current chemical make-up is indicative of the time and place that it was born. Therefore plotting elemental abundance over time was hypothesised as a good indicator of accretion, as populations of different chemistry should emerge as the galaxy evolves. This was plotted and analysed in Section \ref{sec:Age-abundance}. We see three clear populations emerge in the simulations, highlighted in Fig \ref{fig:NaFe_MgMn_selection_Age_FeH_dissection}.}
-
-\SB{Again, it is important to note that the simulated galaxy may have different characteristics to our own Galaxy. As discussed, there are two clear streams that have been attributed as accreted and in situ, based on the assumption that the accreted stars would have been born in a smaller galaxy with less massive stars and therefore lower element abundances. This clarity occurs because we know the sizes of the two galaxies that merged. Depending on the size of the real merger in the Milky Way, there could be significantly more overlap between the accreted and in situ populations if the merger was more massive. Even within the simulated data, we see significant overlap in the kinematic and chemical characteristics of the three separate streams, which is clear in Fig \ref{fig:NaFe_MgMn_selection_Age_FeH_dissection}. This indicates that within the simulated data, and potentially the real Milky Way, there may be significant uncertainty in distinguishing between the accreted and in situ populations, using the dynamic or chemical information.}
-
-\SB{However, there is potential in using the simulations to ‘clean up’ the observational data. We see large amounts of scatter in the observations. However, there is a hint of an overdensity toward the bottom right of the plot, which could be indicative of an accreted population. Applying the quality cute provided with the GALAH data had little effect on the clarity of this overdensity, but with better quality cuts, more time and expertise- and better data- this ‘hint’ could start looking more like what is shown in the observations.}
-
-\SB{Similar research should be performed with other cosmological simulations, preferably with varied chemistry and formation histories. This would enable researchers to observe exactly how different variables in the simulation affect outcomes. More importantly, the research was limited by the uncertainties present in the observations, especially in the ages. If the error margins corresponding to age measurements can be drastically reduced, we have found that plotting element abundance over age holds significant potential for the identification of accreted stars.}
+- put Fig.~\ref{fig:accretion_rate} in context of GECKOS.
 
 \SB{Putting our work into greater context of extragalactic work \citep[e.g.][]{Pinna2019, Pinna2019b, Martig2021} and ongoing observational projects such as the large MUSE program GECKOS \citep{GECKOS2023}.}
 
-Any important comparisons to the results from \citet{Buck2023} that we should make?
-
-\subsection{How comparable are the NIHAO Milky Way analogue and the Milky Way?}
+\SB{Any important comparisons to the results from \citet{Buck2023} that we should make?}
 
 \begin{itemize}
     \item chemical evolution of simulations not fully accurate - but the MW analogue is also not exactly consistent with MW (Tab.~\ref{tab:shift_4to5gyr}).
@@ -424,16 +422,7 @@ Any important comparisons to the results from \citet{Buck2023} that we should ma
 
 
 
-Fig.~\ref{fig:accretion_rate}
-
-\begin{figure*}
-	\includegraphics[width=\textwidth]{figures/accretion_rates.pdf}
-    \caption{
-    \textbf{Relative contributions of Sequence 2 (panel a) and Sequence 3 (panel b) across the galactic area $R$ vs. $z$.} The observational footprint within the Milky Way is indicated with a pink. The larger coverage of $R$ vs. $z$ with bin sizes $1$ and $0.5\,\mathrm{kpc}$, respectively, is inspired by the extragalactic study by \citet[][their Fig.~16]{Martig2021}. For visual reasons, we only show bins with contributions above 10\% in panel b).
-    }
-    \label{fig:accretion_rate}
-\end{figure*}
-
+\SB{Similar research should be performed with other cosmological simulations, preferably with varied chemistry and formation histories. This would enable researchers to observe exactly how different variables in the simulation affect outcomes. More importantly, the research was limited by the uncertainties present in the observations, especially in the ages. If the error margins corresponding to age measurements can be drastically reduced, we have found that plotting element abundance over age holds significant potential for the identification of accreted stars.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -452,7 +441,7 @@ To get a quantitative handle on answering these questions, we need to trace back
     \item When tracing three sequences in the age-[Fe/H]-plane, we confirmed that their significant overlap appeared when these were plotted in terms of dynamical and chemical properties (Fig.~\ref{fig:three_sequences_traced}). However, in the age-[Fe/H]-plane these sequences were clearly separated. We therefore inspected the age-abundance relations in more detail in Sec.~\ref{sec:Age-abundance}. 
     \item Plotting elemental abundances against age, proved fruitful, with very distinct sequences of accreted and in situ populations appearing in the simulation data (Figs.~\ref{fig:age_xfe_xh_nxh} and \ref{fig:histograms_xh_in_age_bins_Mn}) with up to 12-sigma separation (Tab.~\ref{tab:tabular_separation_r12}) at the youngest ages.
     \item Such sequences are not as clear in the observational plots of GALAH DR3 (Fig.~\ref{fig:age_xfe_xh_nxh_galah}), as a result of massive uncertainties that come with the probabilistic nature of estimating stellar ages through isochrone fitting.
-    \item When testing the significance of separations of sequences in the age-[X/H] plane, we see the largest separations for the youngest accreted stars, even at larger observational noise (Fig.~\ref{fig:r12_for_sigmaobs} and Tab.~\ref{tab:tabular_separation_r12_noise}). We find that we loose the ability to tell sequences apart beyond 2-sigma for observational noise above $0.15\,\mathrm{dex}$ (Fig.~\ref{fig:r12_for_sigmaobs}) and age uncertainties above $25\%$ (Fig.~\ref{fig:age_sigma_vs_r}).
+    \item When testing the significance of separations of sequences in the age-[X/H] plane, we see the largest separations for the youngest accreted stars, even at larger observational noise (Fig.~\ref{fig:r12_for_sigmaobs} and Tab.~\ref{tab:tabular_separation_r12_noise}). We find that we loose the ability to tell sequences apart beyond 2-sigma for observational noise above $0.15\,\mathrm{dex}$ (Fig.~\ref{fig:r12_for_sigmaobs}) and age uncertainties above $20\%$ (Fig.~\ref{fig:age_sigma_vs_r}).
     \item With observational data below these uncertainties, we expect to see accreted and in-situ sequences separated (Fig.~\ref{fig:nihao_with_scatter}), as has been the case in the work by \citet{Xiang2022}.
     \item In this work, we have only analysed one Milky Way analogue with one clear in-situ sequence and one major as well as one minor accreted sequence. For the major accreted sequence, we find a stellar mass ratio of 1:3 at the time of last star formation in the accreted sequence (Fig.~\ref{fig:sequence_mass_ratios}).
 \end{itemize}
@@ -460,9 +449,12 @@ To get a quantitative handle on answering these questions, we need to trace back
 These insights provide clear avenues for following up - both in the observational data and other simulations beyond the one Milky Way analogue of this study:
 \begin{itemize}
     \item We can use the observed chemical evolution in both in-situ and accreted components - formed in systems with different masses and stellar mass distributions - to adjust the chemical yields and thus chemical evolution in simulations (see Fig.~\ref{fig:FeH_XFe} for example for Ba as a neutron-capture element).
+    \item This study underscores the imperative for more precise and accurate age determinations. While better precision can be expected from additional information by asteroseismic missions \citep[see e.g.][]{Miglio2017, Mackereth2021}, better accuracy can only be provided by more advanced stellar evolutionary models \citep[see also][]{Kim2002, Schuster2012} as an undeniable bottleneck of Galactic archaeology.
     \item We need to quantify the separation of sequences in other NIHAO galaxies \citep[see e.g.][]{Lu2022, Buck2023} as well as other simulations, like \textsc{VINTERGATAN} \citep{Renaud2021, Renaud2021b, Agertz2021}, \textsc{HESTIA} \citep{Khoperskov2023, Khoperskov2023b, Khoperskov2023c} and if possible beyond just age-[Fe/H] \citep{Khoperskov2023c}. Constraining several of the simulation parameters, for example by up- or down-scaling merger significance to the point where they do or do not resemble our Milky Way properties is another exciting avenue along this line \cite{Rey2023}.
-    \item It will be important to compare the stellar, gas, baryonic, and total masses, inclination angles, merger timescales and other properties of accreted galaxies in simulations to the impacts of massive mergers on the cold gas metallicity gradients \citep{Buck2023} as well as the correlation with observational plots that use age and/or chemistry. This will be complementary to the ongoing work in the kinematic/dynamic comparisons \citep[e.g.][]{Naidu2021, Khoperskov2023b} when reconstructing the complex pattern of accretion in the Milky Way \citep{Naidu2020} and trying to answer the question if accretion is responsibly for the change in star formation efficiency around the end of thick disk and onset of thin disk formation \citep{Conroy2022} - or just happening at the same vivid time in our Galaxy's evolution \citep[see the reviews by][for more extensive discussions]{Helmi2020, Deason2024}.
+    \item It will be important to compare the stellar, gas, baryonic, and total masses, inclination angles, merger timescales and other properties of accreted galaxies in simulations to the impacts of massive mergers on the cold gas metallicity gradients \citep{Buck2023} as well as the correlation with observational plots that use age and/or chemistry. This will be complementary to the ongoing work in the kinematic/dynamic comparisons \citep[e.g.][]{Naidu2021, Khoperskov2023b} when reconstructing the complex pattern of accretion in the Milky Way \citep{Naidu2020}.
 \end{itemize}
+
+Fuelled by the revolutionary orbit information of the \textit{Gaia} satellite \citep{Brown2016, Brown2018, Brown2021, Vallenari2023} with its unprecedented astrometric \citep{Lindegren2016, Lindegren2018, Lindegren2021a} and spectroscopic information from both \textit{Gaia} \citep{Katz2019, Katz2022} as well as ground-based surveys \citep[e.g.][]{SDSSDR17, Buder2021, Zhao2012, Conroy2019}, we are currently in the discovery phase of substructure in our Milky Way from observational data; with new structures being identified in diverse and creative ways \citep[e.g.][]{Naidu2021, Malhan2024}. This surge in discovery is undeniably thrilling, yet it is worth to keep in mind that our bigger goal remains to quantify the role of accretion on shaping our Galaxy. A major question continues to be, if accretion was responsibly for the change in star formation efficiency around the end of thick disk and onset of thin disk formation \citep{Conroy2022} - or just happening at the same vivid time in our Galaxy's evolution \citep[see the reviews by][for more extensive discussions]{Helmi2020, Deason2024}.
 
 \section*{Acknowledgements}
 
@@ -499,7 +491,7 @@ The observational data used for this study is published by \citet{Buder2021} and
 
 All code to reproduce the analysis and figures can be accessed via \url{https://github.com/svenbuder/Accretion_Clues_ObsSim}.
 
-\SB{The repository also includes the chemical and kinematic data of the simulated Milky Way analogue \texttt{g8.26e11} for last snapshot of the simulation for the observable footprint that were used for this study.}
+The repository also includes the chemical and kinematic data of the simulated Milky Way analogue \texttt{g8.26e11} for last snapshot of the simulation for the observable footprint that were used for this study.
 
 If you are using either of these data to follow up on this research, remember to give appropriate credit to the researchers who created and curated either data set, that is, at least to \citet{Buder2021, Buder2022} and \citet{Buck2020b, Buck2021}.
 
