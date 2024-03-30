@@ -39,7 +39,7 @@
 % The list of authors, and the short list which is used in the headers.
 % If you need two or more lines of authors, add an extra line using \newauthor
 \author[Buder, Mijnarends, and Buck]{
-S. Buder,$^{1,2}$\thanks{Corresponding e-mail: sven.buder@anu.edu.au}
+S. Buder,$^{1,2}$\thanks{E-mail: sven.buder@anu.edu.au}
 L. Mijnarends,$^{1,2}$ and
 T. Buck,$^{3,4,5}$
 \\
@@ -64,10 +64,8 @@ $^{5}$Leibniz-Institut f{\"u}r Astrophysik Potsdam (AIP), An der Sternwarte 16, 
 \maketitle
 
 % Abstract of the paper
-\begin{abstract}
-\SB{
-Galactic accretion, the process wherein smaller galaxies merge with the Milky Way, has been posited as a plausible explanation for several properties of the present-day Galaxy, including old stars on dynamically hot orbits and the bimodality of chemical composition within the stellar disk. Testing this hypothesis has so far been hindered by our ability to find and characterise accreted stars and their now-dispersed host galaxies. We will use a cosmological zoom-in simulation from the NIHAO suite, which now also traces the chemical composition of selected elements, to explore a simulated Milky Way analogue. Comparing the noise-free simulations to noisy and incomplete observations of our Milky Way, provided by the spectroscopic stellar GALAH survey, we assess several diagnostic plots in chemical and age-abundance space to identify accreted stars. We confirm the strength of chemical planes such as [Al/Fe] vs [Mg/Mn], but find a stronger potential for separating accretion events in the age-abundance plane. We therefore analyse the necessary quality of observations to capitalise on this premise and find a significant separation of accreted and in-situ sequences at 68\% confidence for 0.15 dex and 20\% abundance and age uncertainties, respectively. Once this uncertainty threshold is overcome, we will be able to better identify and characterise accretion in the Milky Way—confirming the need for more precise ages and abundances, as will be delivered by the second phase of the GALAH survey. 
-}
+\begin{abstract} % 200 words
+Exploring the marks left by galactic accretion in the Milky Way helps us understand how our Galaxy was formed. However, finding and studying accreted stars and the galaxies they came from has been challenging. This study uses a simulation from the NIHAO project, which now includes chemical compositions, to find better ways to spot these accreted stars. By comparing our findings with data from the GALAH spectroscopic survey, we show that looking at the relationship between star age and iron content ([Fe/H]) can clearly separate different groups of stars if the uncertainties in their chemical makeup are less than 0.15 dex and in their ages are less than 20\%. This method shows promise for studying the history of the Milky Way and other galaxies. Our work highlights how important it is to have accurate measurements of star ages and chemical content. It also shows how simulations can help us understand the complex process of galaxies merging and suggest how these events might relate to the differences we see between the Galaxy's thin and thick disk stars. This study provides a way to compare theoretical models with real observations, opening new paths for research in both our own Galaxy and beyond.
 \end{abstract}
 % Select between one and six entries from the list of approved keywords.
 % Don't make up new ones.
@@ -430,26 +428,18 @@ When tracing the stellar masses of the in-situ and accreted sequences (Fig.~\ref
     \label{fig:sequence_mass_ratios}
 \end{figure}
 
-\SB{
-\paragraph*{The (missing) separation of thin and thick disk:}
-\begin{itemize}
-    \item No real change in age-[Fe/H] relation of in-situ component (as in thin vs. thick disk).
-    \item The presence of a thick disk may not net necessarily be seen as a clear separation in [Fe/H] vs. alpha-enhancement, despite manifesting itself in the kinematics \citep[see e.g.][their Fig.~12]{MCM2013}.
-    \item This Milky Way analogue did only undergo one significant merger around $8.5\,\mathrm{Gyr}$ ago. We find an absence of a clearly chemically distinct disk with an more or less significant interruption in star formation and change in later chemical evolution of disk stars. A similar finding was made by \citet{MCM2013} where in the absence of early-on massive mergers, their thick disk was kinematically less hot with vertical velocity dispersions smaller by a factor of $\sim 2$ when compared to the Milky Way. Extending their conclusion into the chemical dimension, our analysis of only one(!) Milky Way analogue could lead to a similar conclusion as theirs, that is, that ``\textit{the Milky Way thick disk is unlikely to have been formed through a quiescent disk evolution}'' \citep{MCM2013}.
-\end{itemize}
-}
+\paragraph*{The (missing?) separation of thin and thick disk:}
+Contrary to the more more distinct sequences that were found by \cite{Nissen2020, Sahlholdt2022, Xiang2022} for thin and thick disk stars in the age-[Fe/H] relation, we do not see a significant change along the age-[Fe/H] relation of in-situ component (as in thin vs. thick disk). Similarly, the [Fe/H] vs. [Mg/Fe] sequence does not present itself as the clear bimodal one seen in the Milky Way \citep{Hayden2015} and other NIHAO simulations \citep{Buck2020, Buck2023}. The presence of a thick disk may not net necessarily be seen as a clear separation in [Fe/H] vs. alpha-enhancement, despite manifesting itself in the kinematics \citep[see e.g.][their Fig.~12]{MCM2013}.
 
-\SB{
-\paragraph*{The (missing) spread in the age-[Fe/H] relation of the disk:}
-\begin{itemize}
-    \item Point out missing spread or [Fe/H] at young ages, that is, missing radial migration \citep{Minchev2010, Loebman2011, Frankel2018}).
-    \item From 9.0-9.5, 8.5-9.0, and $8.0-8.5\,\mathrm{Gyr}$, we see a change of the over [Fe/H] from \input{tex_text/seq1_percentiles_sim_9.0_9.5} to \input{tex_text/seq1_percentiles_sim_8.0_8.5} to \input{tex_text/seq1_percentiles_sim_8.0_8.5} in the simulation. This compares to a change of \input{tex_text/percentiles_obs_9.0_9.5} to \input{tex_text/percentiles_obs_8.5_9.0} to \input{tex_text/percentiles_obs_8.0_8.5}, respectively\footnote{Here we report median values and half the difference between $16^\mathrm{th}$ and $84^\mathrm{th}$ percentiles. Assuming a Gaussian distribution, we would measure larger scatters with a qualitatively similar behaviour for the overall [Fe/H] values of \input{tex_text/seq1_mean_sigmas_sim_9.0_9.5},  \input{tex_text/seq1_mean_sigmas_sim_8.5_9.0}, and  \input{tex_text/seq1_mean_sigmas_sim_8.0_8.5} for the simulation and \input{tex_text/mean_sigmas_obs_9.0_9.5},  \input{tex_text/mean_sigmas_obs_8.5_9.0}, and \input{tex_text/mean_sigmas_obs_8.0_8.5} for GALAH DR3.}
-\end{itemize}
-}
+This Milky Way analogue did only undergo one significant merger around $8.5\,\mathrm{Gyr}$ ago. We find an absence of a clearly chemically distinct disk with an more or less significant interruption in star formation and change in later chemical evolution of disk stars. A similar finding was made by \citet{MCM2013} where in the absence of early-on massive mergers, their thick disk was kinematically less hot with vertical velocity dispersions smaller by a factor of $\sim 2$ when compared to the Milky Way. Extending their conclusion into the chemical dimension, our analysis of only one(!) Milky Way analogue could lead to a similar conclusion as theirs, that is, that ``\textit{the Milky Way thick disk is unlikely to have been formed through a quiescent disk evolution}'' \citep{MCM2013}.
 
-We acknowledge that the discussion of this particular section is incomplete and more comparisons could be done. However, we believe we have established that in terms of accretion, the simulation at hand can provide useful insight and we therefore conclude that further discussion about the comparability of simulation and observation (such as gas masses or the presence and influence of a bar or spiral arms) are beyond the scope of this work.
+\paragraph*{The (missing?) spread in the age-[Fe/H] relation of the young disk:}
 
-Similar research should be performed though with other cosmological simulations, preferably with varied chemistry and formation histories. This would enable researchers to observe exactly how different variables in the simulation affect outcomes. Such comparisons would not only be insightful for the Milky Way, but also observations of other galaxies \citep[compare for example figures by][to our Fig.~\ref{fig:accretion_rate}]{Pinna2019, Pinna2019b, Martig2021} and the ongoing observational projects such as the large MUSE program GECKOS \citep{GECKOS2023}.
+In Sec.~\ref{sec:discussion_zoom_at_mergertime}, we pointed out the low spread of [Fe/H] among young disk stars. From 9.0-9.5, 8.5-9.0, and $8.0-8.5\,\mathrm{Gyr}$, we see a change of the over [Fe/H] from \input{tex_text/seq1_percentiles_sim_9.0_9.5} to \input{tex_text/seq1_percentiles_sim_8.0_8.5} to \input{tex_text/seq1_percentiles_sim_8.0_8.5} in the simulation. This compares to a change of \input{tex_text/percentiles_obs_9.0_9.5} to \input{tex_text/percentiles_obs_8.5_9.0} to \input{tex_text/percentiles_obs_8.0_8.5}, respectively\footnote{Here we report median values and half the difference between $16^\mathrm{th}$ and $84^\mathrm{th}$ percentiles. Assuming a Gaussian distribution, we would measure larger scatters with a qualitatively similar behaviour for the overall [Fe/H] values of \input{tex_text/seq1_mean_sigmas_sim_9.0_9.5},  \input{tex_text/seq1_mean_sigmas_sim_8.5_9.0}, and  \input{tex_text/seq1_mean_sigmas_sim_8.0_8.5} for the simulation and \input{tex_text/mean_sigmas_obs_9.0_9.5},  \input{tex_text/mean_sigmas_obs_8.5_9.0}, and \input{tex_text/mean_sigmas_obs_8.0_8.5} for GALAH DR3.} This significantly lower spread of the simulation could specifically point towards a different formation history of disk stars in our simulation because of a much lower radial migration than in the actual Milky Way  \citep{Minchev2010, Loebman2011, Frankel2018}.
+
+We acknowledge that the discussion of this particular section is incomplete and more comparisons could be done. However, we believe we have established that in terms of accretion, the simulation at hand can provide useful insight and we therefore conclude that further discussion about the comparability of simulation and observation (such as gas masses or the presence and influence of a bar or spiral arms) are important next steps but beyond the scope of this work.
+
+Such research should be performed also with other cosmological simulations, preferably with varied chemistry and formation histories. This would enable researchers to observe exactly how different variables in the simulation affect outcomes. Such comparisons would not only be insightful for the Milky Way, but also observations of other galaxies \citep[compare for example figures by][to our Fig.~\ref{fig:accretion_rate}]{Pinna2019, Pinna2019b, Martig2021} and the ongoing observational projects such as the large MUSE program GECKOS \citep{GECKOS2023}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -471,7 +461,7 @@ To get a quantitative handle on answering these questions, we need to trace back
     \item Such sequences are not as clear in the observational plots of GALAH DR3 (Fig.~\ref{fig:age_xfe_xh_nxh_galah}), as a result of massive uncertainties that come with the probabilistic nature of estimating stellar ages through isochrone fitting.
     \item When testing the significance of separations of sequences in the age-[X/H] plane, we see the largest separations for the youngest accreted stars, even at larger observational noise (Fig.~\ref{fig:r12_for_sigmaobs} and Tab.~\ref{tab:tabular_separation_r12_noise}). We find that we loose the ability to tell sequences apart beyond 2-sigma for observational noise above $0.15\,\mathrm{dex}$ (Fig.~\ref{fig:r12_for_sigmaobs}) and age uncertainties above $20\%$ (Fig.~\ref{fig:age_sigma_vs_r}).
     \item With observational data below these uncertainties, we expect to see accreted and in-situ sequences separated (Fig.~\ref{fig:nihao_with_scatter}), as has been the case in the work by \citet{Xiang2022}.
-    \item In this work, we have only analysed one Milky Way analogue with one clear in-situ sequence and one major as well as one minor accreted sequence. For the major accreted sequence, we find a stellar mass ratio of 1:3 at the time of last star formation in the accreted sequence (Fig.~\ref{fig:sequence_mass_ratios}).
+    \item In this work, we have only analysed one Milky Way analogue with one clear in-situ sequence and one major as well as one minor accreted sequence. For the major accreted sequence, we find a stellar mass ratio of 1:\input{tex_text/mass_ratio_8p2_to_8p6gyr_ago} at the time of last star formation in the accreted sequence (Fig.~\ref{fig:sequence_mass_ratios}).
 \end{itemize}
 
 \paragraph*{Future Research:}
@@ -480,7 +470,7 @@ These insights provide clear avenues for following up - both in the observationa
     \item We can use the observed chemical evolution in both in-situ and accreted components - formed in systems with different masses and stellar mass distributions - to adjust the chemical yields and thus chemical evolution in simulations (see Fig.~\ref{fig:FeH_XFe} for example for Ba as a neutron-capture element).
     \item This study underscores the imperative for more precise and accurate age determinations. While better precision can be expected from additional information by asteroseismic missions \citep[see e.g.][]{Miglio2017,Mackereth2021}, better accuracy can only be provided by more advanced stellar evolutionary models \citep[see also][]{Kim2002, Schuster2012} as an undeniable bottleneck of Galactic archaeology.
     \item We need to quantify the separation of sequences in other NIHAO galaxies \citep[see e.g.][]{Lu2022, Buck2023} as well as other simulations, like \textsc{VINTERGATAN} \citep{Renaud2021, Renaud2021b, Agertz2021}, \textsc{HESTIA} \citep{Khoperskov2023, Khoperskov2023b, Khoperskov2023c} and if possible beyond just age-[Fe/H] \citep{Khoperskov2023c}. Constraining several of the simulation parameters, for example by up- or down-scaling merger significance to the point where they do or do not resemble our Milky Way properties is another exciting avenue along this line \cite{Rey2023}.
-    \item It will be important to compare the stellar, gas, baryonic, and total masses, inclination angles, merger timescales and other properties of accreted galaxies in simulations to the impacts of massive mergers on the cold gas metallicity gradients \citep{Buck2023} as well as the correlation with observational plots that use age and/or chemistry. This will be complementary to the ongoing work in the kinematic/dynamic comparisons \citep[e.g.][]{Naidu2021, Khoperskov2023b} when reconstructing the complex pattern of accretion in the Milky Way \citep{Naidu2020}.
+    \item Following up the correlation and causality of the spread in the age-[Fe/H] relation among stars born after the major merger (Fig.~\ref{fig:tracing_amr_regions_footprint}) is an exciting avenue of further research. It will be important to compare the stellar, gas, baryonic, and total masses, inclination angles, merger timescales, strength and emergence of bars and other properties of accreted galaxies in simulations to the impacts of massive mergers on the cold gas metallicity gradients \citep{Buck2023} as well as the correlation with observational plots that use age and/or chemistry. This will be complementary to the ongoing work in the kinematic/dynamic comparisons \citep[e.g.][]{Naidu2021, Khoperskov2023b} when reconstructing the complex pattern of accretion in the Milky Way \citep{Naidu2020}.
 \end{itemize}
 
 Fuelled by the revolutionary orbit information of the \textit{Gaia} satellite \citep{Brown2016, Brown2018, Brown2021, Vallenari2023} with its unprecedented astrometric \citep{Lindegren2016, Lindegren2018, Lindegren2021a} and spectroscopic information from both \textit{Gaia} \citep{Katz2019, Katz2022} as well as ground-based surveys \citep[e.g.][]{SDSSDR17, Buder2021, Zhao2012, Conroy2019}, we are currently in the discovery phase of substructure in our Milky Way from observational data; with new structures being identified in diverse and creative ways \citep[e.g.][]{Naidu2021, Malhan2024}. This surge in discovery is undeniably thrilling, yet it is worth to keep in mind that our bigger goal remains to quantify the role of accretion on shaping our Galaxy. A major question continues to be, if accretion was responsibly for the change in star formation efficiency around the end of thick disk and onset of thin disk formation \citep{Conroy2022} - or just happening at the same vivid time in our Galaxy's evolution \citep[see the reviews by][for more extensive discussions]{Helmi2020, Deason2024}. Our best way forward to answering this question is to connect the unique insights from resolved observations in the Milky Way with extragalactic observations and theoretical predictions from simulations \citep[see e.g.][]{GECKOS2023}.
@@ -493,8 +483,7 @@ This work was supported by the Australian Research Council Centre of Excellence 
 
 \section*{Facilities}
 
-\textbf{AAT with 2df-HERMES at Siding Spring Observatory:}
-The GALAH Survey is based data acquired through the Australian Astronomical Observatory, under programs: A/2013B/13 (The GALAH pilot survey); A/2014A/25, A/2015A/19, A2017A/18 (The GALAH survey phase 1), A2018 A/18 (Open clusters with HERMES), A2019A/1 (Hierarchical star formation in Ori OB1), A2019A/15 (The GALAH survey phase 2), A/2015B/19, A/2016A/22, A/2016B/10, A/2017B/16, A/2018B/15 (The HERMES-TESS program), and A/2015A/3, A/2015B/1, A/2015B/19, A/2016A/22, A/2016B/12, A/2017A/14, (The HERMES K2-follow-up program). This paper includes data that has been provided by AAO Data Central (datacentral.aao.gov.au).
+\textbf{AAT with 2df-HERMES at Siding Spring Observatory:} The GALAH Survey is based data acquired through the Australian Astronomical Observatory, under programs: A/2013B/13 (The GALAH pilot survey); A/2014A/25, A/2015A/19, A2017A/18 (The GALAH survey phase 1), A2018 A/18 (Open clusters with HERMES), A2019A/1 (Hierarchical star formation in Ori OB1), A2019A/15 (The GALAH survey phase 2), A/2015B/19, A/2016A/22, A/2016B/10, A/2017B/16, A/2018B/15 (The HERMES-TESS program), and A/2015A/3, A/2015B/1, A/2015B/19, A/2016A/22, A/2016B/12, A/2017A/14, (The HERMES K2-follow-up program). This paper includes data that has been provided by AAO Data Central (\url{datacentral.aao.gov.au}).
 
 \textbf{\Gaia: } This work has made use of data from the European Space Agency (ESA) mission \Gaia (\url{http://www.cosmos.esa.int/gaia}), processed by the \Gaia Data Processing and Analysis Consortium (DPAC, \url{http://www.cosmos.esa.int/web/gaia/dpac/consortium}). Funding for the DPAC has been provided by national institutions, in particular the institutions participating in the \Gaia Multilateral Agreement. 
 
@@ -536,8 +525,6 @@ If you are using either of these data to follow up on this research, remember to
 
 \section{Abundance trends of simulations that are not covered by GALAH observations} \label{sec:appendix_other_abundances}
 
-In this section, we append abundance-abundance figures (Fig.~\ref{fig:appendix_feh_xfe_nneps}) and age-abundance figures (Fig.~\ref{fig:appendix_xfe_xh_nx}) that were not shown in the main manuscript, mainly because the shown elements were either not measured in the GALAH Survey and would thus not provide further insight for the analyses of observations. In addition, we append Fig.~\ref{fig:tracing_amr_regions_whole}, which extends the observations of Fig.~\ref{fig:tracing_amr_regions_footprint} to the whole Milky Way analogue.
-
 \begin{figure*}
 	\includegraphics[width=\textwidth]{figures/Overview_FeH_XFe_Sim_only.png}
     \caption{
@@ -570,11 +557,9 @@ In this section, we append abundance-abundance figures (Fig.~\ref{fig:appendix_f
     \label{fig:tracing_amr_regions_disk}
 \end{figure*}
 
+In this section, we append abundance-abundance figures (Fig.~\ref{fig:appendix_feh_xfe_nneps}) and age-abundance figures (Fig.~\ref{fig:appendix_xfe_xh_nx}) that were not shown in the main manuscript, mainly because the shown elements were either not measured in the GALAH Survey and would thus not provide further insight for the analyses of observations. In addition, we append Fig.~\ref{fig:tracing_amr_regions_whole}, which extends the observations of Fig.~\ref{fig:tracing_amr_regions_footprint} to the whole Milky Way analogue.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 % Don't change these lines
-\bsp	% typesetting comment
+%\bsp	% typesetting comment
 \label{lastpage}
 \end{document}
-
-% End of mnras_template.tex
