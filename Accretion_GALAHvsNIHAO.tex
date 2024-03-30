@@ -398,18 +398,37 @@ While the jury on the best information for identifying is still out, this study 
 
 \subsection{How comparable is the NIHAO Milky Way analogue to the Milky Way and other galaxies?} \label{sec:discussion_how_comparable_are_nihao_and_milkyway}
 
-- put Fig.~\ref{fig:accretion_rate} in context of GECKOS.
+Throughout this study we have tried to quantify the usefulness of specific diagnostic plots based on noiseless simulations of a Milky Way analogue. In this section of the discussion, we are now concerned with the question, how similar the Milky Way analogue is comparable with the Milky Way and to which extend our conclusions can thus be applied to the Milky Way.
 
-\SB{Putting our work into greater context of extragalactic work \citep[e.g.][]{Pinna2019, Pinna2019b, Martig2021} and ongoing observational projects such as the large MUSE program GECKOS \citep{GECKOS2023}.}
 
-\SB{Any important comparisons to the results from \citet{Buck2023} that we should make?}
+
+
 
 \begin{itemize}
-    \item chemical evolution of simulations not fully accurate - but the MW analogue is also not exactly consistent with MW (Tab.~\ref{tab:shift_4to5gyr}).
+    \item As we acknowledged throughout this study (see e.g. Sec.~\ref{sec:sim_data}), the chemical evolution of Milky Way analogue simulations neither fully accurate nor consistent with the Milky Way. While the basic properties of the galaxy at hand agree with the Milky Way within the order of magnitude, we acknowledge that a different merger history may lead to different chemical compositions. More of concern for our study is the inaccuracy and incompleteness of chemical enrichment parameters, such as chemical yields. While we can overcome potential relative inaccuracies in element production by up- or down-scaling the total number densities of elements (which in a logarithmic abundance notation leads to simple shifts, as tabulated in Tab.~\ref{tab:shift_4to5gyr}), we cannot correct missing channels - for example for Ba or other heavy elements. This certainly means that the chemical evolution and predicted sequence separations have to be taken with a grain of salt and can only be used as indicators.
     \item Mass ratios of 1:\input{tex_text/mass_ratio_8_to_8p5gyr_ago} around $8-8.5\,\mathrm{Gyr}$. Stellar masses at that time are \input{tex_text/mass_seq2_8_to_8p5gyr_ago.tex}$\times10^9\,\mathrm{M_\odot}$ and \input{tex_text/mass_seq1_8_to_8p5gyr_ago.tex}$\times10^9\,\mathrm{M_\odot}$
     (Fig.~\ref{fig:sequence_mass_ratios}).
     \item Compare to the stellar mass estimates of $5\times10^{8}\,\mathrm{M_\odot}$ based on simulations and dynamics \citep{Naidu2021} in agreement with findings by \citet{Helmi2018} based on chemistry and simulations ($6\times 10^{8}\,\mathrm{M_\odot}$), but below the estimates of \citet{Feuillet2020} ($7-70\times10^{8}\,\mathrm{M_\odot}$). Halo mass ratios between 1:2.5 \citep{Naidu2020} and 1:4 \citep{Helmi2018}. Note that the latter also take dark matter masses into account \citep[e.g. $2\times10^{11}\,\mathrm{M_\odot}$ for][]{Naidu2020}.
 \end{itemize}
+
+
+
+No real change in age-[Fe/H] relation of in-situ component (as in thin vs. thick disk). 
+-> Zoom into the region of 7-9 Gyr and replicate the figures on desktop.
+
+Point out missing spread or [Fe/H] at young ages, that is, missing radial migration \citep{}):
+
+\cite{Minchev2010}
+
+The presence of a thick disk may not net necessarily be seen as a clear separation in [Fe/H] vs. alpha-enhancement, despite manifesting itself in the kinematics \citep[see e.g.][their Fig.~12]{MCM2013}.
+
+This Milky Way analogue did only undergo one significant merger around $8.5\,\mathrm{Gyr}$ ago. We find an absence of a clearly chemically distinct disk with an more or less significant interruption in star formation and change in later chemical evolution of disk stars. A similar finding was made by \citet{MCM2013} where in the absence of early-on massive mergers, their thick disk was kinematically less hot with vertical velocity dispersions smaller by a factor of $\sim 2$ when compared to the Milky Way. Extending their conclusion into the chemical dimension, our analysis of only one(!) Milky Way analogue could lead to a similar conclusion as theirs, that is, that ``the Milky Way thick disk is unlikely to have been formed through a quiescent disk evolution'' \citep{MCM2013}.
+
+On the formation of thick disks \citep{Minchev2015}
+
+Does the galaxy have a bar?
+
+Mention this as side note (beyond scope of this analysis) - warrants more detailed follow up that also looks into actual accretion history and total, stellar, gas mass etc.
 
 \begin{figure}
 	\includegraphics[width=\columnwidth]{figures/sequence_mass_ratios.pdf}
@@ -421,6 +440,26 @@ While the jury on the best information for identifying is still out, this study 
 \end{figure}
 
 \SB{Similar research should be performed with other cosmological simulations, preferably with varied chemistry and formation histories. This would enable researchers to observe exactly how different variables in the simulation affect outcomes. More importantly, the research was limited by the uncertainties present in the observations, especially in the ages. If the error margins corresponding to age measurements can be drastically reduced, we have found that plotting element abundance over age holds significant potential for the identification of accreted stars.}
+
+- put Fig.~\ref{fig:accretion_rate} in context of GECKOS.
+
+\SB{Putting our work into greater context of extragalactic work \citep[e.g.][]{Pinna2019, Pinna2019b, Martig2021} and ongoing observational projects such as the large MUSE program GECKOS \citep{GECKOS2023}.}
+
+\subsection{A closer look at age-[Fe/H] relation around the last major merger}
+
+Fig.~\ref{fig:tracing_amr_regions_footprint}.
+
+Fig.~\ref{fig:tracing_amr_regions_whole} in appendix shows the same age-[Fe/H] regions but for the whole Milky Way analogue. Fig.~\ref{fig:tracing_amr_regions_disk} traces also the younger disk.
+
+\begin{figure*}
+	\includegraphics[width=\textwidth]{figures/tracing_amr_regions_footprint.png}
+\caption{
+    \textbf{Tracing the chemistry of particles in different regions of the age-[Fe/H] relation for the whole Milky Way analogue.}
+    \textbf{Panel a)} shows the age-[Fe/H] relation as grey density plot with the five rectangles indicating the particles that are traced.
+    \textbf{Panel b)} shows the [Fe/H] vs. [Mg/Fe] plane with the density contours (or scatter points in the case of the intermediate pink region) of the different traced particles.
+    \textbf{Panel c)} shows the [Al/Fe] vs. [Mg/Mn] plane for the same particles.
+    }    \label{fig:tracing_amr_regions_footprint}
+\end{figure*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -505,8 +544,7 @@ If you are using either of these data to follow up on this research, remember to
 
 \section{Abundance trends of simulations that are not covered by GALAH observations} \label{sec:appendix_other_abundances}
 
-In this section, we append abundance-abundance figures (Fig.~\ref{fig:appendix_feh_xfe_nneps}) and age-abundance figures (Fig.~\ref{fig:appendix_xfe_xh_nx}) that were not shown in the main manuscript, mainly because the shown elements were either not measured in the GALAH Survey and would thus not provide further insight for the analyses of observations.
-
+In this section, we append abundance-abundance figures (Fig.~\ref{fig:appendix_feh_xfe_nneps}) and age-abundance figures (Fig.~\ref{fig:appendix_xfe_xh_nx}) that were not shown in the main manuscript, mainly because the shown elements were either not measured in the GALAH Survey and would thus not provide further insight for the analyses of observations. In addition, we append Fig.~\ref{fig:tracing_amr_regions_whole}, which extends the observations of Fig.~\ref{fig:tracing_amr_regions_footprint} to the whole Milky Way analogue.
 
 \begin{figure*}
 	\includegraphics[width=\textwidth]{figures/Overview_FeH_XFe_Sim_only.png}
@@ -526,6 +564,22 @@ In this section, we append abundance-abundance figures (Fig.~\ref{fig:appendix_f
     \textbf{Rows} show different notations of abundances, that is, logarithmic abundance {[X/Fe]} relative to iron (top row), logarithmic abundance {[X/H]} relative to hydrogen (middle row), and linear number density ratio {$N_\mathrm{X/H}$} (bottom row).
     }
     \label{fig:appendix_xfe_xh_nx}
+\end{figure*}
+
+\begin{figure*}
+	\includegraphics[width=\textwidth]{figures/tracing_amr_regions_whole.png}
+    \caption{
+    \textbf{Same as Fig.~\ref{fig:tracing_amr_regions_footprint} but for the whole Milky Way analogue.}
+    }
+    \label{fig:tracing_amr_regions_whole}
+\end{figure*}
+
+\begin{figure*}
+	\includegraphics[width=\textwidth]{figures/tracing_amr_regions_disk.png}
+    \caption{
+    \textbf{Same as Fig.~\ref{fig:tracing_amr_regions_footprint} but also tracing the youngest stars of the Milky Way analogue.} Note here the regions are separated at the end of the merger ($8.2\,\mathrm{Gyr}$), rather than before it ($9.0\,\mathrm{Gyr}$).
+    }
+    \label{fig:tracing_amr_regions_disk}
 \end{figure*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
