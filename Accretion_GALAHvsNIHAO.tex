@@ -38,9 +38,9 @@
 
 % The list of authors, and the short list which is used in the headers.
 % If you need two or more lines of authors, add an extra line using \newauthor
-\author[L. Mijnarends, S. Buder and T. Buck]{
-L. Mijnarends,$^{1,2}$\thanks{Corresponding e-mail: sven.buder@anu.edu.au}
-S. Buder,$^{1,2}$
+\author[Buder, Mijnarends, and Buck]{
+S. Buder,$^{1,2}$\thanks{Corresponding e-mail: sven.buder@anu.edu.au}
+L. Mijnarends,$^{1,2}$ and
 T. Buck,$^{3,4,5}$
 \\
 % List of institutions
@@ -52,7 +52,7 @@ $^{5}$Leibniz-Institut f{\"u}r Astrophysik Potsdam (AIP), An der Sternwarte 16, 
 }
 
 % These dates will be filled out by the publisher
-\date{Accepted DD MM 2023. Received DD MM 2023; in original form DD MM 2023}
+\date{Accepted DD MM 2024. Received DD MM 2024; in original form DD MM 2024}
 
 % Enter the current year, for the copyright statements etc.
 \pubyear{2023}
@@ -65,8 +65,9 @@ $^{5}$Leibniz-Institut f{\"u}r Astrophysik Potsdam (AIP), An der Sternwarte 16, 
 
 % Abstract of the paper
 \begin{abstract}
-%Context: 
+\SB{
 Galactic accretion, the process wherein smaller galaxies merge with the Milky Way, has been posited as a plausible explanation for several properties of the present-day Galaxy, including old stars on dynamically hot orbits and the bimodality of chemical composition within the stellar disk. Testing this hypothesis has so far been hindered by our ability to find and characterise accreted stars and their now-dispersed host galaxies. We will use a cosmological zoom-in simulation from the NIHAO suite, which now also traces the chemical composition of selected elements, to explore a simulated Milky Way analogue. Comparing the noise-free simulations to noisy and incomplete observations of our Milky Way, provided by the spectroscopic stellar GALAH survey, we assess several diagnostic plots in chemical and age-abundance space to identify accreted stars. We confirm the strength of chemical planes such as [Al/Fe] vs [Mg/Mn], but find a stronger potential for separating accretion events in the age-abundance plane. We therefore analyse the necessary quality of observations to capitalise on this premise and find a significant separation of accreted and in-situ sequences at 68\% confidence for 0.15 dex and 20\% abundance and age uncertainties, respectively. Once this uncertainty threshold is overcome, we will be able to better identify and characterise accretion in the Milky Way—confirming the need for more precise ages and abundances, as will be delivered by the second phase of the GALAH survey. 
+}
 \end{abstract}
 % Select between one and six entries from the list of approved keywords.
 % Don't make up new ones.
@@ -408,13 +409,7 @@ While mass stellar estimates can help us to quantify the mass ratios of previous
 In Fig.~\ref{fig:tracing_amr_regions_footprint}, we are thus zooming into the age-[Fe/H] relation around $8.6\pm0.4\,\mathrm{Gyr}$, the rough\footnote{Quantifying the beginning and end of a merger process with all its intricate dynamical and chemical interactions is difficult. However, our rough estimate of $8.6\pm0.4\,\mathrm{Gyr}$ is almost twice as precise as current best age precision uncertainties.} time of the last merger. Around this time, we notice not only the stop of star formation in the accreted sequence (see light blue region in Fig.~\ref{fig:tracing_amr_regions_footprint}a), but also the appearance of several particles with iron abundance between the in-situ and accreted sequence (see pink region in Fig.~\ref{fig:tracing_amr_regions_footprint}a). We thus trace several properties of the in-situ (dark and light orange) as well as accreted sequence (dark and light blue) before and throughout the merger, respectively. In particular, we notice a continuing increase of [Fe/H] between $9-9.5\,\mathrm{Gyr}$ to $8-8.5\,\mathrm{Gyr}$ for both sequences. For the in-situ sequence, we notice an increase from \input{tex_text/seq1_mean_sigmas_sim_9.0_9.5} to \input{tex_text/seq1_mean_sigmas_sim_8.0_8.5}. In particular, we find an increase of the [Fe/H] spread between $9-9.5\,\mathrm{Gyr}$ to $8-8.5\,\mathrm{Gyr}$ from 
 \input{tex_text/seq1_sigmas_sim_9.0_9.5} to \input{tex_text/seq1_sigmas_sim_8.0_8.5}, that is an almost 50\% increase. When calculating the same quantities for the whole galaxy (Fig.~\ref{fig:tracing_amr_regions_whole}), we find a smaller increase of [Fe/H] spread from \input{tex_text/seq1_percentiles_sim_all_9.0_9.5} to \input{tex_text/seq1_percentiles_sim_all_8.0_8.5}, that is only 17\%. For the accreted sequence, we find an increase from \input{tex_text/seq2_mean_sigmas_sim_9.0_9.5} to \input{tex_text/seq2_mean_sigmas_sim_8.0_8.5} with consistent scatter. We further find a decrease in the ratios of [Mg/Fe] and [Mg/Mn] in Figs.~\ref{fig:tracing_amr_regions_footprint}b and \ref{fig:tracing_amr_regions_footprint}c, whereas the ratio of [Al/Fe] stays rather constant for both sequences (Fig.~\ref{fig:tracing_amr_regions_footprint}c).
 
-Most interesting to us seem the pink particles of Fig.~\ref{fig:tracing_amr_regions_footprint} with [Fe/H] between the in-situ and accreted sequences. These arise throughout the merger with ages of $8.6\pm0.4\,\mathrm{Gyr}$ and are also exhibiting intermediate abundances in [Mg/Fe], [Al/Fe], and [Mg/Mn] in Figs.~\ref{fig:tracing_amr_regions_footprint}b~and~\ref{fig:tracing_amr_regions_footprint}c. Such stars have previously been identified as stars that formed further outside of the Solar vicinity  with larger angular momenta \citep[e.g.][]{Haywood2008b, Haywood2013, Buder2019}. We too find them to have larger angular momenta of \input{tex_text/LZ_4.tex} when compared to \input{tex_text/LZ_1.tex} for stars of the in-situ disk at the same time and even higher than the accreted stars with same ages (\input{tex_text/LZ_3}).
-
-
-
-
-Fig.~\ref{fig:tracing_amr_regions_disk} traces also the younger disk.
-
+Most interesting to us seem the pink particles of Fig.~\ref{fig:tracing_amr_regions_footprint} with [Fe/H] between the in-situ and accreted sequences. These arise throughout the merger with ages of $8.6\pm0.4\,\mathrm{Gyr}$ and are also exhibiting intermediate abundances in [Mg/Fe], [Al/Fe], and [Mg/Mn] in Figs.~\ref{fig:tracing_amr_regions_footprint}b~and~\ref{fig:tracing_amr_regions_footprint}c. Such stars have previously been identified as stars that formed further outside of the Solar vicinity  with larger angular momenta \citep[e.g.][]{Haywood2008b, Haywood2013, Buder2019}. We too find them to have larger angular momenta of \input{tex_text/LZ_4.tex} when compared to \input{tex_text/LZ_1.tex} for stars of the in-situ disk at the same time and even higher than the accreted stars with same ages (\input{tex_text/LZ_3}). The relative contribution of stars with these properties is, however, relative little with a stellar mass of only \input{tex_text/mass_4} compared to the amount of stars born in the dark and bright orange in-situ regions (\input{tex_text/mass_0} and \input{tex_text/mass_1}) and even the accreted stars with their decreasing star formation between dark and bright blue regions (\input{tex_text/mass_2} and \input{tex_text/mass_3}). Even when extending the analysis towards younger in-situ stars with lower [Fe/H] (see Fig.~\ref{fig:tracing_amr_regions_disk}) we continue to find relative low numbers of these stars, whereas they seem to be more numerous in the Milky Way's Solar vicinity \citep{Haywood2013, Hayden2015, Buder2019}, thus raising important question of similarity of Milky Way and Milky Way analogue which we discuss in the next subsection.
 
 \subsection{How comparable is the NIHAO Milky Way analogue to the Milky Way?} \label{sec:discussion_how_comparable_are_nihao_and_milkyway}
 
@@ -422,12 +417,9 @@ Throughout this study we have tried to quantify the usefulness of specific diagn
 
 \paragraph*{Chemical comparability:} As we acknowledged throughout this study (see e.g. Sec.~\ref{sec:sim_data}), the chemical evolution of Milky Way analogue simulations neither fully accurate nor consistent with the Milky Way. While the basic properties of the galaxy at hand agree with the Milky Way within the order of magnitude, we acknowledge that a different merger history may lead to different chemical compositions. More of concern for our study is the inaccuracy and incompleteness of chemical enrichment parameters, such as chemical yields. While we can overcome potential relative inaccuracies in element production by up- or down-scaling the total number densities of elements (which in a logarithmic abundance notation leads to simple shifts, as tabulated in Tab.~\ref{tab:shift_4to5gyr}), we cannot correct missing channels - for example for Ba or other heavy elements. This certainly means that the chemical evolution and predicted sequence separations have to be taken with a grain of salt and can only be used as indicators.
 
-\paragraph*{Merger ratio:}
-\begin{itemize}
-    \item Mass ratios of 1:\input{tex_text/mass_ratio_8p2_to_8p6gyr_ago} around $8.2-8.6\,\mathrm{Gyr}$. Stellar masses at that time are \input{tex_text/mass_seq2_8p2_to_8p6gyr_ago}$\times10^9\,\mathrm{M_\odot}$ and \input{tex_text/mass_seq1_8p2_to_8p6gyr_ago}$\times10^9\,\mathrm{M_\odot}$
-    (Fig.~\ref{fig:sequence_mass_ratios}).
-    \item Compare to the stellar mass estimates of $5\times10^{8}\,\mathrm{M_\odot}$ based on simulations and dynamics \citep{Naidu2021} in agreement with findings by \citet{Helmi2018} based on chemistry and simulations ($6\times 10^{8}\,\mathrm{M_\odot}$), but below the estimates of \citet{Feuillet2020} ($7-70\times10^{8}\,\mathrm{M_\odot}$). Halo mass ratios between 1:2.5 \citep{Naidu2020} and 1:4 \citep{Helmi2018}. Note that the latter also take dark matter masses into account \citep[e.g. $2\times10^{11}\,\mathrm{M_\odot}$ for][]{Naidu2020}.
-\end{itemize}
+\paragraph*{Merger mass ratio:} For the Milky Way, different estimates of the last major merger have been estimated through different comparisons. These include the stellar mass estimates of $5\times10^{8}\,\mathrm{M_\odot}$ based on simulations and dynamics \citep{Naidu2021} in agreement with findings by \citet{Helmi2018} based on chemistry and simulations ($6\times 10^{8}\,\mathrm{M_\odot}$), but below the estimates of \citet{Feuillet2020} ($7-70\times10^{8}\,\mathrm{M_\odot}$). Halo mass ratios have been estimated between 1:2.5 \citep{Naidu2020} and 1:4 \citep{Helmi2018}, when also taking into account dark matter masses \citep[e.g. $2\times10^{11}\,\mathrm{M_\odot}$ for][]{Naidu2020}.
+
+When tracing the stellar masses of the in-situ and accreted sequences (Fig.~\ref{fig:sequence_mass_ratios}), we find a similar stellar mass ratio of 1:\input{tex_text/mass_ratio_8p2_to_8p6gyr_ago} around $8.2-8.6\,\mathrm{Gyr}$ based on stellar masses of \input{tex_text/mass_seq2_8p2_to_8p6gyr_ago}$\times10^9\,\mathrm{M_\odot}$ and \input{tex_text/mass_seq1_8p2_to_8p6gyr_ago}$\times10^9\,\mathrm{M_\odot}$ or stars older than $8.6\,\mathrm{Gyr}$.
 
 \begin{figure}
 	\includegraphics[width=\columnwidth]{figures/sequence_mass_ratios.pdf}
@@ -438,20 +430,22 @@ Throughout this study we have tried to quantify the usefulness of specific diagn
     \label{fig:sequence_mass_ratios}
 \end{figure}
 
+\SB{
 \paragraph*{The (missing) separation of thin and thick disk:}
 \begin{itemize}
     \item No real change in age-[Fe/H] relation of in-situ component (as in thin vs. thick disk).
     \item The presence of a thick disk may not net necessarily be seen as a clear separation in [Fe/H] vs. alpha-enhancement, despite manifesting itself in the kinematics \citep[see e.g.][their Fig.~12]{MCM2013}.
     \item This Milky Way analogue did only undergo one significant merger around $8.5\,\mathrm{Gyr}$ ago. We find an absence of a clearly chemically distinct disk with an more or less significant interruption in star formation and change in later chemical evolution of disk stars. A similar finding was made by \citet{MCM2013} where in the absence of early-on massive mergers, their thick disk was kinematically less hot with vertical velocity dispersions smaller by a factor of $\sim 2$ when compared to the Milky Way. Extending their conclusion into the chemical dimension, our analysis of only one(!) Milky Way analogue could lead to a similar conclusion as theirs, that is, that ``\textit{the Milky Way thick disk is unlikely to have been formed through a quiescent disk evolution}'' \citep{MCM2013}.
 \end{itemize}
+}
 
+\SB{
 \paragraph*{The (missing) spread in the age-[Fe/H] relation of the disk:}
-
 \begin{itemize}
     \item Point out missing spread or [Fe/H] at young ages, that is, missing radial migration \citep{Minchev2010, Loebman2011, Frankel2018}).
     \item From 9.0-9.5, 8.5-9.0, and $8.0-8.5\,\mathrm{Gyr}$, we see a change of the over [Fe/H] from \input{tex_text/seq1_percentiles_sim_9.0_9.5} to \input{tex_text/seq1_percentiles_sim_8.0_8.5} to \input{tex_text/seq1_percentiles_sim_8.0_8.5} in the simulation. This compares to a change of \input{tex_text/percentiles_obs_9.0_9.5} to \input{tex_text/percentiles_obs_8.5_9.0} to \input{tex_text/percentiles_obs_8.0_8.5}, respectively\footnote{Here we report median values and half the difference between $16^\mathrm{th}$ and $84^\mathrm{th}$ percentiles. Assuming a Gaussian distribution, we would measure larger scatters with a qualitatively similar behaviour for the overall [Fe/H] values of \input{tex_text/seq1_mean_sigmas_sim_9.0_9.5},  \input{tex_text/seq1_mean_sigmas_sim_8.5_9.0}, and  \input{tex_text/seq1_mean_sigmas_sim_8.0_8.5} for the simulation and \input{tex_text/mean_sigmas_obs_9.0_9.5},  \input{tex_text/mean_sigmas_obs_8.5_9.0}, and \input{tex_text/mean_sigmas_obs_8.0_8.5} for GALAH DR3.}
 \end{itemize}
-
+}
 
 We acknowledge that the discussion of this particular section is incomplete and more comparisons could be done. However, we believe we have established that in terms of accretion, the simulation at hand can provide useful insight and we therefore conclude that further discussion about the comparability of simulation and observation (such as gas masses or the presence and influence of a bar or spiral arms) are beyond the scope of this work.
 
