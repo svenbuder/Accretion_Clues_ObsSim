@@ -1,6 +1,6 @@
 data/GALAH_DR3_*.fits
 NIHAO_g8.26e11_simulation_data_220118_original.fits
-Accretion_GALAHvsNIHAO.pdf
+Accretion_GALAHvsNIHAO*.pdf
 *.blg
 *.synctex.gz
 *.aux
