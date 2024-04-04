@@ -1,20 +1,20 @@
-# Finding Accreted Stars in the Milky Way: Clues from NIHAO Simulations (Mijnarends et al., in prep.)
+# Finding Accreted Stars in the Milky Way: Clues from NIHAO Simulations (Buder, Mijnarends, and Buck, 2024)
 
 ## Authors
 
-Luka Mijnarends (ANU & ASTRO 3D), Sven Buder (ANU & ASTRO 3D, sven.buder@anu.edu.au), Tobias Buck (IWR, ITA, AIP)
+Sven Buder (ANU & ASTRO 3D, sven.buder@anu.edu.au), Luka Mijnarends (ANU & ASTRO 3D), and Tobias Buck (IWR, ITA, AIP)
 
 ## Abstract
 
-Galactic accretion, the process wherein smaller galaxies merge with the Milky Way, has been posited as a plausible explanation for several properties of the present-day Galaxy, including old stars on dynamically hot orbits and the bimodality of chemical composition within the stellar disk. Testing this hypothesis has so far been hindered by our ability to find and characterise accreted stars and their now-dispersed host galaxies. We use a cosmological zoom-in simulation from the NIHAO suite, which now also traces the chemical composition of selected elements, to explore a simulated Milky Way analogue. Comparing the noise-free simulations to noisy and incomplete observations of our Milky Way, provided by the spectroscopic stellar GALAH survey, we assess several diagnostic plots in chemical and age-abundance space to identify accreted stars. We confirm the strength of chemical planes such as [Al/Fe] vs [Mg/Mn], but find a stronger potential for separating accretion events in the age-abundance plane. We analyse the necessary quality of observations to capitalise on this premise and find a significant separation of accreted and in-situ sequences at 68% confidence for 0.2 dex and 15% abundance and age uncertainties, respectively. Once this uncertainty threshold is overcome, we will be able to better identify and characterise accretion in the Milky Way—confirming the need for more precise ages and abundances, as will be delivered by the second phase of the GALAH survey.
+Exploring the marks left by galactic accretion in the Milky Way helps us understand how our Galaxy was formed. However, finding and studying accreted stars and the galaxies they came from has been challenging. This study uses a simulation from the NIHAO project, which now includes chemical compositions, to find better ways to spot these accreted stars. By comparing our findings with data from the GALAH spectroscopic survey, we confirm that the observationally established diagnostics of [Al/Fe] vs. [Mg/Mn] also show a separation of in-situ and accreted stars in the simulation, but stars from different accretion events tend to overlap in this plane even without observational uncertainties. Looking at the relationship between stellar age and linear or logarithmic abundances, such as [Fe/H], we can clearly separate different groups of these stars if the uncertainties in their chemical makeup are less than 0.15 dex and in their ages are less than 20\%. This method shows promise for studying the history of the Milky Way and other galaxies. Our work highlights how important it is to have accurate measurements of stellar ages and chemical content. It also shows how simulations can help us understand the complex process of galaxies merging and suggest how these events might relate to the differences we see between our Galaxy's thin and thick disk stars. This study provides a way to compare theoretical models with real observations, opening new paths for research in both our own Galaxy and beyond.
 
 ## How to Cite
 
 Please cite this work as follows:
 
 ```bibtex
-@article{Mijnarends2024,
-    author = {{Mijnarends}, Luka and {Buder}, Sven and {Buck}, Tobias},
+@article{Buder2024,
+    author = {{Buder}, Sven and {Mijnarends}, Luka and {Buck}, Tobias},
     title = {Finding Accreted Stars in the Milky Way: Clues from NIHAO Simulations},
     journal = {arXiv e-prints},
     volume = {abs/24MM.XXXXX},
