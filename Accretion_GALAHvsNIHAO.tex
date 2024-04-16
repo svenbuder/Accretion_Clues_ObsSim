@@ -84,7 +84,9 @@ From our vantage point within the disk-dominated region of the Milky Way, it is 
 
 The key advantage of chemical tagging, when compared to dynamical tagging via velocities or energies, is that the composition of heavy elements, once locked in the atmosphere of a star, is expected to be much more conserved in a dynamically evolving galaxy. Building upon this premise, \citet{Hawkins2015}, \citet{Das2020} and \citet{Buder2022} assessed a number of potential abundance combinations for chemically tagging accreted stars. Among the many elements in the periodic table, they identified especially Na, Al, and Cu as exceptionally useful, if they can be measured. Using these elements together with the purer tracers of core-collapse supernovae (CCSN), like Mg, and supernovae type Ia (SNIa), like Mn, they found the abundance planes of [Na/Fe] vs. [Mg/Mn] and [Al/Fe] vs. [Mg/Mn] to reveal accreted stars in rather isolated loci.
 
-Ages and abundances are, however, not directly observable and difficult to obtain from stellar spectra and any age-inference tool. Significant progress has been made in terms of the number and quality of observations, but we are still limited by our ability to observe a significant number of accreted stars with accurate and precise ages and abundances. While the GALAH survey can for example measure Na abundances, it is particularly difficult to measure Al abundances from its spectra. The observed stellar ages of GALAH DR3 are even more uncertain - with an average age uncertainty of $33\pm20\%$. Cosmological simulations, such as those used in this study, carry no age uncertainties and the particular simulation \citep{Buck2021} we use here, introduced in Sec.~\ref{sec:sim_data}, now also includes a wide range of chemical abundance information. This provides an exceptional data set for exploring both the theoretically expected impact of massive mergers on the chemical evolution of Milky Way-like galaxies \citep{Buck2020,Buck2023} as well as our observational diagnostic tools, without uncertainty margins to consider.
+Ages and abundances are, however, not directly observable and difficult to obtain from stellar spectra and any age-inference tool. Significant progress has been made in terms of the number and quality of observations, but we are still limited by our ability to observe a significant number of accreted stars with accurate and precise ages and abundances. While the GALAH survey can for example measure Na abundances, it is particularly difficult to measure Al abundances from its spectra. The observed stellar ages of GALAH DR3 are even more uncertain - with an average age uncertainty of $33\pm20\%$. Cosmological simulations, such as those used in this study, carry no age uncertainties and the particular simulation \citep{Buck2021} we use here, introduced in Sec.~\ref{sec:sim_data}, now also includes a wide range of chemical abundance information. 
+
+\SB{Cosmological simulation projects such as \textsc{FIRE} \citep{Bonaca2017, Horta2023}, \textsc{EAGLE} \citep{Mackereth2019}, \textsc{NIHAO-UHD} \citep{Buck2020,Buck2021,Buck2023}, \textsc{AURIGA} \citep[][]{Grand2020}, \textsc{VINTERGATAN} \citep{Agertz2021} or  \textsc{HESTIA} \citep{Khoperskov2023} allow us to follow a self-consistent growth and chemical enrichment history, which is particularly important for metal-poor stars formed at redshifts $z>1$. Simulation groups have made further huge progress in reaching the numbers of stellar particles necessary to split datasets in phase-space and abundance space. The latest versions of cosmological simulations thus provide an exceptional data set for exploring the changing chemodynamic environment of our Milky Way - which is neither in equilibrium \citep[see e.g.][]{Antoja2018, BlandHawthorn2019} nor had an isolated evolution \citep{Helmi2020}. We can thus study the theoretically expected impact of massive mergers on the chemical evolution of Milky Way-like galaxies \citep{Buck2020, Buck2021,Buck2023} as well as our observational diagnostic tools without uncertainty margins to consider.}
 
 The aim of this project is to assess diagnostic tools for identifying accreted structures from observations in the Milky Way by comparing them with theoretical predictions from cosmological simulations. This assessment will be based on our ability to observe and quantify clear patterns and trends. In addition to testing chemical tagging, that is, relying only on abundances, we also test the use of age-abundance planes and make predictions on the necessary uncertainties for the diagnostic properties when assuming the Milky Way analogue as ground truth.
 
@@ -155,7 +157,7 @@ In Sec.~\ref{sec:intro}, we have reviewed several observation-based plots that h
 
 \subsection{Location matters: Full galaxy versus Solar neighborhood} \label{sec:location}
 
-Naïvely, we initially plot the diagnostic plots of observers, namely the ratio of CCSN to SNIa via [Si/Fe] as function of iron abundance [Fe/H] in Fig.~\ref{fig:low_alpha_halo}a as well as the previously successful selection plane of [Al/Fe] vs. [Mg/Mn] in Fig.~\ref{fig:low_alpha_halo}b for the complete Milky Way analogue. In the absence of observational noise, it could be expected that areas of in-situ and accreted stars might clearly separate. To the contrary, the [Al/Fe] vs. [Mg/Mn] for the whole galaxy show seemingly even more scatter than the observations when inspecting the whole galaxy. Tracing the selection of accreted stars, that is, the stars with lower [Si/Fe] around $-0.90 < \mathrm{[Fe/H]} < -0.65$ with a selection box, does not lead to a unique location in the [Al/Fe] vs. [Mg/Mn] in Fig.~\ref{fig:low_alpha_halo}b when showing the extend of these stars with a convex hull outline. While this may seem surprising for observers at first sight, it has been seen previously also in the \textsc{HESTIA} \citep[][see their Fig.~12]{Khoperskov2023c} and \textsc{VINTERGATAN} \citep[][see their Fig.~A2]{Rey2023} simulations, when tracing different merger subpopulations.
+Naïvely, we initially plot the diagnostic plots of observers, namely the ratio of CCSN to SNIa via [Si/Fe] as function of iron abundance [Fe/H] in Fig.~\ref{fig:low_alpha_halo}a as well as the previously successful selection plane of [Al/Fe] vs. [Mg/Mn] in Fig.~\ref{fig:low_alpha_halo}b for the complete Milky Way analogue. In the absence of observational noise, it could be expected that areas of in-situ and accreted stars might clearly separate. To the contrary, the [Al/Fe] vs. [Mg/Mn] for the whole galaxy show seemingly even more scatter than the observations when inspecting the whole galaxy. Tracing the selection of accreted stars, that is, the stars with lower [Si/Fe] around $-0.90 < \mathrm{[Fe/H]} < -0.65$ with a selection box, does not lead to a unique location in the [Al/Fe] vs. [Mg/Mn] in Fig.~\ref{fig:low_alpha_halo}b when showing the extend of these stars with a convex hull outline. While this may seem surprising for observers at first sight, it has been seen previously also in the \textsc{Auriga} \citep[][]{Grand2020, Orkney2022}, \textsc{HESTIA} \citep[][see their Fig.~12]{Khoperskov2023c},  as well as the \textsc{VINTERGATAN} \citep[][see their Fig.~A2]{Rey2023} simulations, when tracing different merger subpopulations.
 
 When applying a similar selection to NIHAO as would be expected from GALAH observations in the Solar vicinity (see Sec.~\ref{sec:sim_data}), both the [Fe/H] vs. [Si/Fe] plane in Fig.~\ref{fig:low_alpha_halo}d as well as the [Al/Fe] vs. [Mg/Mn] plane in Fig.~\ref{fig:low_alpha_halo}e cleared up significantly, with the accreted sequence becoming more prominent around $\mathrm{[Al/Fe]}$ of -0.3.
 
@@ -167,7 +169,7 @@ When applying a similar selection to NIHAO as would be expected from GALAH obser
     \label{fig:FeH_XFe}
 \end{figure*}
 
-Intrigued by the difference in clarity of the chemical planes, we also show the two age-metallicity relations - or more accurately age-[Fe/H] planes - for the full Milky Way analogue in Fig.~\ref{fig:low_alpha_halo}c and the observational footprint in Fig.~\ref{fig:low_alpha_halo}f. The clearly arising separations of sequences in both selections motivates a more dedicated analysis of this plane, as will follow in Sec.~\ref{sec:Age-abundance}. Under this section's theme of identifying differences in the planes of full and limited sample selection, we notice a slightly larger scatter of abundances in Fig.~\ref{fig:low_alpha_halo}c, that is, a differences of iron abundances outside the Solar vicinity, as well as the disappearance of a metal-poor ($\mathrm{[Fe/H]} \sim -1.5$) sequence below $10\,\mathrm{Gyr}$ when limiting the selection to the GALAH footprint.
+Intrigued by the difference in clarity of the chemical planes, we also show the two age-metallicity relations - or more accurately age-[Fe/H] planes - for the full Milky Way analogue in Fig.~\ref{fig:low_alpha_halo}c and the observational footprint in Fig.~\ref{fig:low_alpha_halo}f. The clearly arising separations of sequences in both selections motivates a more dedicated analysis of this plane, as will follow in Sec.~\ref{sec:Age-abundance}. \SB{The tight sequences, however, also raise the question, if our Milky Way analogue is indeed similar to our Milky Way, which will be discussed in Sec.~\ref{sec:discussion_how_comparable_are_nihao_and_milkyway}.} Under this section's theme of identifying differences in the planes of full and limited sample selection, we notice a slightly larger scatter of abundances in Fig.~\ref{fig:low_alpha_halo}c, that is, a differences of iron abundances outside the Solar vicinity, as well as the disappearance of a metal-poor ($\mathrm{[Fe/H]} \sim -1.5$) sequence below $10\,\mathrm{Gyr}$ when limiting the selection to the GALAH footprint.
 
 \textbf{Key Takeaway:} Location matters, or better: a clever sample selection - even for simulations!
 
@@ -196,17 +198,17 @@ We now turn to abundance-abundance plots of [Al/Fe] vs. [Mg/Mn] that were alread
 
 When using the same axis limits for simulation and observation (Figs.~\ref{fig:NaFe_MgMn_selection_Age_FeH_dissection}a and c), we notice the strong offset and significantly smaller spread of abundances in the simulation, in agreement with our previous findings for abundances in Sec.~\ref{sec:feh_xfe}. When zooming into the relevant [Al/Fe] vs. [Mg/Mn] regime for the simulations, however, we notice a better qualitative agreement, in that we see two significant overdensities for simulated and observed galaxy. For the observations, we identify the lower and upper overdensity at [Mg/Mn] of 0.0 and 0.4. These have previously been confirmed as low- and high-$\upalpha$-sequence (or thin and thick disk), respectively \citep{Hawkins2015, Buder2022}. These sequences show similar Solar or even enhanced [Na/Fe] and [Al/Fe]. In contrast to this, the major overdensity in the simulation is found around (-0.25,-0.5) with tails reaching higher [Mg/Mn]. The minor overdensity is found towards higher [Mg/Mn] as well as lower [Al/Fe] - coinciding with the expected region of accreted stars \citep{Horta2021} which are less numerous in the observational data of GALAH DR3.
 
-To achieve a more realistic comparison, we add noise to the NIHAO simulation between $0.01$ and $0.04\,\mathrm{dex}$ the [Al/Fe] vs. [Mg/Mn] plane of NIHAO in Fig.~\ref{fig:mgmn_alfe_with_noise}. It has to be noted though, that this noise has to be compared to the separation of accreted and in-situ sequence, which is on the order of $0.07\,\mathrm{dex}$ for [Al/Fe] in the simulation (see black dashed lines in Fig.~\ref{fig:mgmn_alfe_with_noise}), compared to $0.18\,\mathrm{dex}$ in the Milky Way \citep[][see their Tab.~4]{Buder2022}. This means that a noise of $0.03\,\mathrm{dex}$ ($\Delta \sigma \sim 2.3$) in NIHAO has a similar effect as the noise of $0.08\,\mathrm{dex}$ in GALAH DR3, respectively.
+\SB{To achieve a more realistic comparison, we add noise to the NIHAO simulation between $0.01$ and $0.04\,\mathrm{dex}$ the [Al/Fe] vs. [Mg/Mn] plane of NIHAO in Fig.~\ref{fig:mgmn_alfe_with_noise}. It has to be noted though, that this noise has to be compared to the separation of accreted and in-situ sequence, which is on the order of $0.07\,\mathrm{dex}$ for [Al/Fe] in the simulation (see black dashed lines in Fig.~\ref{fig:mgmn_alfe_with_noise}), compared to $0.18\,\mathrm{dex}$ in the Milky Way \citep[][see their Tab.~4]{Buder2022}. This means that a noise of $0.03\,\mathrm{dex}$ ($\Delta \sigma \sim 2.3$) in NIHAO has a similar effect as the noise of $0.08\,\mathrm{dex}$ in GALAH DR3, respectively. When comparing the different panels, we see that the initially very clear separation of the acceeted and in-situ sequence indeed washes out to the point of current observational noise (between Figs.~\ref{fig:mgmn_alfe_with_noise}c and \ref{fig:mgmn_alfe_with_noise}d), where more sophisticated methods are needed to assign particles to either sequence, as done in the past \citep{Das2020, Buder2022}.}
 
 \begin{figure*}
 	\includegraphics[width=\textwidth]{figures/mgmn_alfe_with_noise.png}
     \caption{
-    \textbf{Logarithmic density distribution of particles in the [Al/Fe] vs. [Mg/Mn] plane when adding increasing levels of noise to the observational footprint of the NIHAO simulation.} Gray dashed lines indicate the Solar value, whereas the black dashed line indicates the visual centre in  [Al/Fe] of the accreted sequence at $-0.07\,\mathrm{dex}$. Panel titles indicate the added noise level, relating to a decrease of separation significance in [Al/Fe] down to $\Delta \sigma \sim 1.8$ for panel d). Color maps have been saturated at maximum values of 100 for all panels for increased contrast and better comparability.
-    }
+    \SB{\textbf{Logarithmic density distribution of particles in the [Al/Fe] vs. [Mg/Mn] plane when adding increasing levels of noise to the observational footprint of the NIHAO simulation.} Gray dashed lines indicate the Solar value, whereas the black dashed line indicates the visual centre in  [Al/Fe] of the accreted sequence at $-0.07\,\mathrm{dex}$. Panel titles indicate the added noise level, relating to a decrease of separation significance in [Al/Fe] down to $\Delta \sigma \sim 1.8$ for panel d). Color maps have been saturated at maximum values of 100 for all panels for increased contrast and better comparability.
+    }}
     \label{fig:mgmn_alfe_with_noise}
 \end{figure*}
 
-\textbf{Key Takeaway:} The abundance-abundance plot of [Al/Fe] vs. [Mg/Mn] show qualitative agreement with the observational data, but with significant abundance offsets and a more pronounced overdensity of accreted stars than the observations. This could indicate a more massive merger progenitor than the Milky Way's GSE or hint at our inability to actually measure Mg, Mn, and Al or Na abundances of accreted stars as well as reflect theoretical uncertainties in the yields of Mg, Mn, Al and Na.
+\textbf{Key Takeaway:} The abundance-abundance plot of [Al/Fe] vs. [Mg/Mn] show qualitative agreement with the observational data, but with significant abundance offsets and a more pronounced overdensity of accreted stars than the observations in the absence of noise. This could indicate a more massive merger progenitor than the Milky Way's GSE or hint at our inability to actually measure Mg, Mn, and Al or Na abundances of accreted stars as well as reflect theoretical uncertainties in the yields of Mg, Mn, Al and Na. When adding realistic uncertainties to this plane, the separation washes out to the point where an assignment to either sequence needs more advanced methods.
 
 \section{A new angle: age-abundance-distributions}\label{sec:Age-abundance}
 
@@ -473,9 +475,9 @@ Fuelled by the revolutionary orbit information of the \textit{Gaia} satellite \c
 
 \section*{Acknowledgements}
 
-We acknowledge the traditional owners of the land on which the AAT and ANU stand, the Gamilaraay, the Ngunnawal and Ngambri people. We pay our respects to elders past, present, and emerging and are proud to continue their tradition of surveying the night sky in the Southern hemisphere.
+We thank Martin~P.~Rey for insightful discussions and valuable comments on the manuscript.
 
-We would like to thank Martin~P.~Rey for helpful comments on the manuscript.
+We acknowledge the traditional owners of the land on which the AAT and ANU stand, the Gamilaraay, the Ngunnawal and Ngambri people. We pay our respects to elders past, present, and emerging and are proud to continue their tradition of surveying the night sky in the Southern hemisphere.
 
 This work was supported by the Australian Research Council Centre of Excellence for All Sky Astrophysics in 3 Dimensions (ASTRO 3D), through project number CE170100013. SB acknowledges support from the Australian Research Council under grant number DE240100150 which enabled SB to continue researching at the end of a fixed-term position and finalising this study. TB acknowledges funding from the Carl Zeiss Stiftung and support from the European Research Council under ERC-CoG grant CRAGSMAN-646955. We gratefully acknowledge the Gauss Centre for Supercomputing e.V. (\url{www.gaus s-centre.eu}) for funding this project by providing computing time on the GCS Supercomputer SuperMUC at Leibniz Supercomputing Centre (\url{www.lrz.de}). Simulations were partially computed with High Performance Computing resources at New York University, Abu Dhabi.
 
@@ -521,29 +523,13 @@ If you are using either of these data to follow up on this research, remember to
 % \newpage
 \appendix
 
-\section{Distribution and separation of Age-abundance sequences}
+\section{Additional figures and tables} 
 
-In this section, we append two large tables. Firstly, we append Tab.~\ref{tab:tabular_separation_r12} of mean values and standard deviations of {[X/H]} in different age bins for the three age-abundance sequences of the Milky Way analogue. Secondly, we append Tab.~\ref{tab:tabular_separation_r12_noise} of the separation significance $r_{12}$ between Sequence 1 and 2 in {[X/H]} for different elements and simulated observational noise across different age bins.
+We append abundance-abundance figures (Fig.~\ref{fig:appendix_feh_xfe_nneps}) and age-abundance figures (Fig.~\ref{fig:appendix_xfe_xh_nx}) that were not shown in the main manuscript, mainly because the shown elements were either not measured in the GALAH Survey and would thus not provide further insight for the analyses of observations.
 
-\begin{table*}
-    \centering
-    \caption{\textbf{Mean values and standard deviations of {[X/H]} in different age bins for the three age-abundance sequences of the Milky Way analogue as identified in Eqs.~\ref{eq:sequence1}-\ref{eq:sequence3} as well as the separation significance $r_{12}$ between Sequence 1 and 2 as defined in Eq.~\ref{eq:r_value}.} Values are calculated for the observable footprint without observational noise if more than 10 particles are within a bin. We do not show Ne and P, as they are commonly not measured by stellar surveys.}
-    % Note: Currently tiny font. Can move sigma values to next rows if tiny font is not accepted.
-    \tiny
-    \input{tables/tabular_separation_r12.tex}
-    \label{tab:tabular_separation_r12}
-\end{table*}
+Furthermore, we append two figures: Firstly, Tab.~\ref{tab:tabular_separation_r12} of mean values and standard deviations of {[X/H]} in different age bins for the three age-abundance sequences of the Milky Way analogue and secondly, Tab.~\ref{tab:tabular_separation_r12_noise} of the separation significance $r_{12}$ between Sequence 1 and 2 in {[X/H]} for different elements and simulated observational noise across different age bins.
 
-\begin{table*}
-    \centering
-    \caption{\textbf{Separation significance $r_{12}$ between Sequence 1 and 2 in {[X/H]} for different elements (first column) and simulated observational noise (second column) across different age bins (third column onwards, in Gyr).} Values are calculated for the observable footprint according to Eq.~\ref{eq:r_value}. For reference, we also add the median observational noise of GALAH DR3 in the first column for each element.}
-    \input{tables/tabular_separation_r12_noise.tex}
-    \label{tab:tabular_separation_r12_noise}
-\end{table*}
-
-\section{Abundance trends of simulations that are not covered by GALAH observations} \label{sec:appendix_other_abundances}
-
-In this section, we append abundance-abundance figures (Fig.~\ref{fig:appendix_feh_xfe_nneps}) and age-abundance figures (Fig.~\ref{fig:appendix_xfe_xh_nx}) that were not shown in the main manuscript, mainly because the shown elements were either not measured in the GALAH Survey and would thus not provide further insight for the analyses of observations. In addition, we append Fig.~\ref{fig:tracing_amr_regions_whole}, which extends the observations of Fig.~\ref{fig:tracing_amr_regions_footprint} to the whole Milky Way analogue.
+In addition, we append Fig.~\ref{fig:tracing_amr_regions_whole}, which extends the observations of Fig.~\ref{fig:tracing_amr_regions_footprint} to the whole Milky Way analogue.
 
 \begin{figure*}
 	\includegraphics[width=\textwidth]{figures/Overview_FeH_XFe_Sim_only.png}
@@ -560,6 +546,22 @@ In this section, we append abundance-abundance figures (Fig.~\ref{fig:appendix_f
     }
     \label{fig:appendix_xfe_xh_nx}
 \end{figure*}
+
+\begin{table*}
+    \centering
+    \caption{\textbf{Mean values and standard deviations of {[X/H]} in different age bins for the three age-abundance sequences of the Milky Way analogue as identified in Eqs.~\ref{eq:sequence1}-\ref{eq:sequence3} as well as the separation significance $r_{12}$ between Sequence 1 and 2 as defined in Eq.~\ref{eq:r_value}.} Values are calculated for the observable footprint without observational noise if more than 10 particles are within a bin. We do not show Ne and P, as they are commonly not measured by stellar surveys.}
+    % Note: Currently tiny font. Can move sigma values to next rows if tiny font is not accepted.
+    \tiny
+    \input{tables/tabular_separation_r12.tex}
+    \label{tab:tabular_separation_r12}
+\end{table*}
+
+\begin{table*}
+    \centering
+    \caption{\textbf{Separation significance $r_{12}$ between Sequence 1 and 2 in {[X/H]} for different elements (first column) and simulated observational noise (second column) across different age bins (third column onwards, in Gyr).} Values are calculated for the observable footprint according to Eq.~\ref{eq:r_value}. For reference, we also add the median observational noise of GALAH DR3 in the first column for each element.}
+    \input{tables/tabular_separation_r12_noise.tex}
+    \label{tab:tabular_separation_r12_noise}
+\end{table*}
 
 \begin{figure*}
 	\includegraphics[width=\textwidth]{figures/tracing_amr_regions_whole.png}
