@@ -22,7 +22,7 @@ Please cite this work as follows:
     pages = {arXiv:2404.13835},
     year = {2024},
     archivePrefix = {arXiv},
-    eprint = {22404.13835},
+    eprint = {2404.13835},
     keywords = {cosmology: observations -- Galaxy: formation -- Galaxy: evolution -- Galaxy: abundances -- methods: data analysis},
     doi = {10.48550/arXiv.2404.13835},
     primaryClass = {astro-ph.GA},
