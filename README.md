@@ -13,7 +13,7 @@ Exploring the marks left by galactic accretion in the Milky Way helps us underst
 Please cite this work as follows:
 
 ```bibtex
-@article{Buder2024,
+@article{Buder2024a,
     author = {{Buder}, Sven and {Mijnarends}, Luka and {Buck}, Tobias},
     title = {Finding Accreted Stars in the Milky Way: Clues from NIHAO Simulations},
     journal = {arXiv e-prints},
@@ -26,6 +26,6 @@ Please cite this work as follows:
     keywords = {cosmology: observations -- Galaxy: formation -- Galaxy: evolution -- Galaxy: abundances -- methods: data analysis},
     doi = {10.48550/arXiv.2404.13835},
     primaryClass = {astro-ph.GA},
-    adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240413835B},
+    adsurl = {https://ui.adsabs.harvard.edu/abs/2024MNRAS.532.1010B}
 }
 ```
